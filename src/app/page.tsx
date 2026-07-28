@@ -1,18 +1,9 @@
+import Hero from "@/components/Hero";
+
 export default function Home() {
   return (
     <>
-      {/* Home */}
-      <section id="home" className="min-h-screen flex items-center justify-center">
-        <div className="container-content text-center">
-          <p className="text-fg-dim font-mono text-sm mb-4">Hello, I'm</p>
-          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-fg">
-            Maira Arshad
-          </h1>
-          <p className="mt-4 text-lg text-fg-muted max-w-lg mx-auto">
-            Backend & full-stack developer building with Next.js, Express, and PostgreSQL.
-          </p>
-        </div>
-      </section>
+      <Hero />
 
       {/* About */}
       <section id="about" className="py-24">
