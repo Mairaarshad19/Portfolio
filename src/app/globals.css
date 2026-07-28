@@ -15,7 +15,6 @@
   --color-border-light: #334155;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", monospace;
-  --spacing-section: 5rem;
   --max-width-content: 64rem; /* max-w-5xl equivalent */
 }
 
@@ -33,7 +32,6 @@
   --color-border-light: var(--color-border-light);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
-  --spacing-section: var(--spacing-section);
   --max-width-content: var(--max-width-content);
 }
 
@@ -62,15 +60,6 @@ body {
   }
 }
 
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 .animate-fade-slide-up {
   animation: fade-slide-up 0.8s ease-out forwards;
 }
@@ -86,12 +75,6 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
-
-/* Slight stagger delay variants */
-.scroll-reveal-delay-1 { transition-delay: 0.1s; }
-.scroll-reveal-delay-2 { transition-delay: 0.2s; }
-.scroll-reveal-delay-3 { transition-delay: 0.3s; }
-.scroll-reveal-delay-4 { transition-delay: 0.4s; }
 
 /* ── Utility classes ────────────────────────────────────────── */
 .container-content {

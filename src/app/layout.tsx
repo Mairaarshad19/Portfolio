@@ -16,9 +16,44 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
+const siteUrl = "https://mairaarshad.dev";
+const siteName = "Maira Arshad — Software Engineer";
+const description =
+  "Backend-leaning full-stack developer building with Next.js, Express, and PostgreSQL. BS CS at UET Lahore.";
+
 export const metadata: Metadata = {
-  title: "Maira Arshad — Software Engineer",
-  description: "Backend & full-stack developer building with Next.js, Express, and PostgreSQL",
+  title: {
+    default: siteName,
+    template: "%s | Maira Arshad",
+  },
+  description,
+  metadataBase: new URL(siteUrl),
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteUrl,
+    siteName: "Maira Arshad",
+    title: siteName,
+    description,
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Maira Arshad — Software Engineer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteName,
+    description,
+    images: ["/og.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -31,6 +66,9 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
+      <head>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+      </head>
       <body className="min-h-full flex flex-col font-sans">
         <Navbar />
         <main className="flex-1">{children}</main>
