@@ -2,9 +2,11 @@
 
 import { GitBranch, Link as LinkIcon, Mail, Send } from "lucide-react";
 import { heroContent } from "@/data/portfolio-content";
+import { useScrollReveal } from "@/lib/useScrollReveal";
 
 export default function Contact() {
   const { socials } = heroContent;
+  const { ref, revealed } = useScrollReveal();
 
   const socialIcons: Record<string, React.ReactNode> = {
     GitHub: <GitBranch size={20} />,
@@ -14,7 +16,10 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-24">
-      <div className="container-content">
+      <div
+        ref={ref}
+        className={`container-content scroll-reveal ${revealed ? "revealed" : ""}`}
+      >
         <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-fg mb-12">
           Contact
         </h2>

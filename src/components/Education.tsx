@@ -1,11 +1,18 @@
+"use client";
+
 import { educationContent } from "@/data/portfolio-content";
+import { useScrollReveal } from "@/lib/useScrollReveal";
 
 export default function Education() {
   const { degree, institution, year, coursework, honors } = educationContent;
+  const { ref, revealed } = useScrollReveal();
 
   return (
     <section id="education" className="py-24">
-      <div className="container-content">
+      <div
+        ref={ref}
+        className={`container-content scroll-reveal ${revealed ? "revealed" : ""}`}
+      >
         <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-fg mb-8">
           Education
         </h2>

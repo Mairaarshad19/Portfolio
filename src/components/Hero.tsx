@@ -2,6 +2,7 @@
 
 import { GitBranch, Link, Mail, ArrowDown } from "lucide-react";
 import { heroContent } from "@/data/portfolio-content";
+import { useScrollReveal } from "@/lib/useScrollReveal";
 
 const socialIcons: Record<string, React.ReactNode> = {
   GitHub: <GitBranch size={20} />,
@@ -11,6 +12,7 @@ const socialIcons: Record<string, React.ReactNode> = {
 
 export default function Hero() {
   const { name, role, intro, buttons, socials } = heroContent;
+  const { ref, revealed } = useScrollReveal<HTMLDivElement>({ threshold: 0.05 });
 
   return (
     <section
@@ -22,7 +24,10 @@ export default function Hero() {
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-accent/5 blur-3xl" />
       </div>
 
-      <div className="container-content py-24 animate-fade-slide-up">
+      <div
+        ref={ref}
+        className={`container-content py-24 ${revealed ? "animate-fade-slide-up" : "opacity-0"}`}
+      >
         <div className="max-w-2xl mx-auto text-center">
           {/* Pre-label */}
           <p className="font-mono text-sm text-accent mb-4 tracking-wide">
@@ -30,17 +35,17 @@ export default function Hero() {
           </p>
 
           {/* Name */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-fg leading-tight">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-fg leading-tight">
             {name}
           </h1>
 
           {/* Role */}
-          <p className="mt-3 text-xl sm:text-2xl text-fg-muted font-medium">
+          <p className="mt-3 text-lg sm:text-xl md:text-2xl text-fg-muted font-medium">
             {role}
           </p>
 
           {/* Intro */}
-          <div className="mt-6 space-y-3 text-base text-fg-dim leading-relaxed max-w-xl mx-auto">
+          <div className="mt-6 space-y-3 text-sm sm:text-base text-fg-dim leading-relaxed max-w-xl mx-auto">
             {intro.map((paragraph, i) => (
               <p key={i}>{paragraph}</p>
             ))}
@@ -63,8 +68,8 @@ export default function Hero() {
                   : {})}
                 className={
                   btn.variant === "primary"
-                    ? "inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-bg font-semibold text-sm transition-all hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/20 active:scale-[0.97]"
-                    : "inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-border-light text-fg-muted font-medium text-sm transition-all hover:border-accent hover:text-accent active:scale-[0.97]"
+                    ? "inline-flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 rounded-lg bg-accent text-bg font-semibold text-sm transition-all hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/20 active:scale-[0.97]"
+                    : "inline-flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 rounded-lg border border-border-light text-fg-muted font-medium text-sm transition-all hover:border-accent hover:text-accent active:scale-[0.97]"
                 }
               >
                 {btn.label}

@@ -1,4 +1,7 @@
+"use client";
+
 import { GitBranch, Link, Mail } from "lucide-react";
+import { useScrollReveal } from "@/lib/useScrollReveal";
 
 const socialLinks = [
   {
@@ -19,9 +22,14 @@ const socialLinks = [
 ];
 
 export default function Footer() {
+  const { ref, revealed } = useScrollReveal();
+
   return (
     <footer className="border-t border-border bg-bg-secondary">
-      <div className="container-content flex flex-col items-center gap-4 py-8 sm:flex-row sm:justify-between">
+      <div
+        ref={ref}
+        className={`container-content flex flex-col items-center gap-4 py-8 sm:flex-row sm:justify-between scroll-reveal ${revealed ? "revealed" : ""}`}
+      >
         <p className="text-sm text-fg-dim">
           &copy; {new Date().getFullYear()} Maira Arshad. All rights reserved.
         </p>
