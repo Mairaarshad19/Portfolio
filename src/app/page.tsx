@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Experience from "@/components/Experience";
+import Projects from "@/components/Projects";
 
 export default function Home() {
   return (
@@ -8,13 +9,7 @@ export default function Home() {
       <Hero />
       <About />
       <Experience />
-
-      {/* Projects */}
-      <section id="projects" className="py-24">
-        <div className="container-content">
-          <h2 className="text-2xl font-semibold text-fg mb-4">Projects</h2>
-        </div>
-      </section>
+      <Projects />
 
       {/* Skills */}
       <section id="skills" className="py-24">

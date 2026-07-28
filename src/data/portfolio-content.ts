@@ -52,6 +52,62 @@ export const experienceContent: Experience[] = [
   },
 ];
 
+export interface Project {
+  name: string;
+  description: string;
+  techStack: string[];
+  links: {
+    github?: string;
+    live?: string;
+  };
+  featured: boolean;
+}
+
+export const projectsContent: Project[] = [
+  {
+    name: "Allied Shipping Agency Website",
+    description:
+      "A live, production website for a freight forwarding and logistics company, built solo and actively maintained for a real client. Focused on performance, responsive design, and clean corporate UI/UX — from hero sections to sticky navigation to CTA-optimized layouts.",
+    techStack: ["Next.js 15 (App Router)", "TypeScript", "Tailwind CSS", "React", "Vercel"],
+    links: {
+      live: "", // TODO: add live URL
+    },
+    featured: true,
+  },
+  {
+    name: "QueryMind (SmartCRM)",
+    description:
+      "Co-designed a multi-paradigm data platform unifying relational (PostgreSQL), graph (Neo4j), and vector (Qdrant) databases under one natural-language query interface — no SQL, Cypher, or vector-search expertise required. Contributed to the layered system architecture and helped define an LLM-based intent classification system mapping queries to 17 CRM-specific intents.",
+    techStack: ["PostgreSQL", "Neo4j", "Qdrant", "FastAPI", "Google Gemini", "Python"],
+    links: {},
+    featured: false,
+  },
+  {
+    name: "Vulnerable-by-Design",
+    description:
+      "Built a cybersecurity training platform demonstrating 8+ OWASP Top 10 vulnerabilities (SQL Injection, XSS, IDOR, Broken Access Control) with a SIEM-style logging system processing 1000+ security events and a real-time incident response dashboard.",
+    techStack: ["Python", "Flask", "SQLite"],
+    links: {},
+    featured: false,
+  },
+  {
+    name: "VOXLINK",
+    description:
+      "Developed an offline, voice-controlled classroom automation system using Flutter and ESP32 with no dependency on internet or cloud APIs. Implemented on-device intent-matching across 114 phrase variations and Bluetooth Classic (SPP) communication for real-time hardware control.",
+    techStack: ["Flutter", "ESP32", "Bluetooth Classic (SPP)", "Arduino C++"],
+    links: {},
+    featured: false,
+  },
+  {
+    name: "Smart Emergency Response System",
+    description:
+      "Built a full-stack desktop app for ambulance dispatch and coverage analysis, implementing core data structures from scratch — Priority Queue, Graph, AVL Tree, Hash Table — with a Dijkstra's-algorithm routing engine and Google Maps integration for live tracking.",
+    techStack: ["C#", ".NET", "MySQL", "Google Maps API"],
+    links: {},
+    featured: false,
+  },
+];
+
 export const heroContent = {
   name: "Maira Arshad",
   role: "Backend-Leaning Full-Stack Developer",
