@@ -19,9 +19,9 @@ export default function Hero() {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background gradient accent */}
+      {/* Background gradient accent — muted green glow */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-accent/5 blur-3xl" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-accent/[0.04] blur-3xl" />
       </div>
 
       <div
@@ -34,8 +34,8 @@ export default function Hero() {
             Hello, I'm
           </p>
 
-          {/* Name */}
-          <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-fg leading-tight">
+          {/* Name — serif display */}
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold tracking-tight text-fg leading-tight">
             {name}
           </h1>
 
@@ -52,7 +52,7 @@ export default function Hero() {
           </div>
 
           {/* Buttons */}
-          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             {buttons.map((btn) => (
               <a
                 key={btn.label}
@@ -68,8 +68,8 @@ export default function Hero() {
                   : {})}
                 className={
                   btn.variant === "primary"
-                    ? "inline-flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 rounded-lg bg-accent text-bg font-semibold text-sm transition-all hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/20 active:scale-[0.97]"
-                    : "inline-flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 rounded-lg border border-border-light text-fg-muted font-medium text-sm transition-all hover:border-accent hover:text-accent active:scale-[0.97]"
+                    ? "inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-white font-semibold text-sm transition-all hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/20 active:scale-[0.97]"
+                    : "inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-border-light text-fg-muted font-medium text-sm transition-all hover:border-accent hover:text-accent active:scale-[0.97]"
                 }
               >
                 {btn.label}
@@ -79,7 +79,7 @@ export default function Hero() {
           </div>
 
           {/* Social icons */}
-          <div className="mt-10 flex items-center justify-center gap-6">
+          <div className="mt-12 flex items-center justify-center gap-6">
             {socials.map((s) => (
               <a
                 key={s.label}

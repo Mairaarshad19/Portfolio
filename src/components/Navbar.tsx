@@ -25,7 +25,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-bg/80 backdrop-blur-md">
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-bg/85 backdrop-blur-md">
       <div className="container-content flex h-16 items-center justify-between">
         {/* Logo / name */}
         <a
@@ -34,7 +34,7 @@ export default function Navbar() {
             e.preventDefault();
             handleClick("#home");
           }}
-          className="text-lg font-semibold tracking-tight text-fg hover:text-accent transition-colors"
+          className="text-lg font-display font-semibold tracking-tight text-fg hover:text-accent transition-colors"
         >
           MA<span className="text-accent">.</span>
         </a>

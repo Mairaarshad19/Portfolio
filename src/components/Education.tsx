@@ -8,16 +8,16 @@ export default function Education() {
   const { ref, revealed } = useScrollReveal();
 
   return (
-    <section id="education" className="py-24">
+    <section id="education" className="py-28">
       <div
         ref={ref}
         className={`container-content scroll-reveal ${revealed ? "revealed" : ""}`}
       >
-        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-fg mb-8">
+        <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-fg mb-8">
           Education
         </h2>
 
-        <div className="bg-bg-elevated border border-border rounded-xl p-6 sm:p-8">
+        <div className="bg-bg-elevated border border-border rounded-xl p-6 sm:p-8 shadow-sm">
           {/* Degree row */}
           <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-6">
             <div>
@@ -40,7 +40,7 @@ export default function Education() {
               {coursework.map((course) => (
                 <span
                   key={course}
-                  className="px-2.5 py-1 text-xs font-mono text-fg-muted bg-bg border border-border rounded-md"
+                  className="px-2.5 py-1 text-xs font-mono text-fg-muted bg-bg-secondary border border-border rounded-md"
                 >
                   {course}
                 </span>
@@ -50,7 +50,7 @@ export default function Education() {
 
           {/* Honors */}
           <div className="pt-4 border-t border-border">
-            <span className="inline-flex items-center gap-2 text-sm text-fg-dim">
+            <span className="inline-flex items-center gap-2 text-sm text-fg-muted">
               <span className="text-accent text-base">✦</span>
               {honors}
             </span>

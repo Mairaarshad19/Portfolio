@@ -28,7 +28,7 @@ export default function Footer() {
     <footer className="border-t border-border bg-bg-secondary">
       <div
         ref={ref}
-        className={`container-content flex flex-col items-center gap-4 py-8 sm:flex-row sm:justify-between scroll-reveal ${revealed ? "revealed" : ""}`}
+        className={`container-content flex flex-col items-center gap-4 py-10 sm:flex-row sm:justify-between scroll-reveal ${revealed ? "revealed" : ""}`}
       >
         <p className="text-sm text-fg-dim">
           &copy; {new Date().getFullYear()} Maira Arshad. All rights reserved.

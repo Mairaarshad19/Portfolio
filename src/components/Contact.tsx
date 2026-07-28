@@ -15,12 +15,12 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24">
+    <section id="contact" className="py-28">
       <div
         ref={ref}
         className={`container-content scroll-reveal ${revealed ? "revealed" : ""}`}
       >
-        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-fg mb-12">
+        <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-fg mb-12">
           Contact
         </h2>
 
@@ -73,7 +73,7 @@ export default function Contact() {
                   id="name"
                   name="name"
                   placeholder="Your name"
-                  className="w-full px-4 py-3 bg-bg-elevated border border-border rounded-lg text-fg text-sm placeholder:text-fg-dim/50 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/30 transition-colors"
+                  className="w-full px-4 py-3 bg-bg-elevated border border-border rounded-lg text-fg text-sm placeholder:text-fg-dim/50 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/30 transition-colors shadow-sm"
                 />
               </div>
 
@@ -90,7 +90,7 @@ export default function Contact() {
                   id="email"
                   name="email"
                   placeholder="your@email.com"
-                  className="w-full px-4 py-3 bg-bg-elevated border border-border rounded-lg text-fg text-sm placeholder:text-fg-dim/50 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/30 transition-colors"
+                  className="w-full px-4 py-3 bg-bg-elevated border border-border rounded-lg text-fg text-sm placeholder:text-fg-dim/50 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/30 transition-colors shadow-sm"
                 />
               </div>
 
@@ -107,14 +107,14 @@ export default function Contact() {
                   name="message"
                   rows={5}
                   placeholder="Your message..."
-                  className="w-full px-4 py-3 bg-bg-elevated border border-border rounded-lg text-fg text-sm placeholder:text-fg-dim/50 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/30 transition-colors resize-y"
+                  className="w-full px-4 py-3 bg-bg-elevated border border-border rounded-lg text-fg text-sm placeholder:text-fg-dim/50 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/30 transition-colors resize-y shadow-sm"
                 />
               </div>
 
               {/* Submit button */}
               <button
                 type="submit"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-bg font-semibold text-sm transition-all hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/20 active:scale-[0.97]"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-white font-semibold text-sm transition-all hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/20 active:scale-[0.97]"
               >
                 Send Message
                 <Send size={16} />

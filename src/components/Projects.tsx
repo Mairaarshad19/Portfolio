@@ -17,7 +17,7 @@ function ProjectCard({
     return (
       <div
         ref={ref}
-        className={`relative border border-accent/40 bg-accent/[0.03] rounded-xl p-6 sm:p-8 hover:border-accent/60 transition-colors scroll-reveal ${revealed ? "revealed" : ""}`}
+        className={`relative border border-accent/40 bg-accent-subtle/40 rounded-xl p-6 sm:p-8 hover:border-accent/60 transition-colors shadow-sm scroll-reveal ${revealed ? "revealed" : ""}`}
       >
         <span className="inline-flex items-center gap-1.5 mb-4 text-xs font-mono text-accent tracking-wide uppercase">
           <span className="w-1.5 h-1.5 rounded-full bg-accent" />
@@ -27,7 +27,7 @@ function ProjectCard({
         <h3 className="text-xl sm:text-2xl font-semibold text-fg">
           {project.name}
         </h3>
-        <p className="mt-3 text-sm text-fg-dim leading-relaxed max-w-3xl">
+        <p className="mt-3 text-sm text-fg-muted leading-relaxed max-w-3xl">
           {project.description}
         </p>
 
@@ -35,7 +35,7 @@ function ProjectCard({
           {project.techStack.map((tech) => (
             <span
               key={tech}
-              className="px-2.5 py-1 text-xs font-mono text-fg-muted bg-bg-elevated border border-border rounded-md"
+              className="px-2.5 py-1 text-xs font-mono text-fg-muted bg-bg-secondary border border-border rounded-md"
             >
               {tech}
             </span>
@@ -73,10 +73,10 @@ function ProjectCard({
   return (
     <div
       ref={ref}
-      className={`border border-border bg-bg-elevated rounded-xl p-6 hover:border-border-light transition-colors flex flex-col scroll-reveal ${revealed ? "revealed" : ""}`}
+      className={`border border-border bg-bg-elevated rounded-xl p-6 hover:border-border-light transition-colors flex flex-col shadow-sm scroll-reveal ${revealed ? "revealed" : ""}`}
     >
       <h3 className="text-lg font-semibold text-fg">{project.name}</h3>
-      <p className="mt-2 text-sm text-fg-dim leading-relaxed flex-1">
+      <p className="mt-2 text-sm text-fg-muted leading-relaxed flex-1">
         {project.description}
       </p>
 
@@ -84,7 +84,7 @@ function ProjectCard({
         {project.techStack.map((tech) => (
           <span
             key={tech}
-            className="px-2 py-0.5 text-xs font-mono text-fg-muted bg-bg border border-border rounded-md"
+            className="px-2 py-0.5 text-xs font-mono text-fg-muted bg-bg-secondary border border-border rounded-md"
           >
             {tech}
           </span>
@@ -127,12 +127,12 @@ export default function Projects() {
   const others = projectsContent.filter((p) => !p.featured);
 
   return (
-    <section id="projects" className="py-24">
+    <section id="projects" className="py-28">
       <div
         ref={ref}
         className={`container-content scroll-reveal ${revealed ? "revealed" : ""}`}
       >
-        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-fg mb-12">
+        <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-fg mb-12">
           Projects
         </h2>
 

@@ -1,21 +1,23 @@
 @import "tailwindcss";
 
 /* ── Design System ──────────────────────────────────────────── */
-/* Dark theme (default) */
+/* Premium light theme */
 :root {
-  --color-bg: #0a0e14;
-  --color-bg-secondary: #131820;
-  --color-bg-elevated: #1a2332;
-  --color-fg: #e2e8f0;
-  --color-fg-muted: #94a3b8;
-  --color-fg-dim: #64748b;
-  --color-accent: #38bdf8;
-  --color-accent-hover: #7dd3fc;
-  --color-border: #1e293b;
-  --color-border-light: #334155;
+  --color-bg: #faf9f7;
+  --color-bg-secondary: #f4f2ee;
+  --color-bg-elevated: #ffffff;
+  --color-fg: #1a1a1a;
+  --color-fg-muted: #5c5c5c;
+  --color-fg-dim: #8a8a8a;
+  --color-accent: #0f5132;
+  --color-accent-hover: #146b43;
+  --color-accent-subtle: #eaf5ef;
+  --color-border: #e2ddd6;
+  --color-border-light: #ece8e2;
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", monospace;
-  --max-width-content: 64rem; /* max-w-5xl equivalent */
+  --max-width-content: 68rem;
 }
 
 /* ── Tailwind v4 theme tokens ───────────────────────────────── */
@@ -28,8 +30,10 @@
   --color-fg-dim: var(--color-fg-dim);
   --color-accent: var(--color-accent);
   --color-accent-hover: var(--color-accent-hover);
+  --color-accent-subtle: var(--color-accent-subtle);
   --color-border: var(--color-border);
   --color-border-light: var(--color-border-light);
+  --font-display: var(--font-display);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
   --max-width-content: var(--max-width-content);
@@ -64,7 +68,7 @@ body {
   animation: fade-slide-up 0.8s ease-out forwards;
 }
 
-/* Scroll-reveal: initial hidden state */
+/* Scroll-reveal */
 .scroll-reveal {
   opacity: 0;
   transform: translateY(20px);
@@ -96,5 +100,5 @@ body {
 /* ── Selection ──────────────────────────────────────────────── */
 ::selection {
   background-color: var(--color-accent);
-  color: var(--color-bg);
+  color: #ffffff;
 }
