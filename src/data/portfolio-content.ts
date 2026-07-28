@@ -108,6 +108,37 @@ export const projectsContent: Project[] = [
   },
 ];
 
+export interface SkillCategory {
+  category: string;
+  skills: string[];
+}
+
+export const skillsContent: SkillCategory[] = [
+  {
+    category: "Languages",
+    skills: ["TypeScript", "JavaScript", "Python", "C++", "C#", "SQL"],
+  },
+  {
+    category: "Frameworks & Libraries",
+    skills: ["Next.js 15", "Express.js", "React", "Tailwind CSS", "FastAPI", "Flask", "Flutter"],
+  },
+  {
+    category: "Databases",
+    skills: ["PostgreSQL", "Neo4j", "MySQL", "SQLite", "Qdrant (vector DB)"],
+  },
+  {
+    category: "Tools & Practices",
+    skills: [
+      "Git/GitHub",
+      "Docker",
+      "Vercel",
+      "RESTful API design",
+      "Layered architecture (BL/DL/UI)",
+      "Repository pattern",
+    ],
+  },
+];
+
 export const heroContent = {
   name: "Maira Arshad",
   role: "Backend-Leaning Full-Stack Developer",

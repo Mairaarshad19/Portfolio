@@ -1,0 +1,33 @@
+import { skillsContent } from "@/data/portfolio-content";
+
+export default function Skills() {
+  return (
+    <section id="skills" className="py-24">
+      <div className="container-content">
+        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-fg mb-12">
+          Skills
+        </h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
+          {skillsContent.map((group) => (
+            <div key={group.category}>
+              <h3 className="text-xs font-mono text-accent uppercase tracking-wider mb-4">
+                {group.category}
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {group.skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="px-3 py-1.5 text-sm font-mono text-fg-muted bg-bg-elevated border border-border rounded-md hover:border-accent/40 hover:text-fg transition-colors"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
