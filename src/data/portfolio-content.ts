@@ -125,6 +125,39 @@ export const projectsContent: Project[] = [
   },
 ];
 
+export interface Capability {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+export const capabilitiesContent: Capability[] = [
+  {
+    title: "Backend API Development",
+    description:
+      "Designing and building RESTful APIs with Express.js and FastAPI — from endpoint structuring and payload design to authentication and error handling. Currently applying this at FlyRank building structured-output pipelines and RAG systems.",
+    icon: "Server",
+  },
+  {
+    title: "Full-Stack Web Applications",
+    description:
+      "Building complete web applications end-to-end with Next.js, TypeScript, and PostgreSQL — currently maintaining a live production site for a freight logistics client, from UI to deployment.",
+    icon: "Globe",
+  },
+  {
+    title: "Database Design & Architecture",
+    description:
+      "Designing relational schemas and working across relational, graph, and vector databases (PostgreSQL, Neo4j, Qdrant) — applied in QueryMind's multi-paradigm CRM platform.",
+    icon: "Database",
+  },
+  {
+    title: "AI-Integrated Workflows",
+    description:
+      "Building structured-output pipelines, RAG systems, and evaluation rubrics for AI-assisted workflows — current focus at FlyRank.",
+    icon: "Cpu",
+  },
+];
+
 export interface SkillCategory {
   category: string;
   skills: string[];
