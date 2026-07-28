@@ -1,18 +1,13 @@
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import Experience from "@/components/Experience";
 
 export default function Home() {
   return (
     <>
       <Hero />
       <About />
-
-      {/* Experience */}
-      <section id="experience" className="py-24">
-        <div className="container-content">
-          <h2 className="text-2xl font-semibold text-fg mb-4">Experience</h2>
-        </div>
-      </section>
+      <Experience />
 
       {/* Projects */}
       <section id="projects" className="py-24">

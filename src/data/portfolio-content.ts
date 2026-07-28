@@ -10,6 +10,48 @@ export const aboutContent = {
   ],
 };
 
+export interface Experience {
+  role: string;
+  company: string;
+  dates: string;
+  bullets: string[];
+}
+
+export const experienceContent: Experience[] = [
+  {
+    role: "Backend AI Engineering Intern",
+    company: "FlyRank",
+    dates: "July 2025 – Present",
+    bullets: [
+      "Building and structuring API endpoints and payloads using Express.js prior to implementation",
+      "Building and maintaining RAG (Retrieval-Augmented Generation) pipelines with source grounding and evaluation capability",
+      "Developing structured-output pipelines and tool-calling workflows for agent tasks",
+      "Constructing lightweight evaluation rubrics and test suites for backend workflows",
+    ],
+  },
+  {
+    role: "AI Fluency Intern",
+    company: "FlyRank",
+    dates: "July 2025 – Present",
+    bullets: [
+      "Documenting and executing a repeatable daily AI-assisted workflow with clear handoffs across tools",
+      "Building and applying an evaluation checklist to critique AI-generated drafts for accuracy, context, and completeness",
+      "Designing and publishing a capstone artifact with AI as a core development partner",
+    ],
+  },
+  {
+    role: "Startup Project Lead Intern",
+    company: "Ustadam (AI-based EdTech startup)",
+    dates: "June 2025 – August 2025",
+    bullets: [
+      "Planned the MVP roadmap for an AI-based EdTech platform across backend, frontend, database, and AI integration phases",
+      "Designed system architecture, user flow diagrams, and relational database schema for a scalable platform",
+      "Built a 5-year financial model covering operating costs, revenue forecasting, and ROI estimation",
+      "Managed sprint cycles for a 4-member team through weekly task allocation and progress tracking",
+    ],
+  },
+];
+
 export const heroContent = {
   name: "Maira Arshad",
   role: "Backend-Leaning Full-Stack Developer",
