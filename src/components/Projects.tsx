@@ -1,8 +1,9 @@
 "use client";
 
 import { projectsContent } from "@/data/portfolio-content";
-import { ExternalLink, GitBranch } from "lucide-react";
+import { ExternalLink, GitBranch, Code, Briefcase, GraduationCap } from "lucide-react";
 import { useScrollReveal } from "@/lib/useScrollReveal";
+import { useCountUp } from "@/lib/useCountUp";
 
 function ProjectCard({
   project,
@@ -121,6 +122,33 @@ function ProjectCard({
   );
 }
 
+function StatItem({
+  icon: Icon,
+  label,
+  count,
+  suffix = "",
+}: {
+  icon: React.ElementType;
+  label: string;
+  count: number;
+  suffix?: string;
+}) {
+  const { ref, display } = useCountUp({ end: count, suffix });
+
+  return (
+    <div className="flex flex-col items-center gap-1.5">
+      <Icon size={20} className="text-accent" />
+      <span
+        ref={ref}
+        className="text-2xl font-display font-bold text-fg tabular-nums"
+      >
+        {display}
+      </span>
+      <span className="text-xs text-fg-muted font-mono">{label}</span>
+    </div>
+  );
+}
+
 export default function Projects() {
   const { ref, revealed } = useScrollReveal();
   const featured = projectsContent.find((p) => p.featured);
@@ -135,6 +163,13 @@ export default function Projects() {
         <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-fg mb-12">
           Projects
         </h2>
+
+        {/* Stats row — counts up on scroll into view */}
+        <div className="grid grid-cols-3 gap-6 mb-12 pb-12 border-b border-border">
+          <StatItem icon={Code} label="Projects Built" count={5} suffix="+" />
+          <StatItem icon={Briefcase} label="Live Internships" count={2} />
+          <StatItem icon={GraduationCap} label="Graduation" count={2028} />
+        </div>
 
         <div className="space-y-8">
           {featured && <ProjectCard project={featured} featured />}
