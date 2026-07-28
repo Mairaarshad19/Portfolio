@@ -1,3 +1,20 @@
+export const educationContent = {
+  degree: "BS Computer Science",
+  institution: "UET Lahore",
+  year: "Expected July 2028",
+  coursework: [
+    "Design and Analysis of Algorithms",
+    "Advanced Database Management Systems",
+    "Theory of Automata",
+    "Computer Organization and Assembly Language",
+    "Object-Oriented Programming",
+    "Artificial Intelligence",
+    "Information Security",
+    "Computer Networks",
+  ],
+  honors: "Honhaar Scholarship (fully funded)",
+};
+
 export const aboutContent = {
   paragraph: [
     "I'm a Computer Science student at UET Lahore, expected to graduate in 2028. Right now I split my time between two internships at FlyRank — one on backend AI engineering (Express.js, RAG pipelines, structured-output workflows) and one focused on AI fluency and workflow design. Alongside that, I'm building and maintaining a live production website for a freight forwarding client using Next.js 15 and TypeScript.",
