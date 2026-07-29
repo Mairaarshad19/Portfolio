@@ -40,20 +40,20 @@ export default function Milestones() {
   const { ref, revealed } = useScrollReveal();
 
   return (
-    <section className="py-16">
+    <section className="py-28">
       <div
         ref={ref}
         className={`container-content scroll-reveal ${revealed ? "revealed" : ""}`}
       >
-        <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-fg mb-10">
+        <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-fg mb-12">
           Milestones
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="stagger-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {milestones.map((m, i) => (
             <div
               key={i}
-              className="flex items-start gap-4 bg-bg-elevated border border-border rounded-xl p-5 shadow-sm"
+              className="card-lift stagger-item flex items-start gap-4 bg-bg-elevated border border-border rounded-xl p-5 shadow-sm"
             >
               <div className="w-10 h-10 rounded-lg bg-accent-subtle flex items-center justify-center text-accent shrink-0">
                 <m.icon size={20} />

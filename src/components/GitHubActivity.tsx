@@ -19,35 +19,41 @@ export default function GitHubActivity() {
         ref={ref}
         className={`container-content scroll-reveal ${revealed ? "revealed" : ""}`}
       >
-        <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-fg mb-10">
+        <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-fg mb-12">
           GitHub Activity
         </h2>
 
-        <div className="space-y-4">
+        <div className="stagger-container space-y-6">
           {/* Stats row: repos, commits, prs, etc. */}
-          <div className="flex flex-wrap justify-center gap-4">
-            <img
-              src={`https://github-readme-stats.vercel.app/api?username=${GITHUB_USERNAME}&show_icons=true&count_private=true&include_all_commits=true&rank_icon=percentile${THEME_PARAMS}`}
-              alt="GitHub stats"
-              className="max-w-full h-auto"
-              loading="lazy"
-            />
-            <img
-              src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${GITHUB_USERNAME}&layout=compact&langs_count=8${THEME_PARAMS}`}
-              alt="Top languages"
-              className="max-w-full h-auto"
-              loading="lazy"
-            />
+          <div className="stagger-item grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="card-lift bg-bg-elevated border border-border rounded-xl p-5 shadow-sm flex items-center justify-center">
+              <img
+                src={`https://github-readme-stats.vercel.app/api?username=${GITHUB_USERNAME}&show_icons=true&count_private=true&include_all_commits=true&rank_icon=percentile${THEME_PARAMS}`}
+                alt="GitHub stats"
+                className="w-full h-auto"
+                loading="lazy"
+              />
+            </div>
+            <div className="card-lift bg-bg-elevated border border-border rounded-xl p-5 shadow-sm flex items-center justify-center">
+              <img
+                src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${GITHUB_USERNAME}&layout=compact&langs_count=8${THEME_PARAMS}`}
+                alt="Top languages"
+                className="w-full h-auto"
+                loading="lazy"
+              />
+            </div>
           </div>
 
           {/* Contribution graph */}
-          <div className="flex justify-center">
-            <img
-              src={`https://github-readme-activity-graph.vercel.app/graph?username=${GITHUB_USERNAME}&bg_color=FAF9F7&color=1D4ED8&line=1D4ED8&point=1D4ED8&area=true&area_color=1D4ED8&hide_border=true`}
-              alt="Contribution graph"
-              className="max-w-full h-auto rounded-xl"
-              loading="lazy"
-            />
+          <div className="stagger-item">
+            <div className="card-lift bg-bg-elevated border border-border rounded-xl p-5 shadow-sm flex items-center justify-center">
+              <img
+                src={`https://github-readme-activity-graph.vercel.app/graph?username=${GITHUB_USERNAME}&bg_color=FAF9F7&color=1D4ED8&line=1D4ED8&point=1D4ED8&area=true&area_color=1D4ED8&hide_border=true`}
+                alt="Contribution graph"
+                className="w-full h-auto"
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
       </div>
