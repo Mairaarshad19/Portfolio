@@ -17,7 +17,7 @@ export default function Education() {
           Education
         </h2>
 
-        <div className="bg-bg-elevated border border-border rounded-xl p-6 sm:p-8 shadow-sm">
+        <div className="card-lift bg-bg-elevated border border-border rounded-xl p-6 sm:p-8 shadow-sm">
           {/* Degree row */}
           <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-6">
             <div>

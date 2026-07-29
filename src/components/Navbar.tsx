@@ -49,7 +49,7 @@ export default function Navbar() {
                 e.preventDefault();
                 handleClick(link.href);
               }}
-              className="text-sm font-medium text-fg-muted hover:text-accent transition-colors"
+              className="link-underline text-sm font-medium text-fg-muted hover:text-accent transition-colors"
             >
               {link.label}
             </a>

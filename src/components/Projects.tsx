@@ -18,7 +18,7 @@ function ProjectCard({
     return (
       <div
         ref={ref}
-        className={`relative border border-accent/40 bg-accent-subtle/40 rounded-xl p-6 sm:p-8 hover:border-accent/60 transition-colors shadow-sm scroll-reveal ${revealed ? "revealed" : ""}`}
+        className={`card-lift relative border border-accent/40 bg-accent-subtle/40 rounded-xl p-6 sm:p-8 hover:border-accent/60 shadow-sm scroll-reveal ${revealed ? "revealed" : ""}`}
       >
         <span className="inline-flex items-center gap-1.5 mb-4 text-xs font-mono text-accent tracking-wide uppercase">
           <span className="w-1.5 h-1.5 rounded-full bg-accent" />
@@ -74,7 +74,7 @@ function ProjectCard({
   return (
     <div
       ref={ref}
-      className={`border border-border bg-bg-elevated rounded-xl p-6 hover:border-border-light transition-colors flex flex-col shadow-sm scroll-reveal ${revealed ? "revealed" : ""}`}
+      className={`card-lift border border-border bg-bg-elevated rounded-xl p-6 hover:border-border-light flex flex-col shadow-sm scroll-reveal ${revealed ? "revealed" : ""}`}
     >
       <h3 className="text-lg font-semibold text-fg">{project.name}</h3>
       <p className="mt-2 text-sm text-fg-muted leading-relaxed flex-1">
@@ -171,12 +171,14 @@ export default function Projects() {
           <StatItem icon={GraduationCap} label="Graduation" count={2028} />
         </div>
 
-        <div className="space-y-8">
+        <div className="stagger-container space-y-8">
           {featured && <ProjectCard project={featured} featured />}
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {others.map((project) => (
-              <ProjectCard key={project.name} project={project} />
+              <div key={project.name} className="stagger-item">
+                <ProjectCard project={project} />
+              </div>
             ))}
           </div>
         </div>

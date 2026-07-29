@@ -36,9 +36,9 @@ export default function About() {
             </div>
 
             {/* Quick facts */}
-            <dl className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6">
+            <dl className="stagger-container mt-10 grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6">
               {quickFacts.map((fact) => (
-                <div key={fact.label}>
+                <div key={fact.label} className="stagger-item">
                   <dt className="text-xs font-mono text-accent uppercase tracking-wider mb-1">
                     {fact.label}
                   </dt>

@@ -117,8 +117,8 @@ export default function Hero() {
                   : {})}
                 className={
                   btn.variant === "primary"
-                    ? "inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-white font-semibold text-sm transition-all hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/20 active:scale-[0.97]"
-                    : "inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-border-light text-fg-muted font-medium text-sm transition-all hover:border-accent hover:text-accent active:scale-[0.97]"
+                    ? "btn-lift inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-white font-semibold text-sm transition-all hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/20 active:scale-[0.97]"
+                    : "btn-lift inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-border-light text-fg-muted font-medium text-sm transition-all hover:border-accent hover:text-accent active:scale-[0.97]"
                 }
               >
                 {btn.label}
@@ -136,7 +136,7 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={s.label}
-                className="text-fg-dim hover:text-accent transition-colors"
+                className="icon-lift text-fg-dim hover:text-accent"
               >
                 {socialIcons[s.label]}
               </a>

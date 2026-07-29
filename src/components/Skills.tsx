@@ -16,9 +16,9 @@ export default function Skills() {
           Skills
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-10">
+        <div className="stagger-container grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-10">
           {skillsContent.map((group) => (
-            <div key={group.category}>
+            <div key={group.category} className="stagger-item">
               <h3 className="text-xs font-mono text-accent uppercase tracking-wider mb-4">
                 {group.category}
               </h3>

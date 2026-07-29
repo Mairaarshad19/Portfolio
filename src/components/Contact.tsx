@@ -40,7 +40,7 @@ export default function Contact() {
                     href={s.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 text-fg-dim hover:text-accent transition-colors group"
+                    className="icon-lift inline-flex items-center gap-3 text-fg-dim hover:text-accent group"
                   >
                     <span className="text-fg-dim group-hover:text-accent transition-colors">
                       {socialIcons[s.label]}
@@ -114,7 +114,7 @@ export default function Contact() {
               {/* Submit button */}
               <button
                 type="submit"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-white font-semibold text-sm transition-all hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/20 active:scale-[0.97]"
+                className="btn-lift inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-white font-semibold text-sm transition-all hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/20 active:scale-[0.97]"
               >
                 Send Message
                 <Send size={16} />

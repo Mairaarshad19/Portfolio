@@ -27,7 +27,7 @@ function CapabilityCard({
       ref={ref}
       className={`scroll-reveal ${revealed ? "revealed" : ""}`}
     >
-      <div className="h-full bg-bg-elevated border border-border rounded-xl p-6 sm:p-7 hover:border-accent/30 transition-colors shadow-sm">
+      <div className="card-lift h-full bg-bg-elevated border border-border rounded-xl p-6 sm:p-7 hover:border-accent/30 shadow-sm">
         <div className="w-10 h-10 rounded-lg bg-accent-subtle flex items-center justify-center text-accent mb-5">
           {iconMap[icon]}
         </div>
@@ -53,14 +53,15 @@ export default function Capabilities() {
           What I Can Help With
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div className="stagger-container grid grid-cols-1 sm:grid-cols-2 gap-6">
           {capabilitiesContent.map((cap) => (
-            <CapabilityCard
-              key={cap.title}
-              title={cap.title}
-              description={cap.description}
-              icon={cap.icon}
-            />
+            <div key={cap.title} className="stagger-item">
+              <CapabilityCard
+                title={cap.title}
+                description={cap.description}
+                icon={cap.icon}
+              />
+            </div>
           ))}
         </div>
       </div>

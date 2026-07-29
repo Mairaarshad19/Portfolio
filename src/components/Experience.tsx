@@ -24,7 +24,7 @@ function ExperienceCard({
       </span>
 
       {/* Card */}
-      <div className="bg-bg-elevated border border-border rounded-xl p-6 hover:border-border-light transition-colors shadow-sm">
+      <div className="card-lift bg-bg-elevated border border-border rounded-xl p-6 hover:border-border-light shadow-sm">
         <h3 className="text-lg font-semibold text-fg">{exp.role}</h3>
         <p className="text-sm text-fg-muted mt-0.5 mb-4">{exp.company}</p>
 
@@ -61,9 +61,11 @@ export default function Experience() {
           {/* Vertical timeline line */}
           <div className="absolute left-[3.5px] md:left-[31.5px] top-0 bottom-0 w-px bg-border" />
 
-          <div className="space-y-12">
+          <div className="stagger-container space-y-12">
             {experienceContent.map((exp, i) => (
-              <ExperienceCard key={i} exp={exp} />
+              <div key={i} className="stagger-item">
+                <ExperienceCard exp={exp} />
+              </div>
             ))}
           </div>
         </div>

@@ -42,7 +42,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={label}
-              className="text-fg-dim hover:text-accent transition-colors"
+              className="icon-lift text-fg-dim hover:text-accent"
             >
               <Icon size={20} />
             </a>
