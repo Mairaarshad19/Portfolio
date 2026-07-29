@@ -68,6 +68,20 @@ body {
   animation: fade-slide-up 0.8s ease-out forwards;
 }
 
+/* Spotlight follow cursor — subtle radial glow */
+.spotlight-follow {
+  position: absolute;
+  pointer-events: none;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--color-accent) 0%, transparent 70%);
+  opacity: 0.06;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease;
+  will-change: transform, left, top;
+}
+
 /* Scroll-reveal */
 .scroll-reveal {
   opacity: 0;

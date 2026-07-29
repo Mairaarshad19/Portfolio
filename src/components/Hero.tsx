@@ -3,6 +3,7 @@
 import { GitBranch, Link, Mail, ArrowDown } from "lucide-react";
 import { heroContent } from "@/data/portfolio-content";
 import { useScrollReveal } from "@/lib/useScrollReveal";
+import { useEffect, useRef, useState } from "react";
 
 const socialIcons: Record<string, React.ReactNode> = {
   GitHub: <GitBranch size={20} />,
@@ -13,16 +14,64 @@ const socialIcons: Record<string, React.ReactNode> = {
 export default function Hero() {
   const { name, role, intro, buttons, socials } = heroContent;
   const { ref, revealed } = useScrollReveal<HTMLDivElement>({ threshold: 0.05 });
+  const sectionRef = useRef<HTMLElement>(null);
+  const spotlightRef = useRef<HTMLDivElement>(null);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+  useEffect(() => {
+    // Detect touch device on mount
+    setIsTouchDevice("ontouchstart" in window || navigator.maxTouchPoints > 0);
+  }, []);
+
+  useEffect(() => {
+    if (isTouchDevice) return;
+
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!spotlightRef.current) return;
+      const rect = section.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      spotlightRef.current.style.left = `${x}px`;
+      spotlightRef.current.style.top = `${y}px`;
+      spotlightRef.current.style.opacity = "1";
+    };
+
+    const handleMouseLeave = () => {
+      if (!spotlightRef.current) return;
+      spotlightRef.current.style.opacity = "0";
+    };
+
+    section.addEventListener("mousemove", handleMouseMove);
+    section.addEventListener("mouseleave", handleMouseLeave);
+
+    return () => {
+      section.removeEventListener("mousemove", handleMouseMove);
+      section.removeEventListener("mouseleave", handleMouseLeave);
+    };
+  }, [isTouchDevice]);
 
   return (
     <section
       id="home"
+      ref={sectionRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background gradient accent — muted green glow */}
+      {/* Background gradient accent — muted glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-accent/[0.04] blur-3xl" />
       </div>
+
+      {/* Spotlight follow cursor — disabled on touch devices */}
+      {!isTouchDevice && (
+        <div
+          ref={spotlightRef}
+          className="spotlight-follow"
+          style={{ left: "50%", top: "50%", opacity: 0 }}
+        />
+      )}
 
       <div
         ref={ref}
