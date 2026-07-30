@@ -87,7 +87,8 @@ export const projectsContent: Project[] = [
       "A live, production website for a freight forwarding and logistics company, built solo and actively maintained for a real client. Focused on performance, responsive design, and clean corporate UI/UX — from hero sections to sticky navigation to CTA-optimized layouts.",
     techStack: ["Next.js 15 (App Router)", "TypeScript", "Tailwind CSS", "React", "Vercel"],
     links: {
-      live: "", // TODO: add live URL
+      live: "https://allied-shipping-agency.vercel.app/",
+      github: "https://github.com/Mairaarshad19/allied-shipping-website",
     },
     featured: true,
   },
@@ -104,7 +105,9 @@ export const projectsContent: Project[] = [
     description:
       "Built a full-stack desktop app for ambulance dispatch and coverage analysis, implementing core data structures from scratch — Priority Queue, Graph, AVL Tree, Hash Table — with a Dijkstra's-algorithm routing engine and Google Maps integration for live tracking.",
     techStack: ["C#", ".NET", "MySQL", "Google Maps API"],
-    links: {},
+    links: {
+      github: "https://github.com/Mairaarshad19/Smart_Emergency_Response_System",
+    },
     featured: false,
   },
   {
@@ -112,7 +115,9 @@ export const projectsContent: Project[] = [
     description:
       "Developed an offline, voice-controlled classroom automation system using Flutter and ESP32 with no dependency on internet or cloud APIs. Implemented on-device intent-matching across 114 phrase variations and Bluetooth Classic (SPP) communication for real-time hardware control.",
     techStack: ["Flutter", "ESP32", "Bluetooth Classic (SPP)", "Arduino C++"],
-    links: {},
+    links: {
+      github: "https://github.com/Mairaarshad19/VOXLINK-VoiceAutomation",
+    },
     featured: false,
   },
 ];

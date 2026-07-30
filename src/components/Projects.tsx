@@ -43,16 +43,16 @@ function ProjectCard({
           ))}
         </div>
 
-        <div className="mt-5 flex items-center gap-4">
+        <div className="mt-5 flex items-center gap-3">
           {project.links.live && (
             <a
               href={project.links.live}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-hover transition-colors"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-medium rounded-full border border-accent/40 text-accent hover:bg-accent hover:text-white transition-all duration-200"
             >
-              <ExternalLink size={16} />
-              Live Site
+              <ExternalLink size={14} />
+              Live Demo
             </a>
           )}
           {project.links.github && (
@@ -60,10 +60,10 @@ function ProjectCard({
               href={project.links.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-fg-muted hover:text-accent transition-colors"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-medium rounded-full border border-border text-fg-muted hover:border-accent/40 hover:text-accent transition-all duration-200"
             >
-              <GitBranch size={16} />
-              Source
+              <GitBranch size={14} />
+              Code
             </a>
           )}
         </div>
@@ -93,16 +93,16 @@ function ProjectCard({
       </div>
 
       {(project.links.github || project.links.live) && (
-        <div className="mt-4 pt-4 border-t border-border flex items-center gap-4">
+        <div className="mt-4 pt-4 border-t border-border flex items-center gap-3">
           {project.links.live && (
             <a
               href={project.links.live}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-hover transition-colors"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-medium rounded-full border border-accent/40 text-accent hover:bg-accent hover:text-white transition-all duration-200"
             >
               <ExternalLink size={14} />
-              Live
+              Live Demo
             </a>
           )}
           {project.links.github && (
@@ -110,10 +110,10 @@ function ProjectCard({
               href={project.links.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-fg-muted hover:text-accent transition-colors"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-medium rounded-full border border-border text-fg-muted hover:border-accent/40 hover:text-accent transition-all duration-200"
             >
               <GitBranch size={14} />
-              Source
+              Code
             </a>
           )}
         </div>
