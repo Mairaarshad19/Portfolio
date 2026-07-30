@@ -198,9 +198,9 @@ export const skillsTabs: SkillTab[] = [
 
 export const heroContent = {
   name: "Maira Arshad",
-  role: "Backend-Leaning Full-Stack Developer",
+  role: "Backend-leaning full-stack developer building RESTful APIs and layered web architecture — currently interning at FlyRank, open to backend/full-stack roles.",
   intro: [
-    "BS Computer Science student at UET Lahore (2028), currently building backend systems and RAG pipelines at FlyRank, and shipping a live production website for a freight logistics client.",
+    "BS Computer Science student at UET Lahore (2028), currently shipping a live production website for a freight logistics client.",
     "I like working close to the database and the API layer.",
   ],
   buttons: [
