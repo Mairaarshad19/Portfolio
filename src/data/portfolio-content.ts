@@ -100,10 +100,10 @@ export const projectsContent: Project[] = [
     featured: false,
   },
   {
-    name: "Vulnerable-by-Design",
+    name: "Smart Emergency Response System",
     description:
-      "Built a cybersecurity training platform demonstrating 8+ OWASP Top 10 vulnerabilities (SQL Injection, XSS, IDOR, Broken Access Control) with a SIEM-style logging system processing 1000+ security events and a real-time incident response dashboard.",
-    techStack: ["Python", "Flask", "SQLite"],
+      "Built a full-stack desktop app for ambulance dispatch and coverage analysis, implementing core data structures from scratch — Priority Queue, Graph, AVL Tree, Hash Table — with a Dijkstra's-algorithm routing engine and Google Maps integration for live tracking.",
+    techStack: ["C#", ".NET", "MySQL", "Google Maps API"],
     links: {},
     featured: false,
   },
@@ -112,14 +112,6 @@ export const projectsContent: Project[] = [
     description:
       "Developed an offline, voice-controlled classroom automation system using Flutter and ESP32 with no dependency on internet or cloud APIs. Implemented on-device intent-matching across 114 phrase variations and Bluetooth Classic (SPP) communication for real-time hardware control.",
     techStack: ["Flutter", "ESP32", "Bluetooth Classic (SPP)", "Arduino C++"],
-    links: {},
-    featured: false,
-  },
-  {
-    name: "Smart Emergency Response System",
-    description:
-      "Built a full-stack desktop app for ambulance dispatch and coverage analysis, implementing core data structures from scratch — Priority Queue, Graph, AVL Tree, Hash Table — with a Dijkstra's-algorithm routing engine and Google Maps integration for live tracking.",
-    techStack: ["C#", ".NET", "MySQL", "Google Maps API"],
     links: {},
     featured: false,
   },

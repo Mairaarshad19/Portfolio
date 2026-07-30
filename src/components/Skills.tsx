@@ -50,6 +50,29 @@ const iconMap: Record<string, IconType> = {
   Vercel: SiVercel,
 };
 
+const brandColors: Record<string, string> = {
+  TypeScript: "#3178C6",
+  JavaScript: "#F7DF1E",
+  Python: "#3776AB",
+  "C++": "#00599C",
+  "C#": "#239120",
+  "Next.js": "#000000",
+  "Express.js": "#000000",
+  React: "#61DAFB",
+  "Tailwind CSS": "#06B6D4",
+  FastAPI: "#009688",
+  Flask: "#000000",
+  Flutter: "#02569B",
+  PostgreSQL: "#4169E1",
+  Neo4j: "#4581C3",
+  MySQL: "#4479A1",
+  SQLite: "#003B57",
+  Qdrant: "#D32F2F",
+  "Git/GitHub": "#181717",
+  Docker: "#2496ED",
+  Vercel: "#000000",
+};
+
 export default function Skills() {
   const [activeTab, setActiveTab] = useState(0);
   const { ref, revealed } = useScrollReveal();
@@ -117,8 +140,10 @@ export default function Skills() {
                       key={skill}
                       className="flex flex-col items-center justify-center gap-3 bg-bg-elevated border border-border rounded-xl p-5 shadow-sm hover:border-accent/40 hover:shadow-md transition-all duration-200"
                     >
-                      <div className="w-10 h-10 flex items-center justify-center text-fg">
-                        {SkillIcon ? <SkillIcon size={28} /> : null}
+                      <div className="w-10 h-10 flex items-center justify-center">
+                        {SkillIcon ? (
+                          <SkillIcon size={28} color={brandColors[skill] ?? "#666"} />
+                        ) : null}
                       </div>
                       <span className="text-xs font-mono text-fg-muted text-center leading-tight">
                         {skill}
