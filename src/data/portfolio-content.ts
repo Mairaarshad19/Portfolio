@@ -158,33 +158,43 @@ export const capabilitiesContent: Capability[] = [
   },
 ];
 
-export interface SkillCategory {
-  category: string;
+export interface SkillTab {
+  id: string;
+  label: string;
   skills: string[];
 }
 
-export const skillsContent: SkillCategory[] = [
+export const skillsTabs: SkillTab[] = [
   {
-    category: "Languages",
-    skills: ["TypeScript", "JavaScript", "Python", "C++", "C#", "SQL"],
-  },
-  {
-    category: "Frameworks & Libraries",
-    skills: ["Next.js 15", "Express.js", "React", "Tailwind CSS", "FastAPI", "Flask", "Flutter"],
-  },
-  {
-    category: "Databases",
-    skills: ["PostgreSQL", "Neo4j", "MySQL", "SQLite", "Qdrant (vector DB)"],
-  },
-  {
-    category: "Tools & Practices",
+    id: "languages-frameworks",
+    label: "Languages & Frameworks",
     skills: [
+      "TypeScript",
+      "JavaScript",
+      "Python",
+      "C++",
+      "C#",
+      "Next.js",
+      "Express.js",
+      "React",
+      "Tailwind CSS",
+      "FastAPI",
+      "Flask",
+      "Flutter",
+    ],
+  },
+  {
+    id: "tools-databases",
+    label: "Tools & Databases",
+    skills: [
+      "PostgreSQL",
+      "Neo4j",
+      "MySQL",
+      "SQLite",
+      "Qdrant",
       "Git/GitHub",
       "Docker",
       "Vercel",
-      "RESTful API design",
-      "Layered architecture (BL/DL/UI)",
-      "Repository pattern",
     ],
   },
 ];
