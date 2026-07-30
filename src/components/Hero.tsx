@@ -114,7 +114,11 @@ export default function Hero() {
                         if (el) el.scrollIntoView({ behavior: "smooth" });
                       },
                     }
-                  : {})}
+                  : {
+                      target: "_blank",
+                      rel: "noopener noreferrer",
+                      download: true,
+                    })}
                 className={
                   btn.variant === "primary"
                     ? "btn-lift inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-white font-semibold text-sm transition-all hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/20 active:scale-[0.97]"

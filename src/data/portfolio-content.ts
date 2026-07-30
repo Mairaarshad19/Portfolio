@@ -205,7 +205,7 @@ export const heroContent = {
   ],
   buttons: [
     { label: "View Projects", href: "#projects", variant: "primary" },
-    { label: "Download Resume", href: "#", variant: "secondary" },
+    { label: "Download Resume", href: "/Maira_Arshad_Resume.pdf", variant: "secondary" },
   ],
   socials: [
     {
