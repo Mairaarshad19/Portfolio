@@ -6,6 +6,67 @@ import { projectsContent } from "@/data/portfolio-content";
 import { ExternalLink, GitBranch, Code, Briefcase, GraduationCap } from "lucide-react";
 import { useScrollReveal } from "@/lib/useScrollReveal";
 import { useCountUp } from "@/lib/useCountUp";
+import {
+  SiTypescript,
+  SiPython,
+  SiSharp,
+  SiNextdotjs,
+  SiExpress,
+  SiReact,
+  SiTailwindcss,
+  SiFastapi,
+  SiFlutter,
+  SiPostgresql,
+  SiNeo4J,
+  SiMysql,
+  SiDatabricks,
+  SiVercel,
+  SiDotnet,
+  SiGooglemaps,
+  SiArduino,
+} from "react-icons/si";
+import type { IconType } from "react-icons";
+
+const iconMap: Record<string, IconType | null> = {
+  "Next.js 15 (App Router)": SiNextdotjs,
+  TypeScript: SiTypescript,
+  "Tailwind CSS": SiTailwindcss,
+  React: SiReact,
+  Vercel: SiVercel,
+  PostgreSQL: SiPostgresql,
+  Neo4j: SiNeo4J,
+  Qdrant: SiDatabricks,
+  FastAPI: SiFastapi,
+  "Google Gemini": null,
+  Python: SiPython,
+  "C#": SiSharp,
+  ".NET": SiDotnet,
+  MySQL: SiMysql,
+  "Google Maps API": SiGooglemaps,
+  Flutter: SiFlutter,
+  ESP32: null,
+  "Bluetooth Classic (SPP)": null,
+  "Arduino C++": SiArduino,
+};
+
+const brandColors: Record<string, string> = {
+  TypeScript: "#3178C6",
+  Python: "#3776AB",
+  "C#": "#239120",
+  "Next.js 15 (App Router)": "#000000",
+  React: "#61DAFB",
+  "Tailwind CSS": "#06B6D4",
+  FastAPI: "#009688",
+  Flutter: "#02569B",
+  PostgreSQL: "#4169E1",
+  Neo4j: "#4581C3",
+  MySQL: "#4479A1",
+  Qdrant: "#D32F2F",
+  Vercel: "#000000",
+  ".NET": "#512BD4",
+  "Google Maps API": "#4285F4",
+  "Arduino C++": "#00878F",
+};
 
 function ProjectImage({ screenshot, name }: { screenshot?: string; name: string }) {
   const [error, setError] = useState(false);
@@ -62,14 +123,21 @@ function ProjectCard({
       </p>
 
       <div className="mt-4 flex flex-wrap gap-2">
-        {project.techStack.map((tech) => (
-          <span
-            key={tech}
-            className="px-2 py-0.5 text-xs font-mono text-fg-muted bg-bg-secondary border border-border rounded-md"
-          >
-            {tech}
-          </span>
-        ))}
+        {project.techStack.map((tech) => {
+          const TechIcon = iconMap[tech];
+
+          return (
+            <span
+              key={tech}
+              className="inline-flex items-center gap-1.5 px-2 py-0.5 text-xs font-mono text-fg-muted bg-bg-secondary border border-border rounded-md"
+            >
+              {TechIcon && (
+                <TechIcon size={12} color={brandColors[tech] ?? "#666"} />
+              )}
+              {tech}
+            </span>
+          );
+        })}
       </div>
 
       {(project.links.github || project.links.live) && (
