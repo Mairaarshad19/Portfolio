@@ -71,6 +71,7 @@ export const experienceContent: Experience[] = [
 
 export interface Project {
   name: string;
+  tagline: string;
   description: string;
   techStack: string[];
   links: {
@@ -93,6 +94,7 @@ export const projectsContent: Project[] = [
     },
     featured: true,
     screenshot: "/projects/allied-shipping.png",
+    tagline: "Full-Stack Corporate Website || Freight & Logistics",
   },
   {
     name: "QueryMind (SmartCRM)",
@@ -102,6 +104,7 @@ export const projectsContent: Project[] = [
     links: {},
     featured: false,
     screenshot: "/projects/querymind.png",
+    tagline: "Multi-Paradigm Data Platform || CRM & AI",
   },
   {
     name: "Smart Emergency Response System",
@@ -113,6 +116,7 @@ export const projectsContent: Project[] = [
     },
     featured: false,
     screenshot: "/projects/smart-emergency.png",
+    tagline: "Full-Stack Desktop App || Emergency Services",
   },
   {
     name: "VOXLINK",
@@ -124,6 +128,7 @@ export const projectsContent: Project[] = [
     },
     featured: false,
     screenshot: "/projects/voxlink.png",
+    tagline: "IoT Voice Automation || Classroom Systems",
   },
 ];
 
