@@ -67,10 +67,10 @@ const brandColors: Record<string, string> = {
   "Arduino C++": "#00878F",
 };
 
-function ProjectImage({ screenshot, name }: { screenshot?: string; name: string }) {
+function LandscapeImage({ screenshot, name }: { screenshot: string; name: string }) {
   const [error, setError] = useState(false);
 
-  if (!screenshot || error) {
+  if (error) {
     return (
       <div className="relative w-full h-48 bg-bg-secondary rounded-xl border border-border mb-6 flex items-center justify-center overflow-hidden">
         <div className="flex flex-col items-center gap-1.5">
@@ -82,15 +82,67 @@ function ProjectImage({ screenshot, name }: { screenshot?: string; name: string 
   }
 
   return (
-    <div className="relative w-full h-48 bg-bg-secondary rounded-xl overflow-hidden border border-border mb-6 shadow-sm">
+    <div className="relative w-full h-48 rounded-xl overflow-hidden border border-border mb-6 shadow-sm">
       <Image
         src={screenshot}
         alt={`${name} screenshot`}
         fill
-        className="object-contain p-1"
+        className="object-cover"
         onError={() => setError(true)}
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
       />
+    </div>
+  );
+}
+
+function VoxlinkImage() {
+  const [appError, setAppError] = useState(false);
+  const [hwError, setHwError] = useState(false);
+
+  return (
+    <div className="relative w-full h-48 rounded-xl overflow-hidden border border-border mb-6 shadow-sm flex">
+      {/* Left panel — mobile app screenshot with phone frame */}
+      <div className="relative w-1/2 h-full bg-bg-secondary flex items-center justify-center">
+        {!appError ? (
+          <div className="relative w-[42%] h-[85%] rounded-[18px] border-2 border-fg-muted/30 overflow-hidden shadow-sm bg-white">
+            <Image
+              src="/projects/voxlink.png"
+              alt="VOXLINK mobile app screenshot"
+              fill
+              className="object-contain"
+              onError={() => setAppError(true)}
+              sizes="25vw"
+            />
+          </div>
+        ) : (
+          <div className="flex flex-col items-center gap-1.5">
+            <Code size={18} className="text-fg-muted/30" />
+            <span className="text-[10px] font-mono text-fg-muted/30">App</span>
+          </div>
+        )}
+      </div>
+
+      {/* Divider */}
+      <div className="w-px bg-border self-stretch" />
+
+      {/* Right panel — hardware photo */}
+      <div className="relative w-1/2 h-full bg-bg-secondary flex items-center justify-center">
+        {!hwError ? (
+          <Image
+            src="/projects/voxlink-hardware.jpg"
+            alt="VOXLINK hardware setup"
+            fill
+            className="object-cover"
+            onError={() => setHwError(true)}
+            sizes="25vw"
+          />
+        ) : (
+          <div className="flex flex-col items-center gap-1.5">
+            <Code size={18} className="text-fg-muted/30" />
+            <span className="text-[10px] font-mono text-fg-muted/30">Hardware</span>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
@@ -115,8 +167,19 @@ function ProjectCard({
         </p>
       </div>
 
-      {/* Screenshot */}
-      <ProjectImage screenshot={project.screenshot} name={project.name} />
+      {/* Per-project image treatment */}
+      {project.name === "VOXLINK" ? (
+        <VoxlinkImage />
+      ) : project.screenshot ? (
+        <LandscapeImage screenshot={project.screenshot} name={project.name} />
+      ) : (
+        <div className="relative w-full h-48 bg-bg-secondary rounded-xl border border-border mb-6 flex items-center justify-center overflow-hidden">
+          <div className="flex flex-col items-center gap-1.5">
+            <Code size={20} className="text-fg-muted/30" />
+            <span className="text-xs font-mono text-fg-muted/30">{project.name}</span>
+          </div>
+        </div>
+      )}
 
       {/* Description */}
       <p className="text-sm text-fg-muted leading-relaxed text-center mb-6">
