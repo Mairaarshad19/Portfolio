@@ -78,6 +78,7 @@ export interface Project {
     live?: string;
   };
   featured: boolean;
+  screenshot?: string;
 }
 
 export const projectsContent: Project[] = [
@@ -91,6 +92,7 @@ export const projectsContent: Project[] = [
       github: "https://github.com/Mairaarshad19/allied-shipping-website",
     },
     featured: true,
+    screenshot: "/projects/allied-shipping.png",
   },
   {
     name: "QueryMind (SmartCRM)",
@@ -99,6 +101,7 @@ export const projectsContent: Project[] = [
     techStack: ["PostgreSQL", "Neo4j", "Qdrant", "FastAPI", "Google Gemini", "Python"],
     links: {},
     featured: false,
+    screenshot: "/projects/querymind.png",
   },
   {
     name: "Smart Emergency Response System",
@@ -109,6 +112,7 @@ export const projectsContent: Project[] = [
       github: "https://github.com/Mairaarshad19/Smart_Emergency_Response_System",
     },
     featured: false,
+    screenshot: "/projects/smart-emergency.png",
   },
   {
     name: "VOXLINK",
@@ -119,6 +123,7 @@ export const projectsContent: Project[] = [
       github: "https://github.com/Mairaarshad19/VOXLINK-VoiceAutomation",
     },
     featured: false,
+    screenshot: "/projects/voxlink.png",
   },
 ];
 
