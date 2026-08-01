@@ -1,55 +1,63 @@
 "use client";
 
-import { GitBranch, Link, Mail, ArrowDown } from "lucide-react";
+import { Download } from "lucide-react";
 import Image from "next/image";
 import { heroContent } from "@/data/portfolio-content";
 import { useScrollReveal } from "@/lib/useScrollReveal";
 import { useRotatingRole } from "@/lib/useRotatingRole";
 import { useEffect, useRef, useState } from "react";
-import {
-  SiNextdotjs,
-  SiTypescript,
-  SiPostgresql,
-  SiExpress,
-} from "react-icons/si";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import type { IconType } from "react-icons";
 
-const socialIcons: Record<string, React.ReactNode> = {
-  GitHub: <GitBranch size={20} />,
-  LinkedIn: <Link size={20} />,
-  Email: <Mail size={20} />,
+const socialIcons: Record<string, IconType> = {
+  GitHub: FaGithub,
+  LinkedIn: FaLinkedin,
+  Email: FaEnvelope,
 };
 
-const techBadges: { label: string; icon: IconType; color: string; position: string; delay: string }[] = [
+const achievementBadges: {
+  value: string;
+  label: string;
+  position: string;
+  delay: string;
+}[] = [
   {
-    label: "Next.js",
-    icon: SiNextdotjs,
-    color: "#000000",
-    position: "-top-4 -left-4",
+    value: "4",
+    label: "Internships",
+    position: "-top-5 -left-6",
     delay: "float-badge-delay-1",
   },
   {
-    label: "TypeScript",
-    icon: SiTypescript,
-    color: "#3178C6",
-    position: "-top-4 -right-4",
+    value: "5",
+    label: "Projects",
+    position: "-top-5 -right-8",
     delay: "float-badge-delay-2",
   },
   {
-    label: "PostgreSQL",
-    icon: SiPostgresql,
-    color: "#4169E1",
-    position: "-bottom-4 -left-6",
+    value: "2028",
+    label: "Grad",
+    position: "-bottom-5 -left-8",
     delay: "float-badge-delay-3",
   },
-  {
-    label: "Express.js",
-    icon: SiExpress,
-    color: "#000000",
-    position: "-bottom-4 -right-6",
-    delay: "float-badge-delay-4",
-  },
 ];
+
+/**
+ * Renders text with `**bold**` markers as <strong> elements
+ * for ATS-friendly keyword highlighting.
+ */
+function renderBoldText(text: string) {
+  const parts = text.split(/(\*\*[^*]+\*\*)/g);
+  return parts.map((part, i) => {
+    if (part.startsWith("**") && part.endsWith("**")) {
+      return (
+        <strong key={i} className="font-semibold text-fg">
+          {part.slice(2, -2)}
+        </strong>
+      );
+    }
+    return <span key={i}>{part}</span>;
+  });
+}
 
 export default function Hero() {
   const { name, roles, role, buttons, socials } = heroContent;
@@ -142,66 +150,64 @@ export default function Hero() {
               </span>
             </div>
 
-            {/* Intro paragraph */}
+            {/* Intro paragraph — keyword-bolded */}
             <p className="mt-6 text-sm sm:text-base text-fg-muted leading-relaxed max-w-xl mx-auto lg:mx-0">
-              {role}
+              {renderBoldText(role)}
             </p>
 
             {/* CTA buttons */}
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-              {buttons.map((btn) => (
-                <a
-                  key={btn.label}
-                  href={btn.href}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    const el = document.querySelector(btn.href);
-                    if (el) el.scrollIntoView({ behavior: "smooth" });
-                  }}
-                  className={
-                    btn.variant === "primary"
-                      ? "btn-lift inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-white font-semibold text-sm transition-all hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/20 active:scale-[0.97]"
-                      : "btn-lift inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-border-light text-fg-muted font-medium text-sm transition-all hover:border-accent hover:text-accent active:scale-[0.97]"
-                  }
-                >
-                  {btn.label}
-                  {btn.variant === "primary" && <ArrowDown size={16} />}
-                </a>
-              ))}
+              {buttons.map((btn) =>
+                btn.variant === "primary" ? (
+                  <a
+                    key={btn.label}
+                    href={btn.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    download
+                    className="btn-lift inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-white font-semibold text-sm transition-all hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/20 active:scale-[0.97]"
+                  >
+                    <Download size={16} />
+                    {btn.label}
+                  </a>
+                ) : (
+                  <a
+                    key={btn.label}
+                    href={btn.href}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const el = document.querySelector(btn.href);
+                      if (el) el.scrollIntoView({ behavior: "smooth" });
+                    }}
+                    className="btn-lift inline-flex items-center gap-2 px-6 py-3 rounded-lg border-2 border-[#0047FF] text-[#0047FF] bg-transparent font-semibold text-sm transition-all hover:bg-[#0047FF] hover:text-white active:scale-[0.97]"
+                  >
+                    {btn.label}
+                  </a>
+                )
+              )}
             </div>
 
-            {/* Resume link */}
-            <p className="mt-4 text-sm text-fg-dim">
-              or{" "}
-              <a
-                href="/Maira_Arshad_Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                download
-                className="link-underline text-accent hover:text-accent-hover transition-colors"
-              >
-                download my resume
-              </a>
-            </p>
-
-            {/* Social icons — circular buttons */}
+            {/* Social icons — circular react-icons buttons */}
             <div className="mt-8 flex items-center justify-center lg:justify-start gap-4">
-              {socials.map((s) => (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={s.label}
-                  className="icon-lift w-11 h-11 rounded-full border border-border bg-bg-elevated flex items-center justify-center text-fg-dim hover:text-accent hover:border-accent/40 hover:bg-accent-subtle transition-all duration-200 shadow-sm"
-                >
-                  {socialIcons[s.label]}
-                </a>
-              ))}
+              {socials.map((s) => {
+                const SocialIcon = socialIcons[s.label];
+                return (
+                  <a
+                    key={s.label}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={s.label}
+                    className="w-10 h-10 rounded-full border border-border bg-bg-elevated flex items-center justify-center text-fg-dim hover:text-white hover:bg-accent hover:border-accent transition-all duration-200 shadow-sm"
+                  >
+                    <SocialIcon size={18} />
+                  </a>
+                );
+              })}
             </div>
           </div>
 
-          {/* ── Right column — photo with badges ── */}
+          {/* ── Right column — photo with achievement badges ── */}
           <div className="order-1 lg:order-2 flex justify-center">
             <div className="relative">
               {/* Soft gradient blur shape behind photo */}
@@ -210,7 +216,7 @@ export default function Hero() {
               {/* Photo frame */}
               <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-[2rem] overflow-hidden border-2 border-accent/20 shadow-xl shadow-accent/10">
                 <Image
-                  src="/maira-picture.jpeg"
+                  src="/maira.jpeg"
                   alt="Maira Arshad"
                   fill
                   className="object-cover"
@@ -219,22 +225,21 @@ export default function Hero() {
                 />
               </div>
 
-              {/* Floating tech badges — hidden on small screens */}
+              {/* Floating achievement badges — hidden on small screens */}
               <div className="hidden sm:block">
-                {techBadges.map((badge) => {
-                  const BadgeIcon = badge.icon;
-                  return (
-                    <div
-                      key={badge.label}
-                      className={`float-badge ${badge.delay} absolute ${badge.position} flex items-center gap-1.5 px-3 py-1.5 bg-white rounded-full border border-border shadow-md`}
-                    >
-                      <BadgeIcon size={14} color={badge.color} />
-                      <span className="text-xs font-medium text-fg">
-                        {badge.label}
-                      </span>
-                    </div>
-                  );
-                })}
+                {achievementBadges.map((badge) => (
+                  <div
+                    key={badge.label}
+                    className={`float-badge ${badge.delay} absolute ${badge.position} flex items-center gap-2 px-3.5 py-2 bg-white rounded-full border border-border shadow-md`}
+                  >
+                    <span className="text-base font-bold text-accent leading-none">
+                      {badge.value}
+                    </span>
+                    <span className="text-xs font-medium text-fg-muted leading-none">
+                      {badge.label}
+                    </span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

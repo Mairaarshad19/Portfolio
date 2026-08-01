@@ -214,10 +214,10 @@ export const heroContent = {
     "Full-Stack Developer",
     "API Designer",
   ],
-  role: "Computer Science undergraduate building backend systems and full-stack web applications. Interned at FlyRank building RESTful APIs, RAG pipelines, and structured-output workflows with Express.js and PostgreSQL. Independently built and deployed a production website for a freight logistics client using Next.js 15. BSc Computer Science at UET Lahore, Class of 2028.",
+  role: "Computer Science undergraduate with **4 internships** across backend engineering, AI workflows, and mobile development. Built and shipped **5 projects**, including a live production website using **Next.js 15**, RESTful APIs and RAG pipelines with **Express.js** and **PostgreSQL**, and a multi-database AI platform. BSc Computer Science at UET Lahore, Class of 2028.",
   intro: [],
   buttons: [
-    { label: "View Projects", href: "#projects", variant: "primary" },
+    { label: "Download Resume", href: "/Maira_Arshad_Resume.pdf", variant: "primary" },
     { label: "Contact Me", href: "#contact", variant: "secondary" },
   ],
   socials: [
