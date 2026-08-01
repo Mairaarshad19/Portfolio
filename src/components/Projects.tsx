@@ -6,66 +6,6 @@ import { projectsContent } from "@/data/portfolio-content";
 import { ExternalLink, GitBranch, Code, Briefcase, GraduationCap } from "lucide-react";
 import { useScrollReveal } from "@/lib/useScrollReveal";
 import { useCountUp } from "@/lib/useCountUp";
-import {
-  SiTypescript,
-  SiPython,
-  SiSharp,
-  SiNextdotjs,
-  SiReact,
-  SiTailwindcss,
-  SiFastapi,
-  SiFlutter,
-  SiPostgresql,
-  SiNeo4J,
-  SiMysql,
-  SiDatabricks,
-  SiVercel,
-  SiDotnet,
-  SiGooglemaps,
-  SiArduino,
-} from "react-icons/si";
-import type { IconType } from "react-icons";
-
-const iconMap: Record<string, IconType | null> = {
-  "Next.js 15 (App Router)": SiNextdotjs,
-  TypeScript: SiTypescript,
-  "Tailwind CSS": SiTailwindcss,
-  React: SiReact,
-  Vercel: SiVercel,
-  PostgreSQL: SiPostgresql,
-  Neo4j: SiNeo4J,
-  Qdrant: SiDatabricks,
-  FastAPI: SiFastapi,
-  "Google Gemini": null,
-  Python: SiPython,
-  "C#": SiSharp,
-  ".NET": SiDotnet,
-  MySQL: SiMysql,
-  "Google Maps API": SiGooglemaps,
-  Flutter: SiFlutter,
-  ESP32: null,
-  "Bluetooth Classic (SPP)": null,
-  "Arduino C++": SiArduino,
-};
-
-const brandColors: Record<string, string> = {
-  TypeScript: "#3178C6",
-  Python: "#3776AB",
-  "C#": "#239120",
-  "Next.js 15 (App Router)": "#000000",
-  React: "#61DAFB",
-  "Tailwind CSS": "#06B6D4",
-  FastAPI: "#009688",
-  Flutter: "#02569B",
-  PostgreSQL: "#4169E1",
-  Neo4j: "#4581C3",
-  MySQL: "#4479A1",
-  Qdrant: "#D32F2F",
-  Vercel: "#000000",
-  ".NET": "#512BD4",
-  "Google Maps API": "#4285F4",
-  "Arduino C++": "#00878F",
-};
 
 function LandscapeImage({ screenshot, name }: { screenshot: string; name: string }) {
   const [error, setError] = useState(false);
@@ -75,7 +15,7 @@ function LandscapeImage({ screenshot, name }: { screenshot: string; name: string
       <div className="relative w-full h-48 bg-bg-secondary rounded-xl border border-border mb-6 flex items-center justify-center overflow-hidden">
         <div className="flex flex-col items-center gap-1.5">
           <Code size={20} className="text-fg-muted/30" />
-          <span className="text-xs font-mono text-fg-muted/30">{name}</span>
+          <span className="text-xs text-fg-muted/30">{name}</span>
         </div>
       </div>
     );
@@ -117,7 +57,7 @@ function VoxlinkImage() {
         ) : (
           <div className="flex flex-col items-center gap-1.5">
             <Code size={18} className="text-fg-muted/30" />
-            <span className="text-[10px] font-mono text-fg-muted/30">App</span>
+            <span className="text-[10px] text-fg-muted/30">App</span>
           </div>
         )}
       </div>
@@ -139,7 +79,7 @@ function VoxlinkImage() {
         ) : (
           <div className="flex flex-col items-center gap-1.5">
             <Code size={18} className="text-fg-muted/30" />
-            <span className="text-[10px] font-mono text-fg-muted/30">Hardware</span>
+            <span className="text-[10px] text-fg-muted/30">Hardware</span>
           </div>
         )}
       </div>
@@ -161,8 +101,8 @@ function ProjectCard({
     >
       {/* Header — centered */}
       <div className="text-center mb-5">
-        <h3 className="text-xl font-bold text-fg">{project.name}</h3>
-        <p className="mt-1 text-sm font-mono text-accent tracking-wide">
+        <h3 className="text-xl font-display font-bold text-fg">{project.name}</h3>
+        <p className="mt-1 text-sm text-accent tracking-wide truncate">
           {project.tagline}
         </p>
       </div>
@@ -176,44 +116,37 @@ function ProjectCard({
         <div className="relative w-full h-48 bg-bg-secondary rounded-xl border border-border mb-6 flex items-center justify-center overflow-hidden">
           <div className="flex flex-col items-center gap-1.5">
             <Code size={20} className="text-fg-muted/30" />
-            <span className="text-xs font-mono text-fg-muted/30">{project.name}</span>
+            <span className="text-xs text-fg-muted/30">{project.name}</span>
           </div>
         </div>
       )}
 
       {/* Description */}
-      <p className="text-sm text-fg-muted leading-relaxed text-center mb-6">
+      <p className="text-sm text-fg-muted leading-relaxed text-justify line-clamp-3 mb-6">
         {project.description}
       </p>
 
-      {/* Tech stack pills */}
+      {/* Tech stack pills — text-only, electric blue on white */}
       <div className="flex flex-wrap justify-center gap-2 mb-6">
-        {project.techStack.map((tech) => {
-          const TechIcon = iconMap[tech];
-
-          return (
-            <span
-              key={tech}
-              className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-mono text-fg-muted bg-bg-secondary border border-border rounded-full"
-            >
-              {TechIcon && (
-                <TechIcon size={12} color={brandColors[tech] ?? "#666"} />
-              )}
-              {tech}
-            </span>
-          );
-        })}
+        {project.techStack.map((tech) => (
+          <span
+            key={tech}
+            className="px-2.5 py-1 text-xs font-medium text-[#0066FF] bg-white border border-blue-200/60 rounded-full"
+          >
+            {tech}
+          </span>
+        ))}
       </div>
 
-      {/* Buttons — centered */}
-      {(project.links.github || project.links.live) && (
+      {/* Buttons — centered (or spacer for equal card heights) */}
+      {project.links.github || project.links.live ? (
         <div className="flex items-center justify-center gap-3 mt-auto">
           {project.links.github && (
             <a
               href={project.links.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-5 py-2 text-sm font-mono font-medium rounded-full bg-accent text-white hover:bg-accent-hover transition-all duration-200 shadow-sm"
+              className="inline-flex items-center gap-1.5 px-5 py-2 text-sm font-medium rounded-full bg-accent text-white hover:bg-accent-hover transition-all duration-200 shadow-sm"
             >
               <GitBranch size={14} />
               View Code
@@ -224,13 +157,15 @@ function ProjectCard({
               href={project.links.live}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-5 py-2 text-sm font-mono font-medium rounded-full border-2 border-accent text-accent hover:bg-accent hover:text-white transition-all duration-200"
+              className="inline-flex items-center gap-1.5 px-5 py-2 text-sm font-medium rounded-full border-2 border-accent text-accent hover:bg-accent hover:text-white transition-all duration-200"
             >
               <ExternalLink size={14} />
               Live Visit
             </a>
           )}
         </div>
+      ) : (
+        <div className="mt-auto" />
       )}
     </div>
   );
@@ -258,7 +193,7 @@ function StatItem({
       >
         {display}
       </span>
-      <span className="text-xs text-fg-muted font-mono">{label}</span>
+      <span className="text-xs text-fg-muted">{label}</span>
     </div>
   );
 }

@@ -17,7 +17,7 @@ export default function About() {
           {/* Photo column */}
           <div className="md:col-span-2 flex justify-center md:justify-end">
             <div className="relative w-56 h-56 sm:w-72 sm:h-72 rounded-2xl overflow-hidden bg-bg-elevated border border-border shadow-sm">
-              <div className="w-full h-full flex items-center justify-center text-fg-dim text-sm font-mono">
+              <div className="w-full h-full flex items-center justify-center text-fg-dim text-sm">
                 photo
               </div>
             </div>
@@ -39,7 +39,7 @@ export default function About() {
             <dl className="stagger-container mt-10 grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6">
               {quickFacts.map((fact) => (
                 <div key={fact.label} className="stagger-item">
-                  <dt className="text-xs font-mono text-accent uppercase tracking-wider mb-1">
+                  <dt className="text-xs font-medium text-accent uppercase tracking-wider mb-1">
                     {fact.label}
                   </dt>
                   <dd className="text-sm text-fg-dim">{fact.value}</dd>

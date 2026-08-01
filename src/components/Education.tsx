@@ -21,26 +21,26 @@ export default function Education() {
           {/* Degree row */}
           <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-6">
             <div>
-              <h3 className="text-lg font-semibold text-fg">
+              <h3 className="text-lg font-display font-semibold text-fg">
                 {degree}
               </h3>
               <p className="text-sm text-fg-muted mt-0.5">{institution}</p>
             </div>
-            <span className="text-xs font-mono text-accent whitespace-nowrap">
+            <span className="text-xs font-medium text-accent whitespace-nowrap">
               {year}
             </span>
           </div>
 
           {/* Relevant coursework */}
           <div className="mb-6">
-            <h4 className="text-xs font-mono text-fg-dim uppercase tracking-wider mb-3">
+            <h4 className="text-xs font-display font-semibold text-fg-dim uppercase tracking-wider mb-3">
               Relevant Coursework
             </h4>
             <div className="flex flex-wrap gap-2">
               {coursework.map((course) => (
                 <span
                   key={course}
-                  className="px-2.5 py-1 text-xs font-mono text-fg-muted bg-bg-secondary border border-border rounded-md"
+                  className="px-2.5 py-1 text-xs font-medium text-fg-muted bg-bg-secondary border border-border rounded-md"
                 >
                   {course}
                 </span>

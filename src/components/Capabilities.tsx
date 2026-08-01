@@ -31,7 +31,7 @@ function CapabilityCard({
         <div className="w-10 h-10 rounded-lg bg-accent-subtle flex items-center justify-center text-accent mb-5">
           {iconMap[icon]}
         </div>
-        <h3 className="text-lg font-semibold text-fg mb-3">{title}</h3>
+        <h3 className="text-lg font-display font-semibold text-fg mb-3">{title}</h3>
         <p className="text-sm text-fg-muted leading-relaxed">
           {description}
         </p>

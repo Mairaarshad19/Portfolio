@@ -86,7 +86,7 @@ export const projectsContent: Project[] = [
   {
     name: "Allied Shipping Agency Website",
     description:
-      "A live, production website for a freight forwarding and logistics company, built solo and actively maintained for a real client. Focused on performance, responsive design, and clean corporate UI/UX — from hero sections to sticky navigation to CTA-optimized layouts.",
+      "A live, production website for a freight forwarding and logistics company, built solo and actively maintained for a real client — focused on performance, responsive design, and clean corporate UI/UX.",
     techStack: ["Next.js 15 (App Router)", "TypeScript", "Tailwind CSS", "React", "Vercel"],
     links: {
       live: "https://allied-shipping-agency.vercel.app/",
@@ -99,7 +99,7 @@ export const projectsContent: Project[] = [
   {
     name: "QueryMind (SmartCRM)",
     description:
-      "Co-designed a multi-paradigm data platform unifying relational (PostgreSQL), graph (Neo4j), and vector (Qdrant) databases under one natural-language query interface — no SQL, Cypher, or vector-search expertise required. Contributed to the layered system architecture and helped define an LLM-based intent classification system mapping queries to 17 CRM-specific intents.",
+      "Co-designed a multi-paradigm data platform unifying PostgreSQL, Neo4j, and Qdrant under one natural-language query interface — no SQL or vector-search expertise required.",
     techStack: ["PostgreSQL", "Neo4j", "Qdrant", "FastAPI", "Google Gemini", "Python"],
     links: {},
     featured: false,
@@ -109,7 +109,7 @@ export const projectsContent: Project[] = [
   {
     name: "Smart Emergency Response System",
     description:
-      "Built a full-stack desktop app for ambulance dispatch and coverage analysis, implementing core data structures from scratch — Priority Queue, Graph, AVL Tree, Hash Table — with a Dijkstra's-algorithm routing engine and Google Maps integration for live tracking.",
+      "Built a full-stack desktop app for ambulance dispatch and coverage analysis, implementing core data structures from scratch — Priority Queue, Graph, AVL Tree, Hash Table — with Dijkstra's routing and Google Maps integration for live tracking.",
     techStack: ["C#", ".NET", "MySQL", "Google Maps API"],
     links: {
       github: "https://github.com/Mairaarshad19/Smart_Emergency_Response_System",
@@ -121,7 +121,7 @@ export const projectsContent: Project[] = [
   {
     name: "VOXLINK",
     description:
-      "Developed an offline, voice-controlled classroom automation system using Flutter and ESP32 with no dependency on internet or cloud APIs. Implemented on-device intent-matching across 114 phrase variations and Bluetooth Classic (SPP) communication for real-time hardware control.",
+      "Developed an offline, voice-controlled classroom automation system using Flutter and ESP32 — featuring on-device intent-matching across 114 phrase variations and Bluetooth Classic (SPP) for real-time hardware control.",
     techStack: ["Flutter", "ESP32", "Bluetooth Classic (SPP)", "Arduino C++"],
     links: {
       github: "https://github.com/Mairaarshad19/VOXLINK-VoiceAutomation",

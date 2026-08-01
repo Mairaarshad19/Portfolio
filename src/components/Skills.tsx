@@ -145,7 +145,7 @@ export default function Skills() {
                           <SkillIcon size={28} color={brandColors[skill] ?? "#666"} />
                         ) : null}
                       </div>
-                      <span className="text-xs font-mono text-fg-muted text-center leading-tight">
+                      <span className="text-xs font-medium text-fg-muted text-center leading-tight">
                         {skill}
                       </span>
                     </div>

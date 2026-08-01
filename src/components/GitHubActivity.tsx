@@ -24,7 +24,7 @@ function GitHubImage({
 
   if (error) {
     return (
-      <div className="flex items-center justify-center h-32 text-sm text-fg-dim font-mono">
+      <div className="flex items-center justify-center h-32 text-sm text-fg-dim">
         Unable to load GitHub stats. Try again later.
       </div>
     );

@@ -45,7 +45,7 @@ export default function Contact() {
                     <span className="text-fg-dim group-hover:text-accent transition-colors">
                       {socialIcons[s.label]}
                     </span>
-                    <span className="text-sm font-mono">
+                    <span className="text-sm">
                       {s.label === "Email" ? s.href.replace("mailto:", "") : s.href.replace("https://", "")}
                     </span>
                   </a>
@@ -64,7 +64,7 @@ export default function Contact() {
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-sm font-mono text-fg-muted mb-2 tracking-wide"
+                  className="block text-sm font-medium text-fg-muted mb-2 tracking-wide"
                 >
                   Name
                 </label>
@@ -81,7 +81,7 @@ export default function Contact() {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-mono text-fg-muted mb-2 tracking-wide"
+                  className="block text-sm font-medium text-fg-muted mb-2 tracking-wide"
                 >
                   Email
                 </label>
@@ -98,7 +98,7 @@ export default function Contact() {
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-sm font-mono text-fg-muted mb-2 tracking-wide"
+                  className="block text-sm font-medium text-fg-muted mb-2 tracking-wide"
                 >
                   Message
                 </label>

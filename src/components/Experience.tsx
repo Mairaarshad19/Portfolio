@@ -19,13 +19,13 @@ function ExperienceCard({
       <div className="absolute left-[-4.5px] md:left-[27.5px] top-1.5 w-[9px] h-[9px] rounded-full bg-accent ring-2 ring-bg" />
 
       {/* Date badge */}
-      <span className="inline-block mb-2 text-xs font-mono text-accent tracking-wide">
+      <span className="inline-block mb-2 text-xs font-medium text-accent tracking-wide">
         {exp.dates}
       </span>
 
       {/* Card */}
       <div className="card-lift bg-bg-elevated border border-border rounded-xl p-6 hover:border-border-light shadow-sm">
-        <h3 className="text-lg font-semibold text-fg">{exp.role}</h3>
+        <h3 className="text-lg font-display font-semibold text-fg">{exp.role}</h3>
         <p className="text-sm text-fg-muted mt-0.5 mb-4">{exp.company}</p>
 
         <ul className="space-y-2">

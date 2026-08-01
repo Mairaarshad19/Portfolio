@@ -79,11 +79,11 @@ export default function Hero() {
       >
         <div className="max-w-2xl mx-auto text-center">
           {/* Pre-label */}
-          <p className="font-mono text-sm text-accent mb-4 tracking-wide">
+          <p className="text-sm font-medium text-accent mb-4 tracking-wide">
             Hello, I'm
           </p>
 
-          {/* Name — serif display */}
+          {/* Name — display heading */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold tracking-tight text-fg leading-tight">
             {name}
           </h1>
