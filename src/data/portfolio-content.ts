@@ -17,8 +17,9 @@ export const educationContent = {
 
 export const aboutContent = {
   paragraph: [
-    "I'm a Computer Science student at UET Lahore, expected to graduate in 2028. I completed two internships at FlyRank — one on backend AI engineering (Express.js, RAG pipelines, structured-output workflows) and one focused on AI fluency and workflow design. I also built and maintained a live production website for a freight forwarding client using Next.js 15 and TypeScript.",
-    "I like backend work the most: API design, PostgreSQL schemas, and the layered architecture that keeps a codebase maintainable as it grows.",
+    "I'm a Computer Science undergraduate with a strong pull toward backend systems — the part of an application most people never see, but where the real architecture decisions live. That interest took shape through coursework in algorithms and database systems, and became concrete through hands-on internship work building production APIs.",
+    "At FlyRank, I built RESTful API endpoints and RAG pipelines using Express.js and PostgreSQL, applying layered architecture and the repository pattern to keep systems maintainable as they grow. I independently built and deployed Allied Shipping Agency Website, a live production site for a real freight logistics client, using Next.js 15 end to end — from UI to CI/CD deployment on Vercel. I've also worked across relational, graph, and vector databases on QueryMind, a multi-paradigm CRM platform unifying PostgreSQL, Neo4j, and Qdrant behind one interface.",
+    "I care about writing code that's still legible six months later — clear API contracts, sensible schema design, and architecture that doesn't need a rewrite the moment requirements shift. I'm currently looking for backend and full-stack engineering roles where I can keep building systems that actually hold up in production.",
   ],
   quickFacts: [
     { label: "Location", value: "Lahore, Pakistan" },
@@ -214,7 +215,7 @@ export const heroContent = {
     "Full-Stack Developer",
     "API Designer",
   ],
-  role: "Computer Science undergraduate with 4 internships across backend engineering, AI workflows, and mobile development. Built and shipped 5 projects, including a live production website using Next.js 15, RESTful APIs and RAG pipelines with Express.js and PostgreSQL, and a multi-database AI platform. BSc Computer Science at **UET Lahore**, Class of 2028.",
+  role: "Computer Science undergraduate with **4 internships** across backend engineering, AI workflows, and mobile development. Built and shipped **5 projects**, including a live production website using Next.js 15, RESTful APIs and RAG pipelines with Express.js and PostgreSQL, and a multi-database AI platform. BSc Computer Science at **UET Lahore**, Class of 2028.",
   intro: [],
   buttons: [
     { label: "Download Resume", href: "/Maira_Arshad_Resume.pdf", variant: "primary" },
