@@ -91,9 +91,9 @@ export default function Skills() {
         <p className="text-sm sm:text-base text-fg-muted leading-relaxed max-w-2xl mb-10">
           I build backend systems and full-stack applications with TypeScript
           and Python, working across Express.js, FastAPI, and Next.js. My
-          database experience spans relational, graph, and vector stores —
-          PostgreSQL, Neo4j, and Qdrant — and I use Docker, Git, and CI/CD
-          tooling to keep projects production-ready.
+          database experience spans relational, graph, and vector stores,
+          including PostgreSQL, Neo4j, and Qdrant. I use Docker, Git, and
+          CI/CD tooling to keep projects production-ready.
         </p>
 
         {/* Segmented control tabs */}

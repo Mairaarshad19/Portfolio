@@ -14,9 +14,9 @@ export default function About() {
         ref={ref}
         className={`container-content scroll-reveal ${revealed ? "revealed" : ""}`}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-stretch">
           {/* ── LEFT COLUMN — About text (~60%) ── */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-3 flex flex-col justify-center">
             <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-fg mb-8">
               About Me
             </h2>
@@ -29,7 +29,7 @@ export default function About() {
           </div>
 
           {/* ── RIGHT COLUMN — Journey + Certifications (~40%) ── */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2 flex flex-col justify-center">
             {/* Journey snapshot — vertical mini-timeline */}
             <div>
               <h3 className="text-xs font-medium text-accent uppercase tracking-wider mb-6">

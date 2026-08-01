@@ -17,20 +17,20 @@ export const educationContent = {
 
 export const aboutContent = {
   paragraph: [
-    "I'm a Computer Science undergraduate with a strong pull toward backend systems — the part of an application most people never see, but where the real architecture decisions live. That interest took shape through coursework in algorithms and databases, and became concrete through internship work building production APIs.",
-    "At FlyRank, I built RESTful API endpoints and RAG pipelines using Express.js and PostgreSQL, applying layered architecture and the repository pattern to keep systems maintainable as they grow. I independently built and deployed Allied Shipping Agency Website, a live production site for a real freight logistics client, using Next.js 15 end to end — from UI to deployment on Vercel.",
-    "I care about writing code that's still legible months later — clear API contracts, sensible schema design, and architecture that doesn't need a rewrite the moment requirements shift. I'm currently looking for backend and full-stack roles where I can keep building systems that hold up in production.",
+    "I'm a Computer Science undergraduate with a strong pull toward backend systems, the part of an application most people never see, but where the real architecture decisions live. That interest took shape through coursework in algorithms and databases, and became concrete through internship work building production APIs.",
+    "At FlyRank, I built RESTful API endpoints and RAG pipelines using Express.js and PostgreSQL, applying layered architecture and the repository pattern to keep systems maintainable as they grow. I independently built and deployed Allied Shipping Agency Website, a live production site for a real freight logistics client, using Next.js 15 end to end, from UI to deployment on Vercel.",
+    "I care about writing code that's still legible months later: clear API contracts, sensible schema design, and architecture that doesn't need a rewrite the moment requirements shift. I'm currently looking for backend and full-stack roles where I can keep building systems that hold up in production.",
   ],
   journeyMilestones: [
     "CS @ UET Lahore",
-    "Startup LeadIntern — UET Lahore",
-    "Backend Engineering — FlyRank",
+    "Startup Lead Intern at UET Lahore",
+    "Backend Engineering at FlyRank",
     "Live Client Project Shipped",
   ],
   certifications: [
-    "AI Fluency Framework & Foundations — Anthropic",
-    "SQL (Basic & Intermediate) — HackerRank",
-    "AI & Data Science — Honhaar Jawan",
+    "AI Fluency Framework & Foundations by Anthropic",
+    "SQL (Basic & Intermediate) by HackerRank",
+    "AI & Data Science by Honhaar Jawan",
   ],
 };
 
@@ -93,7 +93,7 @@ export const projectsContent: Project[] = [
   {
     name: "Allied Shipping Agency Website",
     description:
-      "A live, production website for a freight forwarding and logistics company, built solo and actively maintained for a real client — focused on performance, responsive design, and clean corporate UI/UX.",
+      "A live, production website for a freight forwarding and logistics company, built solo and actively maintained for a real client, focused on performance, responsive design, and clean corporate UI/UX.",
     techStack: ["Next.js 15 (App Router)", "TypeScript", "Tailwind CSS", "React", "Vercel"],
     links: {
       live: "https://allied-shipping-agency.vercel.app/",
@@ -106,7 +106,7 @@ export const projectsContent: Project[] = [
   {
     name: "QueryMind (SmartCRM)",
     description:
-      "Co-designed a multi-paradigm data platform unifying PostgreSQL, Neo4j, and Qdrant under one natural-language query interface — no SQL or vector-search expertise required.",
+      "Co-designed a multi-paradigm data platform unifying PostgreSQL, Neo4j, and Qdrant under one natural-language query interface, with no SQL or vector-search expertise required.",
     techStack: ["PostgreSQL", "Neo4j", "Qdrant", "FastAPI", "Google Gemini", "Python"],
     links: {},
     featured: false,
@@ -116,7 +116,7 @@ export const projectsContent: Project[] = [
   {
     name: "Smart Emergency Response System",
     description:
-      "Built a full-stack desktop app for ambulance dispatch and coverage analysis, implementing core data structures from scratch — Priority Queue, Graph, AVL Tree, Hash Table — with Dijkstra's routing and Google Maps integration for live tracking.",
+      "Built a full-stack desktop app for ambulance dispatch and coverage analysis, implementing core data structures from scratch: Priority Queue, Graph, AVL Tree, Hash Table, with Dijkstra's routing and Google Maps integration for live tracking.",
     techStack: ["C#", ".NET", "MySQL", "Google Maps API"],
     links: {
       github: "https://github.com/Mairaarshad19/Smart_Emergency_Response_System",
@@ -128,7 +128,7 @@ export const projectsContent: Project[] = [
   {
     name: "VOXLINK",
     description:
-      "Developed an offline, voice-controlled classroom automation system using Flutter and ESP32 — featuring on-device intent-matching across 114 phrase variations and Bluetooth Classic (SPP) for real-time hardware control.",
+      "Developed an offline, voice-controlled classroom automation system using Flutter and ESP32, featuring on-device intent-matching across 114 phrase variations and Bluetooth Classic (SPP) for real-time hardware control.",
     techStack: ["Flutter", "ESP32", "Bluetooth Classic (SPP)", "Arduino C++"],
     links: {
       github: "https://github.com/Mairaarshad19/VOXLINK-VoiceAutomation",
@@ -149,25 +149,25 @@ export const capabilitiesContent: Capability[] = [
   {
     title: "Backend API Development",
     description:
-      "Designing and building RESTful APIs with Express.js and FastAPI — from endpoint structuring and payload design to authentication and error handling. Applied this at FlyRank building structured-output pipelines and RAG systems.",
+      "Designing and building RESTful APIs with Express.js and FastAPI, from endpoint structuring and payload design to authentication and error handling. Applied this at FlyRank building structured-output pipelines and RAG systems.",
     icon: "Server",
   },
   {
     title: "Full-Stack Web Applications",
     description:
-      "Building complete web applications end-to-end with Next.js, TypeScript, and PostgreSQL — built and maintained a live production site for a freight logistics client, from UI to deployment.",
+      "Building complete web applications end-to-end with Next.js, TypeScript, and PostgreSQL. Built and maintained a live production site for a freight logistics client, from UI to deployment.",
     icon: "Globe",
   },
   {
     title: "Database Design & Architecture",
     description:
-      "Designing relational schemas and working across relational, graph, and vector databases (PostgreSQL, Neo4j, Qdrant) — applied in QueryMind's multi-paradigm CRM platform.",
+      "Designing relational schemas and working across relational, graph, and vector databases (PostgreSQL, Neo4j, Qdrant), applied in QueryMind's multi-paradigm CRM platform.",
     icon: "Database",
   },
   {
     title: "AI-Integrated Workflows",
     description:
-      "Building structured-output pipelines, RAG systems, and evaluation rubrics for AI-assisted workflows — applied during my internship at FlyRank.",
+      "Building structured-output pipelines, RAG systems, and evaluation rubrics for AI-assisted workflows, applied during my internship at FlyRank.",
     icon: "Cpu",
   },
 ];

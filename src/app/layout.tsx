@@ -19,7 +19,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 const siteUrl = "https://mairaarshad.dev";
-const siteName = "Maira Arshad — Software Engineer";
+const siteName = "Maira Arshad, Software Engineer";
 const description =
   "Backend-leaning full-stack developer building with Next.js, Express, and PostgreSQL. BS CS at UET Lahore.";
 
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Maira Arshad — Software Engineer",
+        alt: "Maira Arshad, Software Engineer",
       },
     ],
   },
