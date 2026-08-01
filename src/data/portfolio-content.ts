@@ -17,7 +17,7 @@ export const educationContent = {
 
 export const aboutContent = {
   paragraph: [
-    "I'm a Computer Science student at UET Lahore, expected to graduate in 2028. Right now I split my time between two internships at FlyRank — one on backend AI engineering (Express.js, RAG pipelines, structured-output workflows) and one focused on AI fluency and workflow design. Alongside that, I'm building and maintaining a live production website for a freight forwarding client using Next.js 15 and TypeScript.",
+    "I'm a Computer Science student at UET Lahore, expected to graduate in 2028. I completed two internships at FlyRank — one on backend AI engineering (Express.js, RAG pipelines, structured-output workflows) and one focused on AI fluency and workflow design. I also built and maintained a live production website for a freight forwarding client using Next.js 15 and TypeScript.",
     "I like backend work the most: API design, PostgreSQL schemas, and the layered architecture that keeps a codebase maintainable as it grows.",
   ],
   quickFacts: [
@@ -38,22 +38,22 @@ export const experienceContent: Experience[] = [
   {
     role: "Backend AI Engineering Intern",
     company: "FlyRank",
-    dates: "July 2025 – Present",
+    dates: "July 2026 – August 2026",
     bullets: [
-      "Building and structuring API endpoints and payloads using Express.js prior to implementation",
-      "Building and maintaining RAG (Retrieval-Augmented Generation) pipelines with source grounding and evaluation capability",
-      "Developing structured-output pipelines and tool-calling workflows for agent tasks",
-      "Constructing lightweight evaluation rubrics and test suites for backend workflows",
+      "Built and structured API endpoints and payloads using Express.js prior to implementation",
+      "Built and maintained RAG (Retrieval-Augmented Generation) pipelines with source grounding and evaluation capability",
+      "Developed structured-output pipelines and tool-calling workflows for agent tasks",
+      "Constructed lightweight evaluation rubrics and test suites for backend workflows",
     ],
   },
   {
     role: "AI Fluency Intern",
     company: "FlyRank",
-    dates: "July 2025 – Present",
+    dates: "July 2026 – August 2026",
     bullets: [
-      "Documenting and executing a repeatable daily AI-assisted workflow with clear handoffs across tools",
-      "Building and applying an evaluation checklist to critique AI-generated drafts for accuracy, context, and completeness",
-      "Designing and publishing a capstone artifact with AI as a core development partner",
+      "Documented and executed a repeatable daily AI-assisted workflow with clear handoffs across tools",
+      "Built and applied an evaluation checklist to critique AI-generated drafts for accuracy, context, and completeness",
+      "Designed and published a capstone artifact with AI as a core development partner",
     ],
   },
   {
@@ -142,13 +142,13 @@ export const capabilitiesContent: Capability[] = [
   {
     title: "Backend API Development",
     description:
-      "Designing and building RESTful APIs with Express.js and FastAPI — from endpoint structuring and payload design to authentication and error handling. Currently applying this at FlyRank building structured-output pipelines and RAG systems.",
+      "Designing and building RESTful APIs with Express.js and FastAPI — from endpoint structuring and payload design to authentication and error handling. Applied this at FlyRank building structured-output pipelines and RAG systems.",
     icon: "Server",
   },
   {
     title: "Full-Stack Web Applications",
     description:
-      "Building complete web applications end-to-end with Next.js, TypeScript, and PostgreSQL — currently maintaining a live production site for a freight logistics client, from UI to deployment.",
+      "Building complete web applications end-to-end with Next.js, TypeScript, and PostgreSQL — built and maintained a live production site for a freight logistics client, from UI to deployment.",
     icon: "Globe",
   },
   {
@@ -160,7 +160,7 @@ export const capabilitiesContent: Capability[] = [
   {
     title: "AI-Integrated Workflows",
     description:
-      "Building structured-output pipelines, RAG systems, and evaluation rubrics for AI-assisted workflows — current focus at FlyRank.",
+      "Building structured-output pipelines, RAG systems, and evaluation rubrics for AI-assisted workflows — applied during my internship at FlyRank.",
     icon: "Cpu",
   },
 ];
@@ -208,14 +208,11 @@ export const skillsTabs: SkillTab[] = [
 
 export const heroContent = {
   name: "Maira Arshad",
-  role: "Backend-leaning full-stack developer building RESTful APIs and layered web architecture — currently interning at FlyRank, open to backend/full-stack roles.",
-  intro: [
-    "BS Computer Science student at UET Lahore (2028), currently shipping a live production website for a freight logistics client.",
-    "I like working close to the database and the API layer.",
-  ],
+  role: "Computer Science undergraduate building backend systems and full-stack web applications. Interned at FlyRank building RESTful APIs, RAG pipelines, and structured-output workflows with Express.js and PostgreSQL. Independently built and deployed a production website for a freight logistics client using Next.js 15. BSc Computer Science at UET Lahore, Class of 2028.",
+  intro: [],
   buttons: [
     { label: "View Projects", href: "#projects", variant: "primary" },
-    { label: "Download Resume", href: "/Maira_Arshad_Resume.pdf", variant: "secondary" },
+    { label: "Get in Touch", href: "#contact", variant: "secondary" },
   ],
   socials: [
     {

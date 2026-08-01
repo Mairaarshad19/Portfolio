@@ -12,7 +12,7 @@ const socialIcons: Record<string, React.ReactNode> = {
 };
 
 export default function Hero() {
-  const { name, role, intro, buttons, socials } = heroContent;
+  const { name, role, buttons, socials } = heroContent;
   const { ref, revealed } = useScrollReveal<HTMLDivElement>({ threshold: 0.05 });
   const sectionRef = useRef<HTMLElement>(null);
   const spotlightRef = useRef<HTMLDivElement>(null);
@@ -89,16 +89,9 @@ export default function Hero() {
           </h1>
 
           {/* Role */}
-          <p className="mt-3 text-lg sm:text-xl md:text-2xl text-fg-muted font-medium">
+          <p className="mt-3 text-lg sm:text-xl md:text-2xl text-fg-muted font-medium leading-relaxed max-w-2xl mx-auto">
             {role}
           </p>
-
-          {/* Intro */}
-          <div className="mt-6 space-y-3 text-sm sm:text-base text-fg-dim leading-relaxed max-w-xl mx-auto">
-            {intro.map((paragraph, i) => (
-              <p key={i}>{paragraph}</p>
-            ))}
-          </div>
 
           {/* Buttons */}
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -130,6 +123,20 @@ export default function Hero() {
               </a>
             ))}
           </div>
+
+          {/* Resume link */}
+          <p className="mt-4 text-sm text-fg-dim">
+            or{" "}
+            <a
+              href="/Maira_Arshad_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              download
+              className="link-underline text-accent hover:text-accent-hover transition-colors"
+            >
+              download my resume
+            </a>
+          </p>
 
           {/* Social icons */}
           <div className="mt-12 flex items-center justify-center gap-6">
