@@ -79,6 +79,51 @@ body::before {
   animation: fade-slide-up 0.8s ease-out forwards;
 }
 
+/* Rotating role text — crossfade + slight vertical slide */
+.role-text {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.role-text.role-hidden {
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+.role-text.role-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Floating tech badges — slow breathing motion, staggered */
+@keyframes float-badge {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.float-badge {
+  animation: float-badge 4s ease-in-out infinite;
+}
+
+.float-badge-delay-1 {
+  animation-delay: 0.5s;
+}
+
+.float-badge-delay-2 {
+  animation-delay: 1.2s;
+}
+
+.float-badge-delay-3 {
+  animation-delay: 1.8s;
+}
+
+.float-badge-delay-4 {
+  animation-delay: 2.4s;
+}
+
 /* Spotlight follow cursor — subtle radial glow */
 .spotlight-follow {
   position: absolute;

@@ -208,11 +208,17 @@ export const skillsTabs: SkillTab[] = [
 
 export const heroContent = {
   name: "Maira Arshad",
+  roles: [
+    "Software Engineer",
+    "Backend Developer",
+    "Full-Stack Developer",
+    "API Designer",
+  ],
   role: "Computer Science undergraduate building backend systems and full-stack web applications. Interned at FlyRank building RESTful APIs, RAG pipelines, and structured-output workflows with Express.js and PostgreSQL. Independently built and deployed a production website for a freight logistics client using Next.js 15. BSc Computer Science at UET Lahore, Class of 2028.",
   intro: [],
   buttons: [
     { label: "View Projects", href: "#projects", variant: "primary" },
-    { label: "Get in Touch", href: "#contact", variant: "secondary" },
+    { label: "Contact Me", href: "#contact", variant: "secondary" },
   ],
   socials: [
     {
