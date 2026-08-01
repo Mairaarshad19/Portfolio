@@ -19,7 +19,7 @@ export default function About() {
         </h2>
 
         {/* Bio paragraphs */}
-        <div className="space-y-4 text-sm sm:text-base text-fg-muted leading-relaxed max-w-3xl">
+        <div className="space-y-4 text-sm sm:text-base text-fg-muted leading-relaxed">
           {paragraph.map((p, i) => (
             <p key={i}>{p}</p>
           ))}

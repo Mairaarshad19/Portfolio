@@ -17,19 +17,20 @@ export const educationContent = {
 
 export const aboutContent = {
   paragraph: [
-    "I'm a Computer Science undergraduate with a strong pull toward backend systems — the part of an application most people never see, but where the real architecture decisions live. That interest took shape through coursework in algorithms and database systems, and became concrete through hands-on internship work building production APIs.",
-    "At FlyRank, I built RESTful API endpoints and RAG pipelines using Express.js and PostgreSQL, applying layered architecture and the repository pattern to keep systems maintainable as they grow. I independently built and deployed Allied Shipping Agency Website, a live production site for a real freight logistics client, using Next.js 15 end to end — from UI to CI/CD deployment on Vercel. I've also worked across relational, graph, and vector databases on QueryMind, a multi-paradigm CRM platform unifying PostgreSQL, Neo4j, and Qdrant behind one interface.",
-    "I care about writing code that's still legible six months later — clear API contracts, sensible schema design, and architecture that doesn't need a rewrite the moment requirements shift. I'm currently looking for backend and full-stack engineering roles where I can keep building systems that actually hold up in production.",
+    "I'm a Computer Science undergraduate with a strong pull toward backend systems — the part of an application most people never see, but where the real architecture decisions live. That interest took shape through coursework in algorithms and databases, and became concrete through internship work building production APIs.",
+    "At FlyRank, I built RESTful API endpoints and RAG pipelines using Express.js and PostgreSQL, applying layered architecture and the repository pattern to keep systems maintainable as they grow. I independently built and deployed Allied Shipping Agency Website, a live production site for a real freight logistics client, using Next.js 15 end to end — from UI to deployment on Vercel.",
+    "I care about writing code that's still legible months later — clear API contracts, sensible schema design, and architecture that doesn't need a rewrite the moment requirements shift. I'm currently looking for backend and full-stack roles where I can keep building systems that hold up in production.",
   ],
   journeyMilestones: [
     "CS @ UET Lahore",
-    "First Internship — Ustadam",
+    "Startup LeadIntern — UET Lahore",
     "Backend Engineering — FlyRank",
     "Live Client Project Shipped",
   ],
   certifications: [
     "AI Fluency Framework & Foundations — Anthropic",
     "SQL (Basic & Intermediate) — HackerRank",
+    "AI & Data Science — Honhaar Jawan",
   ],
 };
 
