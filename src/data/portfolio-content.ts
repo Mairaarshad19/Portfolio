@@ -37,6 +37,7 @@ export const aboutContent = {
 export interface Experience {
   role: string;
   company: string;
+  workMode: string;
   dates: string;
   bullets: string[];
 }
@@ -45,33 +46,48 @@ export const experienceContent: Experience[] = [
   {
     role: "Backend AI Engineering Intern",
     company: "FlyRank",
+    workMode: "Remote",
     dates: "July 2026 – August 2026",
     bullets: [
-      "Built and structured API endpoints and payloads using Express.js prior to implementation",
-      "Built and maintained RAG (Retrieval-Augmented Generation) pipelines with source grounding and evaluation capability",
-      "Developed structured-output pipelines and tool-calling workflows for agent tasks",
-      "Constructed lightweight evaluation rubrics and test suites for backend workflows",
+      "Built and structured **RESTful API** endpoints and payloads using **Express.js**, defining error responses prior to implementation",
+      "Built and maintained **RAG (Retrieval-Augmented Generation)** pipelines with source grounding and evaluation capability",
+      "Developed structured-output pipelines and tool-calling workflows for **AI agent** tasks",
+      "Constructed evaluation rubrics and test suites to validate backend workflow reliability",
     ],
   },
   {
     role: "AI Fluency Intern",
     company: "FlyRank",
+    workMode: "Remote",
     dates: "July 2026 – August 2026",
     bullets: [
-      "Documented and executed a repeatable daily AI-assisted workflow with clear handoffs across tools",
-      "Built and applied an evaluation checklist to critique AI-generated drafts for accuracy, context, and completeness",
+      "Documented and executed a repeatable daily **AI-assisted workflow** with clear handoffs across tools",
+      "Built and applied an evaluation checklist to critique **AI-generated** drafts for accuracy, context, and completeness",
       "Designed and published a capstone artifact with AI as a core development partner",
     ],
   },
   {
     role: "Startup Project Lead Intern",
     company: "Ustadam (AI-based EdTech startup)",
+    workMode: "Hybrid",
     dates: "June 2025 – August 2025",
     bullets: [
-      "Planned the MVP roadmap for an AI-based EdTech platform across backend, frontend, database, and AI integration phases",
-      "Designed system architecture, user flow diagrams, and relational database schema for a scalable platform",
-      "Built a 5-year financial model covering operating costs, revenue forecasting, and ROI estimation",
-      "Managed sprint cycles for a 4-member team through weekly task allocation and progress tracking",
+      "Planned the MVP roadmap for an **AI-based EdTech platform** across backend, frontend, database, and AI integration phases",
+      "Designed **system architecture**, user flow diagrams, and a relational **database schema** for a scalable platform",
+      "Built a **5-year** financial model covering operating costs, revenue forecasting, and ROI estimation",
+      "Managed sprint cycles for a **4-member team** through weekly task allocation and progress tracking",
+    ],
+  },
+  {
+    role: "Mobile App Development Intern",
+    company: "DevInfantary",
+    workMode: "Remote",
+    dates: "July 2026 – August 2026",
+    bullets: [
+      "Developed cross-platform mobile applications using **Flutter** and **Dart**, implementing responsive UIs with **Material Design** principles",
+      "Built and customized **7+ core Flutter widgets** (Container, Row, Column, ListView, AppBar, Navigation, Forms), gaining hands-on experience with Flutter's widget tree and layout system",
+      "Used **Hot Reload** and Android device testing to troubleshoot and optimize app behavior",
+      "Practiced **Git** and **GitHub** for version control and source code management throughout the internship",
     ],
   },
 ];

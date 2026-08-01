@@ -3,6 +3,24 @@
 import { experienceContent } from "@/data/portfolio-content";
 import { useScrollReveal } from "@/lib/useScrollReveal";
 
+/**
+ * Renders text with `**bold**` markers as <strong> elements
+ * for ATS-friendly keyword highlighting.
+ */
+function renderBoldText(text: string) {
+  const parts = text.split(/(\*\*[^*]+\*\*)/g);
+  return parts.map((part, i) => {
+    if (part.startsWith("**") && part.endsWith("**")) {
+      return (
+        <strong key={i} className="font-semibold text-fg">
+          {part.slice(2, -2)}
+        </strong>
+      );
+    }
+    return <span key={i}>{part}</span>;
+  });
+}
+
 function ExperienceCard({
   exp,
 }: {
@@ -26,7 +44,12 @@ function ExperienceCard({
       {/* Card */}
       <div className="card-lift bg-bg-elevated border border-border rounded-xl p-6 hover:border-border-light shadow-sm">
         <h3 className="text-lg font-display font-semibold text-fg">{exp.role}</h3>
-        <p className="text-sm text-fg-muted mt-0.5 mb-4">{exp.company}</p>
+        <p className="text-sm text-fg-muted mt-0.5 mb-4 flex items-center gap-2">
+          {exp.company}
+          <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-accent-subtle border border-accent/20 text-xs font-medium text-accent">
+            {exp.workMode}
+          </span>
+        </p>
 
         <ul className="space-y-2">
           {exp.bullets.map((bullet, j) => (
@@ -35,7 +58,7 @@ function ExperienceCard({
               className="text-sm text-fg-muted leading-relaxed pl-4 relative"
             >
               <span className="absolute left-0 top-[0.6em] w-1.5 h-px bg-fg-dim" />
-              {bullet}
+              {renderBoldText(bullet)}
             </li>
           ))}
         </ul>
