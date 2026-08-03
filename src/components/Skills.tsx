@@ -130,7 +130,7 @@ export default function Skills() {
                   className="flex flex-col items-center justify-center gap-3 bg-accent-subtle border border-accent/20 rounded-xl p-6 shadow-sm hover:border-accent/40 hover:shadow-md transition-all duration-200"
                 >
                   <div className="w-12 h-12 flex items-center justify-center">
-                    <Icon size={32} color={brandColors[skill] ?? "#666"} />
+                    <Icon size={36} color={brandColors[skill] ?? "#666"} />
                   </div>
                   <span className="text-sm font-semibold text-fg text-center leading-tight">
                     {skill}
@@ -150,7 +150,7 @@ export default function Skills() {
               </h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
                 {cat.skills.map((skill) => (
-                  <SkillPill key={skill} skill={skill} size={24} />
+                  <SkillPill key={skill} skill={skill} size={28} />
                 ))}
               </div>
             </div>
