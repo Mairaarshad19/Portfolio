@@ -138,7 +138,6 @@ export const projectsContent: Project[] = [
       github: "https://github.com/Mairaarshad19/Smart_Emergency_Response_System",
     },
     featured: false,
-    screenshot: "/projects/smart-emergency.png",
     tagline: "Full-Stack Desktop App || Emergency Services",
   },
   {

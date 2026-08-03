@@ -26,62 +26,10 @@ function LandscapeImage({ screenshot, name }: { screenshot: string; name: string
         src={screenshot}
         alt={`${name} screenshot`}
         fill
-        className="object-contain"
+        className="object-cover"
         onError={() => setError(true)}
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
       />
-    </div>
-  );
-}
-
-function VoxlinkImage() {
-  const [appError, setAppError] = useState(false);
-  const [hwError, setHwError] = useState(false);
-
-  return (
-    <div className="relative w-full h-[300px] rounded-xl overflow-hidden border border-border mb-6 shadow-sm flex">
-      {/* Left panel — mobile app screenshot with phone frame */}
-      <div className="relative w-1/2 h-full bg-bg-secondary flex items-center justify-center">
-        {!appError ? (
-          <div className="relative w-[42%] h-[85%] rounded-[18px] border-2 border-fg-muted/30 overflow-hidden shadow-sm bg-white">
-            <Image
-              src="/projects/voxlink.png"
-              alt="VOXLINK mobile app screenshot"
-              fill
-              className="object-contain"
-              onError={() => setAppError(true)}
-              sizes="25vw"
-            />
-          </div>
-        ) : (
-          <div className="flex flex-col items-center gap-1.5">
-            <Code size={18} className="text-fg-muted/30" />
-            <span className="text-[10px] text-fg-muted/30">App</span>
-          </div>
-        )}
-      </div>
-
-      {/* Divider */}
-      <div className="w-px bg-border self-stretch" />
-
-      {/* Right panel — hardware photo */}
-      <div className="relative w-1/2 h-full bg-bg-secondary flex items-center justify-center">
-        {!hwError ? (
-          <Image
-            src="/projects/voxlink-hardware.jpg"
-            alt="VOXLINK hardware setup"
-            fill
-            className="object-contain"
-            onError={() => setHwError(true)}
-            sizes="25vw"
-          />
-        ) : (
-          <div className="flex flex-col items-center gap-1.5">
-            <Code size={18} className="text-fg-muted/30" />
-            <span className="text-[10px] text-fg-muted/30">Hardware</span>
-          </div>
-        )}
-      </div>
     </div>
   );
 }
@@ -92,49 +40,54 @@ function ProjectCard({
   project: (typeof projectsContent)[number];
 }) {
   const { ref, revealed } = useScrollReveal();
+  const hasScreenshot = Boolean(project.screenshot);
 
   return (
     <div
       ref={ref}
       className={`card-lift border-2 border-accent/30 bg-bg-elevated rounded-2xl p-8 flex flex-col shadow-sm scroll-reveal ${revealed ? "revealed" : ""}`}
     >
-      {/* Header — centered */}
-      <div className="text-center mb-5">
-        <h3 className="text-xl font-display font-bold text-fg">{project.name}</h3>
-        <p className="mt-1 text-sm text-accent tracking-wide truncate">
-          {project.tagline}
-        </p>
-      </div>
-
-      {/* Per-project image treatment */}
-      {project.name === "VOXLINK" ? (
-        <VoxlinkImage />
-      ) : project.screenshot ? (
-        <LandscapeImage screenshot={project.screenshot} name={project.name} />
-      ) : (
-        <div className="relative w-full h-[300px] bg-bg-secondary rounded-xl border border-border mb-6 flex items-center justify-center overflow-hidden">
-          <div className="flex flex-col items-center gap-1.5">
-            <Code size={20} className="text-fg-muted/30" />
-            <span className="text-xs text-fg-muted/30">{project.name}</span>
-          </div>
+      {/* Content — vertically centered when there's no image to balance the card */}
+      <div
+        className={`flex-1 flex flex-col ${
+          hasScreenshot ? "" : "justify-center"
+        }`}
+      >
+        {/* Header — centered */}
+        <div className={`text-center ${hasScreenshot ? "mb-5" : "mb-8"}`}>
+          <h3 className="text-xl font-display font-bold text-fg">
+            {project.name}
+          </h3>
+          <p className="mt-1 text-sm text-accent tracking-wide truncate">
+            {project.tagline}
+          </p>
         </div>
-      )}
 
-      {/* Description */}
-      <p className="text-sm text-fg-muted leading-relaxed text-justify line-clamp-3 mb-6">
-        {project.description}
-      </p>
+        {/* Image — only when a screenshot exists */}
+        {hasScreenshot && (
+          <LandscapeImage screenshot={project.screenshot!} name={project.name} />
+        )}
 
-      {/* Tech stack pills — text-only, electric blue on white */}
-      <div className="flex flex-wrap justify-center gap-2 mb-6">
-        {project.techStack.map((tech) => (
-          <span
-            key={tech}
-            className="px-2.5 py-1 text-xs font-medium text-[#0066FF] bg-white border border-blue-200/60 rounded-full"
-          >
-            {tech}
-          </span>
-        ))}
+        {/* Description */}
+        <p
+          className={`text-sm text-fg-muted leading-relaxed text-justify line-clamp-3 ${
+            hasScreenshot ? "mb-6" : "mb-8 max-w-md mx-auto"
+          }`}
+        >
+          {project.description}
+        </p>
+
+        {/* Tech stack pills — text-only, electric blue on white */}
+        <div className="flex flex-wrap justify-center gap-2 mb-6">
+          {project.techStack.map((tech) => (
+            <span
+              key={tech}
+              className="px-2.5 py-1 text-xs font-medium text-[#0066FF] bg-white border border-blue-200/60 rounded-full"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
       </div>
 
       {/* Buttons — centered (or spacer for equal card heights) */}
