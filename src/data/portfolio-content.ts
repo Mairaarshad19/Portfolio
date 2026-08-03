@@ -217,11 +217,18 @@ export const skillCategories: SkillCategory[] = [
       "Next.js",
       "Express.js",
       "React",
+      "Node.js",
       "FastAPI",
+      "Flask",
       "Flutter",
       "Tailwind CSS",
-      "Flask",
+      ".NET Framework (Windows Forms)",
     ],
+  },
+  {
+    id: "apis",
+    label: "APIs & Integrations",
+    skills: ["REST API", "Google Gemini API"],
   },
   {
     id: "databases",
@@ -231,7 +238,7 @@ export const skillCategories: SkillCategory[] = [
   {
     id: "tools",
     label: "Tools & DevOps",
-    skills: ["Git/GitHub", "Docker", "Vercel"],
+    skills: ["Git/GitHub", "Docker", "Vercel", "Visual Studio"],
   },
 ];
 

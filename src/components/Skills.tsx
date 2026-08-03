@@ -23,7 +23,12 @@ import {
   SiGithub,
   SiDocker,
   SiVercel,
+  SiNodedotjs,
+  SiDotnet,
+  SiGooglegemini,
 } from "react-icons/si";
+import { TbBrandVisualStudio } from "react-icons/tb";
+import { Network } from "lucide-react";
 import type { IconType } from "react-icons";
 
 const iconMap: Record<string, IconType> = {
@@ -36,9 +41,14 @@ const iconMap: Record<string, IconType> = {
   "Express.js": SiExpress,
   React: SiReact,
   "Tailwind CSS": SiTailwindcss,
+  "Node.js": SiNodedotjs,
   FastAPI: SiFastapi,
   Flask: SiFlask,
+  ".NET Framework (Windows Forms)": SiDotnet,
   Flutter: SiFlutter,
+  "REST API": Network,
+  "Google Gemini API": SiGooglegemini,
+  "Visual Studio": TbBrandVisualStudio,
   PostgreSQL: SiPostgresql,
   Neo4j: SiNeo4J,
   MySQL: SiMysql,
@@ -59,9 +69,14 @@ const brandColors: Record<string, string> = {
   "Express.js": "#000000",
   React: "#61DAFB",
   "Tailwind CSS": "#06B6D4",
+  "Node.js": "#5FA04E",
   FastAPI: "#009688",
   Flask: "#000000",
+  ".NET Framework (Windows Forms)": "#512BD4",
   Flutter: "#02569B",
+  "REST API": "#1d4ed8",
+  "Google Gemini API": "#4285F4",
+  "Visual Studio": "#5C2D91",
   PostgreSQL: "#4169E1",
   Neo4j: "#4581C3",
   MySQL: "#4479A1",
