@@ -69,7 +69,7 @@ export const experienceContent: Experience[] = [
   {
     role: "Startup Project Lead Intern",
     company: "Ustadam (AI-based EdTech startup)",
-    workMode: "Hybrid",
+    workMode: "Hybrid — UET Lahore",
     dates: "June 2025 – August 2025",
     bullets: [
       "Planned the MVP roadmap for an **AI-based EdTech platform** across backend, frontend, database, and AI integration phases",
