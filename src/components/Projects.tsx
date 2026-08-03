@@ -11,7 +11,7 @@ function LandscapeImage({ screenshot, name }: { screenshot: string; name: string
 
   if (error) {
     return (
-      <div className="relative w-full h-48 bg-bg-secondary rounded-xl border border-border mb-6 flex items-center justify-center overflow-hidden">
+      <div className="relative w-full h-[300px] bg-bg-secondary rounded-xl border border-border mb-6 flex items-center justify-center overflow-hidden">
         <div className="flex flex-col items-center gap-1.5">
           <Code size={20} className="text-fg-muted/30" />
           <span className="text-xs text-fg-muted/30">{name}</span>
@@ -21,12 +21,12 @@ function LandscapeImage({ screenshot, name }: { screenshot: string; name: string
   }
 
   return (
-    <div className="relative w-full h-48 rounded-xl overflow-hidden border border-border mb-6 shadow-sm">
+    <div className="relative w-full h-[300px] bg-bg-secondary rounded-xl overflow-hidden border border-border mb-6 shadow-sm">
       <Image
         src={screenshot}
         alt={`${name} screenshot`}
         fill
-        className="object-cover"
+        className="object-contain"
         onError={() => setError(true)}
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
       />
@@ -39,7 +39,7 @@ function VoxlinkImage() {
   const [hwError, setHwError] = useState(false);
 
   return (
-    <div className="relative w-full h-48 rounded-xl overflow-hidden border border-border mb-6 shadow-sm flex">
+    <div className="relative w-full h-[300px] rounded-xl overflow-hidden border border-border mb-6 shadow-sm flex">
       {/* Left panel — mobile app screenshot with phone frame */}
       <div className="relative w-1/2 h-full bg-bg-secondary flex items-center justify-center">
         {!appError ? (
@@ -71,7 +71,7 @@ function VoxlinkImage() {
             src="/projects/voxlink-hardware.jpg"
             alt="VOXLINK hardware setup"
             fill
-            className="object-cover"
+            className="object-contain"
             onError={() => setHwError(true)}
             sizes="25vw"
           />
@@ -112,7 +112,7 @@ function ProjectCard({
       ) : project.screenshot ? (
         <LandscapeImage screenshot={project.screenshot} name={project.name} />
       ) : (
-        <div className="relative w-full h-48 bg-bg-secondary rounded-xl border border-border mb-6 flex items-center justify-center overflow-hidden">
+        <div className="relative w-full h-[300px] bg-bg-secondary rounded-xl border border-border mb-6 flex items-center justify-center overflow-hidden">
           <div className="flex flex-col items-center gap-1.5">
             <Code size={20} className="text-fg-muted/30" />
             <span className="text-xs text-fg-muted/30">{project.name}</span>
