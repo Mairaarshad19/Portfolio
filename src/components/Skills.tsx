@@ -1,7 +1,6 @@
 "use client";
 
-import { useState } from "react";
-import { skillsTabs } from "@/data/portfolio-content";
+import { coreStack, skillCategories } from "@/data/portfolio-content";
 import { useScrollReveal } from "@/lib/useScrollReveal";
 import {
   SiTypescript,
@@ -73,8 +72,29 @@ const brandColors: Record<string, string> = {
   Vercel: "#000000",
 };
 
+function SkillPill({
+  skill,
+  size = 28,
+}: {
+  skill: string;
+  size?: number;
+}) {
+  const Icon = iconMap[skill];
+  if (!Icon) return null;
+
+  return (
+    <div className="flex flex-col items-center justify-center gap-3 bg-bg-elevated border border-border rounded-xl p-5 shadow-sm hover:border-accent/40 hover:shadow-md transition-all duration-200">
+      <div className="w-10 h-10 flex items-center justify-center">
+        <Icon size={size} color={brandColors[skill] ?? "#666"} />
+      </div>
+      <span className="text-xs font-medium text-fg-muted text-center leading-tight">
+        {skill}
+      </span>
+    </div>
+  );
+}
+
 export default function Skills() {
-  const [activeTab, setActiveTab] = useState(0);
   const { ref, revealed } = useScrollReveal();
 
   return (
@@ -87,8 +107,8 @@ export default function Skills() {
           Skills
         </h2>
 
-        {/* Intro paragraph — rewritten */}
-        <p className="text-sm sm:text-base text-fg-muted leading-relaxed max-w-2xl mb-10">
+        {/* Intro paragraph */}
+        <p className="text-sm sm:text-base text-fg-muted leading-relaxed max-w-2xl mb-12">
           I build backend systems and full-stack applications with TypeScript
           and Python, working across Express.js, FastAPI, and Next.js. My
           database experience spans relational, graph, and vector stores,
@@ -96,64 +116,45 @@ export default function Skills() {
           CI/CD tooling to keep projects production-ready.
         </p>
 
-        {/* Segmented control tabs */}
-        <div className="flex justify-center mb-10">
-          <div className="inline-flex bg-bg-secondary border border-border rounded-full p-1">
-            {skillsTabs.map((tab, i) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(i)}
-                className={`relative px-5 py-2 text-sm font-medium rounded-full transition-all duration-300 ${
-                  activeTab === i
-                    ? "bg-accent text-white shadow-sm"
-                    : "text-fg-muted hover:text-fg"
-                }`}
-              >
-                {tab.label}
-              </button>
-            ))}
+        {/* Core Stack — prominent row */}
+        <div className="mb-14">
+          <h3 className="text-xs font-medium text-accent uppercase tracking-wider mb-5">
+            Core Stack
+          </h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+            {coreStack.map((skill) => {
+              const Icon = iconMap[skill];
+              return (
+                <div
+                  key={skill}
+                  className="flex flex-col items-center justify-center gap-3 bg-accent-subtle border border-accent/20 rounded-xl p-6 shadow-sm hover:border-accent/40 hover:shadow-md transition-all duration-200"
+                >
+                  <div className="w-12 h-12 flex items-center justify-center">
+                    <Icon size={32} color={brandColors[skill] ?? "#666"} />
+                  </div>
+                  <span className="text-sm font-semibold text-fg text-center leading-tight">
+                    {skill}
+                  </span>
+                </div>
+              );
+            })}
           </div>
         </div>
 
-        {/* Icon card grid with crossfade */}
-        <div className="relative">
-          {skillsTabs.map((tab, i) => {
-            const isActive = activeTab === i;
-            const Icon = iconMap[tab.skills[0]];
-
-            return (
-              <div
-                key={tab.id}
-                className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 transition-all duration-500 ease-in-out"
-                style={{
-                  opacity: isActive ? 1 : 0,
-                  position: isActive ? "relative" : "absolute",
-                  inset: 0,
-                  pointerEvents: isActive ? "auto" : "none",
-                  transform: `translateY(${isActive ? 0 : 8}px)`,
-                }}
-              >
-                {tab.skills.map((skill) => {
-                  const SkillIcon = iconMap[skill];
-                  return (
-                    <div
-                      key={skill}
-                      className="flex flex-col items-center justify-center gap-3 bg-bg-elevated border border-border rounded-xl p-5 shadow-sm hover:border-accent/40 hover:shadow-md transition-all duration-200"
-                    >
-                      <div className="w-10 h-10 flex items-center justify-center">
-                        {SkillIcon ? (
-                          <SkillIcon size={28} color={brandColors[skill] ?? "#666"} />
-                        ) : null}
-                      </div>
-                      <span className="text-xs font-medium text-fg-muted text-center leading-tight">
-                        {skill}
-                      </span>
-                    </div>
-                  );
-                })}
+        {/* Full category breakdown — all visible */}
+        <div className="space-y-10">
+          {skillCategories.map((cat) => (
+            <div key={cat.id}>
+              <h3 className="text-xs font-medium text-accent uppercase tracking-wider mb-4">
+                {cat.label}
+              </h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                {cat.skills.map((skill) => (
+                  <SkillPill key={skill} skill={skill} size={24} />
+                ))}
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       </div>
     </section>

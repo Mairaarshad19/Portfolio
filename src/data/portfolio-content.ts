@@ -187,44 +187,51 @@ export const capabilitiesContent: Capability[] = [
   },
 ];
 
-export interface SkillTab {
+export interface SkillCategory {
   id: string;
   label: string;
   skills: string[];
 }
 
-export const skillsTabs: SkillTab[] = [
+/** Skills with the deepest real project/internship depth — shown prominently. */
+export const coreStack: string[] = [
+  "TypeScript",
+  "Next.js",
+  "Express.js",
+  "PostgreSQL",
+  "React",
+  "Python",
+];
+
+/** Full skill breakdown, ordered by real-world usage (most-used first). */
+export const skillCategories: SkillCategory[] = [
   {
-    id: "languages-frameworks",
-    label: "Languages & Frameworks",
+    id: "languages",
+    label: "Languages",
+    skills: ["TypeScript", "Python", "JavaScript", "C++", "C#"],
+  },
+  {
+    id: "frameworks",
+    label: "Frameworks & Libraries",
     skills: [
-      "TypeScript",
-      "JavaScript",
-      "Python",
-      "C++",
-      "C#",
       "Next.js",
       "Express.js",
       "React",
-      "Tailwind CSS",
       "FastAPI",
-      "Flask",
       "Flutter",
+      "Tailwind CSS",
+      "Flask",
     ],
   },
   {
-    id: "tools-databases",
-    label: "Tools & Databases",
-    skills: [
-      "PostgreSQL",
-      "Neo4j",
-      "MySQL",
-      "SQLite",
-      "Qdrant",
-      "Git/GitHub",
-      "Docker",
-      "Vercel",
-    ],
+    id: "databases",
+    label: "Databases",
+    skills: ["PostgreSQL", "Qdrant", "Neo4j", "MySQL", "SQLite"],
+  },
+  {
+    id: "tools",
+    label: "Tools & DevOps",
+    skills: ["Git/GitHub", "Docker", "Vercel"],
   },
 ];
 
