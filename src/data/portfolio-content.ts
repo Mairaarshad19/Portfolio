@@ -6,7 +6,6 @@ export interface Certification {
 export const educationContent = {
   degree: "BS Computer Science",
   institution: "UET Lahore",
-  year: "Expected July 2028",
   coursework: [
     "Programming Fundamentals",
     "Object-Oriented Programming",
@@ -19,7 +18,7 @@ export const educationContent = {
   certifications: [
     { name: "AI Fluency Framework & Foundations", issuer: "Anthropic" },
     { name: "SQL (Basic & Intermediate)", issuer: "HackerRank" },
-    { name: "AI & Data Science for Beginners", issuer: "Honhaar Jawan" },
+    { name: "AI & Data Science", issuer: "Honhaar Jawan" },
   ],
 };
 
@@ -243,7 +242,7 @@ export const heroContent = {
     "Full-Stack Developer",
     "API Designer",
   ],
-  role: "Computer Science undergraduate with **4 internships** across backend engineering, AI workflows, and mobile development. Built and shipped **5 projects**, including a live production website using Next.js 15, RESTful APIs and RAG pipelines with Express.js and PostgreSQL, and a multi-database AI platform. BSc Computer Science at **UET Lahore**, Class of 2028.",
+  role: "Computer Science undergraduate with **4 internships** across backend engineering, AI workflows, and mobile development. Built and shipped **5 projects**, including a live production website using Next.js 15, RESTful APIs and RAG pipelines with Express.js and PostgreSQL, and a multi-database AI platform. BSc Computer Science at **UET Lahore**.",
   intro: [],
   buttons: [
     { label: "Download Resume", href: "/Maira_Arshad_Resume.pdf", variant: "primary" },

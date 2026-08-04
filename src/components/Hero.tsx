@@ -34,8 +34,8 @@ const achievementBadges: {
     delay: "float-badge-delay-2",
   },
   {
-    value: "2028",
-    label: "Grad",
+    value: "Backend",
+    label: "Focus",
     position: "-bottom-5 -left-8",
     delay: "float-badge-delay-3",
   },

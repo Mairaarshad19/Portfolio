@@ -5,8 +5,7 @@ import { educationContent } from "@/data/portfolio-content";
 import { useScrollReveal } from "@/lib/useScrollReveal";
 
 export default function Education() {
-  const { degree, institution, year, coursework, certifications } =
-    educationContent;
+  const { degree, institution, coursework, certifications } = educationContent;
   const { ref, revealed } = useScrollReveal();
 
   return (
@@ -23,21 +22,16 @@ export default function Education() {
           {/* ── LEFT COLUMN — Education ── */}
           <div className="card-lift bg-bg-elevated border border-border rounded-xl p-6 sm:p-8 shadow-sm h-full">
             {/* Degree row */}
-            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-10">
-              <div className="flex items-start gap-4">
-                <span className="w-12 h-12 shrink-0 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center">
-                  <GraduationCap size={24} className="text-accent" />
-                </span>
-                <div>
-                  <h3 className="text-lg font-display font-semibold text-fg leading-snug">
-                    {degree}
-                  </h3>
-                  <p className="text-sm text-fg-muted mt-1">{institution}</p>
-                </div>
-              </div>
-              <span className="inline-flex items-center px-3 py-1.5 text-xs font-medium text-accent bg-accent-subtle border border-accent/20 rounded-full whitespace-nowrap">
-                {year}
+            <div className="flex items-start gap-4 mb-10">
+              <span className="w-12 h-12 shrink-0 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center">
+                <GraduationCap size={24} className="text-accent" />
               </span>
+              <div>
+                <h3 className="text-lg font-display font-semibold text-fg leading-snug">
+                  {degree}
+                </h3>
+                <p className="text-sm text-fg-muted mt-1">{institution}</p>
+              </div>
             </div>
 
             {/* Relevant coursework — pill tags */}
