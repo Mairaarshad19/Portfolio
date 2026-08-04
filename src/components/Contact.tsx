@@ -26,7 +26,7 @@ export default function Contact() {
     const form = e.currentTarget;
     const formData = new FormData(form);
 
-    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
     if (!accessKey) {
       setStatus("error");
       return;
@@ -47,6 +47,7 @@ export default function Contact() {
           email: formData.get("email"),
           subject: formData.get("subject"),
           message: formData.get("message"),
+          botcheck: formData.get("botcheck"),
         }),
       });
 
@@ -107,7 +108,19 @@ export default function Contact() {
 
           {/* Right column — contact form */}
           <div>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="relative space-y-6">
+              {/* Honeypot — invisible to real users, catches bots */}
+              <div className="absolute -left-[9999px]" aria-hidden="true">
+                <label htmlFor="botcheck">Don't fill this out</label>
+                <input
+                  type="text"
+                  id="botcheck"
+                  name="botcheck"
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+              </div>
+
               {/* Name */}
               <div>
                 <label
@@ -193,12 +206,13 @@ export default function Contact() {
               {/* Status message */}
               {status === "success" && (
                 <p className="text-sm font-medium text-green-600">
-                  Thanks for reaching out! I'll get back to you soon.
+                  Message sent &mdash; I'll get back to you soon.
                 </p>
               )}
               {status === "error" && (
                 <p className="text-sm font-medium text-red-600">
-                  Something went wrong. Please try again or email me directly.
+                  Something went wrong. Please try emailing me directly at
+                  mairaarshad019@gmail.com.
                 </p>
               )}
             </form>
