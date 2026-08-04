@@ -1,11 +1,11 @@
 "use client";
 
-import { Award, GraduationCap } from "lucide-react";
+import { GraduationCap } from "lucide-react";
 import { educationContent } from "@/data/portfolio-content";
 import { useScrollReveal } from "@/lib/useScrollReveal";
 
 export default function Education() {
-  const { degree, institution, year, coursework, honors, certifications } =
+  const { degree, institution, year, coursework, certifications } =
     educationContent;
   const { ref, revealed } = useScrollReveal();
 
@@ -23,10 +23,10 @@ export default function Education() {
           {/* ── LEFT COLUMN — Education ── */}
           <div className="card-lift bg-bg-elevated border border-border rounded-xl p-6 sm:p-8 shadow-sm h-full">
             {/* Degree row */}
-            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-8">
-              <div className="flex items-start gap-3.5">
-                <span className="w-11 h-11 shrink-0 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center">
-                  <GraduationCap size={22} className="text-accent" />
+            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-10">
+              <div className="flex items-start gap-4">
+                <span className="w-12 h-12 shrink-0 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center">
+                  <GraduationCap size={24} className="text-accent" />
                 </span>
                 <div>
                   <h3 className="text-lg font-display font-semibold text-fg leading-snug">
@@ -35,46 +35,26 @@ export default function Education() {
                   <p className="text-sm text-fg-muted mt-1">{institution}</p>
                 </div>
               </div>
-              <span className="text-xs font-medium text-accent whitespace-nowrap">
+              <span className="inline-flex items-center px-3 py-1.5 text-xs font-medium text-accent bg-accent-subtle border border-accent/20 rounded-full whitespace-nowrap">
                 {year}
               </span>
             </div>
 
             {/* Relevant coursework — pill tags */}
-            <div className="mb-8">
-              <h4 className="text-xs font-display font-semibold text-fg-dim uppercase tracking-wider mb-4">
+            <div>
+              <h4 className="text-xs font-display font-semibold text-fg-dim uppercase tracking-wider mb-5">
                 Relevant Coursework
               </h4>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2.5">
                 {coursework.map((course) => (
                   <span
                     key={course}
-                    className="px-3 py-1.5 text-xs font-medium text-fg-muted bg-bg-secondary border border-border rounded-full"
+                    className="px-3.5 py-2 text-xs font-medium text-fg-muted bg-bg-secondary border border-border rounded-full"
                   >
                     {course}
                   </span>
                 ))}
               </div>
-            </div>
-
-            {/* Honors — highlighted lines with award icons */}
-            <div className="pt-6 border-t border-border space-y-4">
-              <h4 className="text-xs font-display font-semibold text-fg-dim uppercase tracking-wider">
-                Honors & Awards
-              </h4>
-              {honors.map((honor) => (
-                <div
-                  key={honor}
-                  className="flex items-start gap-3 bg-accent-subtle border border-accent/20 rounded-lg px-4 py-3"
-                >
-                  <span className="w-8 h-8 shrink-0 rounded-md bg-accent/10 border border-accent/20 flex items-center justify-center">
-                    <Award size={16} className="text-accent" />
-                  </span>
-                  <p className="text-sm font-medium text-fg leading-snug pt-1">
-                    {honor}
-                  </p>
-                </div>
-              ))}
             </div>
           </div>
 
@@ -90,7 +70,7 @@ export default function Education() {
                   className="inline-flex items-center gap-3.5 bg-accent-subtle border border-accent/20 rounded-lg px-4 py-3"
                 >
                   <span className="w-9 h-9 shrink-0 rounded-md bg-accent/10 border border-accent/20 flex items-center justify-center">
-                    <Award size={18} className="text-accent" />
+                    <GraduationCap size={18} className="text-accent" />
                   </span>
                   <div className="min-w-0">
                     <p className="text-sm font-semibold text-fg leading-snug">
