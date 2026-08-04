@@ -1,3 +1,8 @@
+export interface Certification {
+  name: string;
+  issuer: string;
+}
+
 export const educationContent = {
   degree: "BS Computer Science",
   institution: "UET Lahore",
@@ -13,6 +18,11 @@ export const educationContent = {
     "Computer Networks",
   ],
   honors: "Honhaar Scholarship (fully funded)",
+  certifications: [
+    { name: "AI Fluency Framework & Foundations", issuer: "Anthropic" },
+    { name: "SQL (Basic & Intermediate)", issuer: "HackerRank" },
+    { name: "AI & Data Science for Beginners", issuer: "Honhaar Jawan" },
+  ],
 };
 
 export const aboutContent = {
@@ -26,11 +36,6 @@ export const aboutContent = {
     "Startup Lead Intern at UET Lahore",
     "Backend Engineering at FlyRank",
     "Live Client Project Shipped",
-  ],
-  certifications: [
-    "AI Fluency Framework & Foundations by Anthropic",
-    "SQL (Basic & Intermediate) by HackerRank",
-    "AI & Data Science by Honhaar Jawan",
   ],
 };
 
