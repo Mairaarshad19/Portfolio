@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { Send } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
@@ -10,10 +11,55 @@ export default function Contact() {
   const { socials } = heroContent;
   const { ref, revealed } = useScrollReveal();
 
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">(
+    "idle"
+  );
+
   const socialIcons: Record<string, React.ReactNode> = {
     GitHub: <FaGithub size={20} />,
     LinkedIn: <FaLinkedin size={20} />,
     Email: <MdEmail size={20} />,
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+    if (!accessKey) {
+      setStatus("error");
+      return;
+    }
+
+    setStatus("sending");
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          name: formData.get("name"),
+          email: formData.get("email"),
+          subject: formData.get("subject"),
+          message: formData.get("message"),
+        }),
+      });
+
+      const data = await res.json();
+      if (data.success) {
+        setStatus("success");
+        form.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -61,7 +107,7 @@ export default function Contact() {
 
           {/* Right column — contact form */}
           <div>
-            <form onSubmit={(e) => e.preventDefault()} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               {/* Name */}
               <div>
                 <label
@@ -74,6 +120,7 @@ export default function Contact() {
                   type="text"
                   id="name"
                   name="name"
+                  required
                   placeholder="Your name"
                   className="w-full px-4 py-3 bg-bg-elevated border border-border rounded-lg text-fg text-sm placeholder:text-fg-dim/50 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/30 transition-colors shadow-sm"
                 />
@@ -91,29 +138,28 @@ export default function Contact() {
                   type="email"
                   id="email"
                   name="email"
+                  required
                   placeholder="your@email.com"
                   className="w-full px-4 py-3 bg-bg-elevated border border-border rounded-lg text-fg text-sm placeholder:text-fg-dim/50 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/30 transition-colors shadow-sm"
                 />
               </div>
 
-              {/* Topic dropdown */}
+              {/* Subject */}
               <div>
                 <label
-                  htmlFor="topic"
+                  htmlFor="subject"
                   className="block text-sm font-medium text-fg-muted mb-2 tracking-wide"
                 >
-                  What are you reaching out about?
+                  Subject
                 </label>
-                <select
-                  id="topic"
-                  name="topic"
-                  className="w-full px-4 py-3 bg-bg-elevated border border-border rounded-lg text-fg text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/30 transition-colors shadow-sm"
-                >
-                  <option value="">Select a topic...</option>
-                  <option value="job">Job Opportunity</option>
-                  <option value="freelance">Freelance Project</option>
-                  <option value="general">General Inquiry</option>
-                </select>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  required
+                  placeholder="e.g. Backend Developer Role at [Company]"
+                  className="w-full px-4 py-3 bg-bg-elevated border border-border rounded-lg text-fg text-sm placeholder:text-fg-dim/50 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/30 transition-colors shadow-sm"
+                />
               </div>
 
               {/* Message */}
@@ -128,6 +174,7 @@ export default function Contact() {
                   id="message"
                   name="message"
                   rows={5}
+                  required
                   placeholder="Your message..."
                   className="w-full px-4 py-3 bg-bg-elevated border border-border rounded-lg text-fg text-sm placeholder:text-fg-dim/50 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/30 transition-colors resize-y shadow-sm"
                 />
@@ -136,11 +183,24 @@ export default function Contact() {
               {/* Submit button */}
               <button
                 type="submit"
-                className="btn-lift inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-white font-semibold text-sm transition-all hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/20 active:scale-[0.97]"
+                disabled={status === "sending"}
+                className="btn-lift inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-white font-semibold text-sm transition-all hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/20 active:scale-[0.97] disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                Send Message
+                {status === "sending" ? "Sending..." : "Send Message"}
                 <Send size={16} />
               </button>
+
+              {/* Status message */}
+              {status === "success" && (
+                <p className="text-sm font-medium text-green-600">
+                  Thanks for reaching out! I'll get back to you soon.
+                </p>
+              )}
+              {status === "error" && (
+                <p className="text-sm font-medium text-red-600">
+                  Something went wrong. Please try again or email me directly.
+                </p>
+              )}
             </form>
           </div>
         </div>

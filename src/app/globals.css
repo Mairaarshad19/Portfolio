@@ -225,6 +225,11 @@ body::before {
   transform: translateY(0);
 }
 
+/* ── Sticky nav offset — sections scroll to clear the navbar ── */
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
 /* ── Utility classes ────────────────────────────────────────── */
 .container-content {
   width: 100%;

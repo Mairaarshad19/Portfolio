@@ -20,9 +20,9 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 const siteUrl = "https://mairaarshad.dev";
-const siteName = "Maira Arshad, Software Engineer";
+const siteName = "Maira Arshad | Software Engineer";
 const description =
-  "Backend-leaning full-stack developer building with Next.js, Express, and PostgreSQL. BS CS at UET Lahore.";
+  "Backend-leaning full-stack developer building production systems.";
 
 export const metadata: Metadata = {
   title: {
@@ -31,6 +31,10 @@ export const metadata: Metadata = {
   },
   description,
   metadataBase: new URL(siteUrl),
+  icons: {
+    icon: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -71,6 +75,7 @@ export default function RootLayout({
     >
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/favicon.svg" />
       </head>
       <body className="min-h-full flex flex-col font-sans">
         <Navbar />
