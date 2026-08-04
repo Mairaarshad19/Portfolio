@@ -8,38 +8,13 @@ import { useRotatingRole } from "@/lib/useRotatingRole";
 import { useEffect, useRef, useState } from "react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import type { IconType } from "react-icons";
+import MagneticButton from "@/components/MagneticButton";
 
 const socialIcons: Record<string, IconType> = {
   GitHub: FaGithub,
   LinkedIn: FaLinkedin,
   Email: FaEnvelope,
 };
-
-const achievementBadges: {
-  value: string;
-  label: string;
-  position: string;
-  delay: string;
-}[] = [
-  {
-    value: "4",
-    label: "Internships",
-    position: "-top-5 -left-6",
-    delay: "float-badge-delay-1",
-  },
-  {
-    value: "5",
-    label: "Projects",
-    position: "-top-5 -right-8",
-    delay: "float-badge-delay-2",
-  },
-  {
-    value: "Backend",
-    label: "Focus",
-    position: "-bottom-5 -left-8",
-    delay: "float-badge-delay-3",
-  },
-];
 
 /**
  * Renders text with `**bold**` markers as <strong> elements
@@ -59,6 +34,27 @@ function renderBoldText(text: string) {
   });
 }
 
+function useLahoreTime() {
+  const [time, setTime] = useState("");
+
+  useEffect(() => {
+    const update = () => {
+      const formatted = new Intl.DateTimeFormat("en-US", {
+        hour: "numeric",
+        minute: "2-digit",
+        timeZone: "Asia/Karachi",
+      }).format(new Date());
+      setTime(`${formatted} · Lahore`);
+    };
+
+    update();
+    const interval = setInterval(update, 60000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return time;
+}
+
 export default function Hero() {
   const { name, roles, role, buttons, socials } = heroContent;
   const { ref, revealed } = useScrollReveal<HTMLDivElement>({ threshold: 0.05 });
@@ -66,6 +62,7 @@ export default function Hero() {
   const spotlightRef = useRef<HTMLDivElement>(null);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
   const { role: currentRole, visible: roleVisible } = useRotatingRole(roles);
+  const lahoreTime = useLahoreTime();
 
   useEffect(() => {
     // Detect touch device on mount
@@ -159,19 +156,19 @@ export default function Hero() {
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
               {buttons.map((btn) =>
                 btn.variant === "primary" ? (
-                  <a
+                  <MagneticButton
                     key={btn.label}
                     href={btn.href}
                     target="_blank"
                     rel="noopener noreferrer"
                     download
-                    className="btn-lift inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-white font-semibold text-sm transition-all hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/20 active:scale-[0.97]"
+                    className="btn-lift px-6 py-3 rounded-lg bg-accent text-white font-semibold text-sm gap-2 hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/20 active:scale-[0.97]"
                   >
                     <Download size={16} />
                     {btn.label}
-                  </a>
+                  </MagneticButton>
                 ) : (
-                  <a
+                  <MagneticButton
                     key={btn.label}
                     href={btn.href}
                     onClick={(e) => {
@@ -179,10 +176,10 @@ export default function Hero() {
                       const el = document.querySelector(btn.href);
                       if (el) el.scrollIntoView({ behavior: "smooth" });
                     }}
-                    className="btn-lift inline-flex items-center gap-2 px-6 py-3 rounded-lg border-2 border-[#0047FF] text-[#0047FF] bg-transparent font-semibold text-sm transition-all hover:bg-[#0047FF] hover:text-white active:scale-[0.97]"
+                    className="btn-lift px-6 py-3 rounded-lg border-2 border-[#0047FF] text-[#0047FF] bg-transparent font-semibold text-sm gap-2 hover:bg-[#0047FF] hover:text-white active:scale-[0.97]"
                   >
                     {btn.label}
-                  </a>
+                  </MagneticButton>
                 )
               )}
             </div>
@@ -207,7 +204,7 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* ── Right column — photo with achievement badges ── */}
+          {/* ── Right column — photo with floating badges ── */}
           <div className="order-1 lg:order-2 flex justify-center">
             <div className="relative">
               {/* Soft gradient blur shape behind photo */}
@@ -225,21 +222,22 @@ export default function Hero() {
                 />
               </div>
 
-              {/* Floating achievement badges — hidden on small screens */}
+              {/* Floating badges — hidden on small screens */}
               <div className="hidden sm:block">
-                {achievementBadges.map((badge) => (
-                  <div
-                    key={badge.label}
-                    className={`float-badge ${badge.delay} absolute ${badge.position} flex items-center gap-2 px-3.5 py-2 bg-white rounded-full border border-border shadow-md`}
-                  >
-                    <span className="text-base font-bold text-accent leading-none">
-                      {badge.value}
-                    </span>
-                    <span className="text-xs font-medium text-fg-muted leading-none">
-                      {badge.label}
-                    </span>
-                  </div>
-                ))}
+                {/* Available for Opportunities */}
+                <div className="float-badge float-badge-delay-1 absolute -top-5 -left-6 flex items-center gap-2 px-3.5 py-2 bg-white rounded-full border border-border shadow-md">
+                  <span className="pulse-dot w-2.5 h-2.5 rounded-full bg-green-500" />
+                  <span className="text-xs font-medium text-fg-muted leading-none">
+                    Available for Opportunities
+                  </span>
+                </div>
+
+                {/* Live local time */}
+                <div className="float-badge float-badge-delay-2 absolute -bottom-5 -left-8 flex items-center gap-2 px-3.5 py-2 bg-white rounded-full border border-border shadow-md">
+                  <span className="text-xs font-medium text-fg-muted leading-none">
+                    {lahoreTime}
+                  </span>
+                </div>
               </div>
             </div>
           </div>

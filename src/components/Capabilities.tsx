@@ -3,6 +3,8 @@
 import { Globe, Server, Database, ShieldCheck } from "lucide-react";
 import { servicesContent } from "@/data/portfolio-content";
 import { useScrollReveal } from "@/lib/useScrollReveal";
+import SectionHeading from "@/components/SectionHeading";
+import MagneticButton from "@/components/MagneticButton";
 
 const iconMap: Record<string, React.ReactNode> = {
   Globe: <Globe size={24} />,
@@ -60,9 +62,7 @@ export default function Capabilities() {
         ref={ref}
         className={`container-content scroll-reveal ${revealed ? "revealed" : ""}`}
       >
-        <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-fg mb-12">
-          Services
-        </h2>
+        <SectionHeading>Services</SectionHeading>
 
         {/* Service cards — single cohesive grid */}
         <div className="stagger-container grid grid-cols-1 sm:grid-cols-2 gap-6 items-stretch">
@@ -79,13 +79,13 @@ export default function Capabilities() {
 
         {/* CTA */}
         <div className="flex justify-center mt-14">
-          <a
+          <MagneticButton
             href="#contact"
             onClick={handleCtaClick}
-            className="btn-lift inline-flex items-center justify-center px-8 py-3.5 rounded-lg bg-accent text-white font-semibold text-sm transition-all hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/20 active:scale-[0.97]"
+            className="btn-lift px-8 py-3.5 rounded-lg bg-accent text-white font-semibold text-sm hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/20 active:scale-[0.97]"
           >
             Let's Talk About Your Project
-          </a>
+          </MagneticButton>
         </div>
       </div>
     </section>

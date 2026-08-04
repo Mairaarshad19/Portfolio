@@ -5,6 +5,7 @@ import Image from "next/image";
 import { projectsContent } from "@/data/portfolio-content";
 import { ExternalLink, GitBranch, Code } from "lucide-react";
 import { useScrollReveal } from "@/lib/useScrollReveal";
+import SectionHeading from "@/components/SectionHeading";
 
 function LandscapeImage({ screenshot, name }: { screenshot: string; name: string }) {
   const [error, setError] = useState(false);
@@ -132,9 +133,7 @@ export default function Projects() {
         ref={ref}
         className={`container-content scroll-reveal ${revealed ? "revealed" : ""}`}
       >
-        <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-fg mb-12">
-          Projects
-        </h2>
+        <SectionHeading>Projects</SectionHeading>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projectsContent.map((project) => (

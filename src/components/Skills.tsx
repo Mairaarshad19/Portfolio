@@ -2,6 +2,7 @@
 
 import { skillCategories } from "@/data/portfolio-content";
 import { useScrollReveal } from "@/lib/useScrollReveal";
+import SectionHeading from "@/components/SectionHeading";
 import {
   SiTypescript,
   SiJavascript,
@@ -106,9 +107,7 @@ export default function Skills() {
         ref={ref}
         className={`container-content scroll-reveal ${revealed ? "revealed" : ""}`}
       >
-        <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-fg mb-6">
-          Skills
-        </h2>
+        <SectionHeading>Skills</SectionHeading>
 
         {/* Intro paragraph */}
         <p className="text-sm sm:text-base text-fg-muted leading-relaxed max-w-2xl mb-12">

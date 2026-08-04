@@ -2,6 +2,7 @@
 
 import { experienceContent } from "@/data/portfolio-content";
 import { useScrollReveal } from "@/lib/useScrollReveal";
+import SectionHeading from "@/components/SectionHeading";
 
 /**
  * Renders text with `**bold**` markers as <strong> elements
@@ -76,9 +77,7 @@ export default function Experience() {
         ref={ref}
         className={`container-content scroll-reveal ${revealed ? "revealed" : ""}`}
       >
-        <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-fg mb-12">
-          Experience
-        </h2>
+        <SectionHeading>Experience</SectionHeading>
 
         <div className="relative">
           {/* Vertical timeline line */}

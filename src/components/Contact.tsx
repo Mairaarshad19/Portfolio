@@ -6,6 +6,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { heroContent } from "@/data/portfolio-content";
 import { useScrollReveal } from "@/lib/useScrollReveal";
+import SectionHeading from "@/components/SectionHeading";
 
 export default function Contact() {
   const { socials } = heroContent;
@@ -69,9 +70,7 @@ export default function Contact() {
         ref={ref}
         className={`container-content scroll-reveal ${revealed ? "revealed" : ""}`}
       >
-        <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-fg mb-12">
-          Contact
-        </h2>
+        <SectionHeading>Contact</SectionHeading>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Left column — intro + links */}

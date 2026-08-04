@@ -2,6 +2,7 @@
 
 import { aboutContent } from "@/data/portfolio-content";
 import { useScrollReveal } from "@/lib/useScrollReveal";
+import SectionHeading from "@/components/SectionHeading";
 
 export default function About() {
   const { paragraph, journeyMilestones } = aboutContent;
@@ -13,9 +14,7 @@ export default function About() {
         ref={ref}
         className={`container-content scroll-reveal ${revealed ? "revealed" : ""}`}
       >
-        <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-fg mb-8">
-          About Me
-        </h2>
+        <SectionHeading>About Me</SectionHeading>
 
         {/* Bio — single full-width column */}
         <div className="space-y-4 text-sm sm:text-base text-fg-muted leading-relaxed max-w-3xl">

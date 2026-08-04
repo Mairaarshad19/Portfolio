@@ -3,6 +3,7 @@
 import { GraduationCap } from "lucide-react";
 import { educationContent } from "@/data/portfolio-content";
 import { useScrollReveal } from "@/lib/useScrollReveal";
+import SectionHeading from "@/components/SectionHeading";
 
 export default function Education() {
   const { degree, institution, coursework, certifications } = educationContent;
@@ -14,9 +15,7 @@ export default function Education() {
         ref={ref}
         className={`container-content scroll-reveal ${revealed ? "revealed" : ""}`}
       >
-        <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-fg mb-8">
-          Education & Certifications
-        </h2>
+        <SectionHeading>Education & Certifications</SectionHeading>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
           {/* ── LEFT COLUMN — Education ── */}

@@ -225,6 +225,22 @@ body::before {
   transform: translateY(0);
 }
 
+/* ── Availability pulse dot — gentle opacity/scale pulse ────── */
+@keyframes pulse-dot {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+}
+
+.pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
 /* ── Sticky nav offset — sections scroll to clear the navbar ── */
 section[id] {
   scroll-margin-top: 5rem;
