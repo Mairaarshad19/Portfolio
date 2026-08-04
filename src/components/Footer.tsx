@@ -31,7 +31,7 @@ export default function Footer() {
         className={`container-content flex flex-col items-center gap-4 py-10 sm:flex-row sm:justify-between scroll-reveal ${revealed ? "revealed" : ""}`}
       >
         <p className="text-sm text-fg-dim">
-          &copy; {new Date().getFullYear()} Maira Arshad. All rights reserved.
+          &copy; 2026 Maira Arshad. Built with Next.js and Tailwind CSS.
         </p>
 
         <div className="flex items-center gap-5">

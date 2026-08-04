@@ -71,7 +71,7 @@ export const experienceContent: Experience[] = [
   {
     role: "Startup Project Lead Intern",
     company: "Ustadam (AI-based EdTech startup)",
-    workMode: "Hybrid — UET Lahore",
+    workMode: "Hybrid, UET Lahore",
     dates: "June 2025 – August 2025",
     bullets: [
       "Planned the MVP roadmap for an **AI-based EdTech platform** across backend, frontend, database, and AI integration phases",
@@ -162,18 +162,18 @@ export interface ServiceOffer {
   icon: string;
 }
 
-/** Client-facing services — each combines the deliverable with an honest reason to trust it. */
+/** Client-facing services. Each combines the deliverable with an honest reason to trust it. */
 export const servicesContent: ServiceOffer[] = [
   {
     title: "Custom Websites & Web Apps",
     description:
-      "Fast, responsive websites and web apps built with modern tools like Next.js and React — clean, scalable code that looks great and holds up as your business grows.",
+      "Fast, responsive websites and web apps built with modern tools like Next.js and React. Clean, scalable code that looks great and holds up as your business grows.",
     icon: "Globe",
   },
   {
     title: "Backend & API Development",
     description:
-      "Reliable backend systems and APIs your product runs on, built with clean, layered architecture so they're easy to extend later — not just glued together to work once.",
+      "Reliable backend systems and APIs your product runs on, built with clean, layered architecture so they're easy to extend later, not just glued together to work once.",
     icon: "Server",
   },
   {
@@ -185,7 +185,7 @@ export const servicesContent: ServiceOffer[] = [
   {
     title: "Secure, Production-Ready Code",
     description:
-      "Authentication, environment variables, and credentials handled correctly from day one — secure, tested code built to run reliably in production, not just in development.",
+      "Authentication, environment variables, and credentials handled correctly from day one. Secure, tested code built to run reliably in production, not just in development.",
     icon: "ShieldCheck",
   },
 ];

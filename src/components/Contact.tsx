@@ -1,6 +1,8 @@
 "use client";
 
-import { GitBranch, Link as LinkIcon, Mail, Send } from "lucide-react";
+import { Send } from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 import { heroContent } from "@/data/portfolio-content";
 import { useScrollReveal } from "@/lib/useScrollReveal";
 
@@ -9,9 +11,9 @@ export default function Contact() {
   const { ref, revealed } = useScrollReveal();
 
   const socialIcons: Record<string, React.ReactNode> = {
-    GitHub: <GitBranch size={20} />,
-    LinkedIn: <LinkIcon size={20} />,
-    Email: <Mail size={20} />,
+    GitHub: <FaGithub size={20} />,
+    LinkedIn: <FaLinkedin size={20} />,
+    Email: <MdEmail size={20} />,
   };
 
   return (
@@ -29,24 +31,27 @@ export default function Contact() {
           <div className="flex flex-col justify-between">
             <div>
               <p className="text-lg text-fg-muted leading-relaxed">
-                Open to backend, full-stack, and AI-adjacent roles &mdash; remote or Lahore-based.
+                Open to backend, full-stack, and AI-adjacent roles. Remote or
+                Lahore-based.
               </p>
 
-              {/* Direct contact links */}
-              <div className="mt-10 space-y-4">
+              {/* Direct contact links — stacked vertically */}
+              <div className="mt-10 space-y-3">
                 {socials.map((s) => (
                   <a
                     key={s.label}
                     href={s.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="icon-lift inline-flex items-center gap-3 text-fg-dim hover:text-accent group"
+                    className="group flex items-center gap-4 rounded-lg px-4 py-3 bg-bg-elevated border border-border hover:border-accent/30 hover:bg-accent-subtle transition-all duration-200"
                   >
-                    <span className="text-fg-dim group-hover:text-accent transition-colors">
+                    <span className="text-[#0047FF] transition-transform duration-200 group-hover:scale-110">
                       {socialIcons[s.label]}
                     </span>
-                    <span className="text-sm">
-                      {s.label === "Email" ? s.href.replace("mailto:", "") : s.href.replace("https://", "")}
+                    <span className="text-sm font-medium text-fg-muted group-hover:text-fg transition-colors">
+                      {s.label === "Email"
+                        ? s.href.replace("mailto:", "")
+                        : s.href.replace("https://", "")}
                     </span>
                   </a>
                 ))}
@@ -56,10 +61,7 @@ export default function Contact() {
 
           {/* Right column — contact form */}
           <div>
-            <form
-              onSubmit={(e) => e.preventDefault()}
-              className="space-y-6"
-            >
+            <form onSubmit={(e) => e.preventDefault()} className="space-y-6">
               {/* Name */}
               <div>
                 <label
@@ -92,6 +94,26 @@ export default function Contact() {
                   placeholder="your@email.com"
                   className="w-full px-4 py-3 bg-bg-elevated border border-border rounded-lg text-fg text-sm placeholder:text-fg-dim/50 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/30 transition-colors shadow-sm"
                 />
+              </div>
+
+              {/* Topic dropdown */}
+              <div>
+                <label
+                  htmlFor="topic"
+                  className="block text-sm font-medium text-fg-muted mb-2 tracking-wide"
+                >
+                  What are you reaching out about?
+                </label>
+                <select
+                  id="topic"
+                  name="topic"
+                  className="w-full px-4 py-3 bg-bg-elevated border border-border rounded-lg text-fg text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/30 transition-colors shadow-sm"
+                >
+                  <option value="">Select a topic...</option>
+                  <option value="job">Job Opportunity</option>
+                  <option value="freelance">Freelance Project</option>
+                  <option value="general">General Inquiry</option>
+                </select>
               </div>
 
               {/* Message */}
