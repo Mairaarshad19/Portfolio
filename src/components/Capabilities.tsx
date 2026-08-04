@@ -23,15 +23,23 @@ function ServiceCard({
   const { ref, revealed } = useScrollReveal();
 
   return (
-    <div ref={ref} className={`scroll-reveal ${revealed ? "revealed" : ""}`}>
-      <div className="card-lift h-full min-h-[220px] flex flex-col bg-bg-elevated border border-border rounded-xl p-6 sm:p-7 hover:border-accent/30 shadow-sm">
-        <div className="w-10 h-10 rounded-lg bg-accent-subtle flex items-center justify-center text-accent mb-5">
-          {iconMap[icon]}
+    <div
+      ref={ref}
+      className={`scroll-reveal h-full ${revealed ? "revealed" : ""}`}
+    >
+      <div className="card-lift h-full flex flex-col bg-white border-2 border-accent/30 rounded-2xl p-6 sm:p-7 shadow-sm hover:border-accent/50 hover:shadow-md transition-all duration-200">
+        {/* Header row — icon badge + title on the same line */}
+        <div className="flex items-center gap-3.5 mb-4 sm:mb-5">
+          <span className="w-11 h-11 shrink-0 rounded-lg bg-accent-subtle flex items-center justify-center text-accent">
+            {iconMap[icon]}
+          </span>
+          <h3 className="text-base sm:text-lg font-display font-semibold text-fg leading-snug">
+            {title}
+          </h3>
         </div>
-        <h3 className="text-lg font-display font-semibold text-fg mb-3">
-          {title}
-        </h3>
-        <p className="text-sm text-fg-muted leading-relaxed">{description}</p>
+        <p className="text-sm text-fg-muted leading-relaxed text-justify">
+          {description}
+        </p>
       </div>
     </div>
   );
