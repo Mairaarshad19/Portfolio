@@ -156,36 +156,37 @@ export const projectsContent: Project[] = [
   },
 ];
 
-export interface Capability {
+export interface ServiceOffer {
   title: string;
   description: string;
   icon: string;
 }
 
-export const capabilitiesContent: Capability[] = [
+/** Client-facing services — each combines the deliverable with an honest reason to trust it. */
+export const servicesContent: ServiceOffer[] = [
   {
-    title: "Backend API Development",
+    title: "Custom Websites & Web Apps",
     description:
-      "Designing and building RESTful APIs with Express.js and FastAPI, from endpoint structuring and payload design to authentication and error handling. Applied this at FlyRank building structured-output pipelines and RAG systems.",
-    icon: "Server",
+      "Fast, responsive websites and web apps built with modern tools like Next.js and React. Allied Shipping Agency Website has been live and actively maintained since launch — that's the standard every build follows.",
+    icon: "Globe",
   },
   {
-    title: "Full-Stack Web Applications",
+    title: "Backend & API Development",
     description:
-      "Building complete web applications end-to-end with Next.js, TypeScript, and PostgreSQL. Built and maintained a live production site for a freight logistics client, from UI to deployment.",
-    icon: "Globe",
+      "Reliable backend systems and APIs your product runs on, built with clean, layered architecture so they're easy to extend later — not just glued together to work once.",
+    icon: "Server",
   },
   {
     title: "Database Design & Architecture",
     description:
-      "Designing relational schemas and working across relational, graph, and vector databases (PostgreSQL, Neo4j, Qdrant), applied in QueryMind's multi-paradigm CRM platform.",
+      "Well-structured databases that scale with your data, designed properly from the start instead of needing a rewrite six months in.",
     icon: "Database",
   },
   {
-    title: "AI-Integrated Workflows",
+    title: "Secure, Production-Ready Code",
     description:
-      "Building structured-output pipelines, RAG systems, and evaluation rubrics for AI-assisted workflows, applied during my internship at FlyRank.",
-    icon: "Cpu",
+      "Authentication, environment variables, and credentials handled correctly from day one — the same practices used to ship and maintain a live client site.",
+    icon: "ShieldCheck",
   },
 ];
 
