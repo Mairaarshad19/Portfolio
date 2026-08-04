@@ -45,7 +45,7 @@ export default function Education() {
               <h4 className="text-xs font-display font-semibold text-fg-dim uppercase tracking-wider mb-5">
                 Relevant Coursework
               </h4>
-              <div className="flex flex-wrap gap-2.5">
+              <div className="flex flex-wrap" style={{ gap: "10px" }}>
                 {coursework.map((course) => (
                   <span
                     key={course}
