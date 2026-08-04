@@ -167,7 +167,7 @@ export const servicesContent: ServiceOffer[] = [
   {
     title: "Custom Websites & Web Apps",
     description:
-      "Fast, responsive websites and web apps built with modern tools like Next.js and React. Allied Shipping Agency Website has been live and actively maintained since launch — that's the standard every build follows.",
+      "Fast, responsive websites and web apps built with modern tools like Next.js and React — from a business site to a full product.",
     icon: "Globe",
   },
   {

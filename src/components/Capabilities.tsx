@@ -24,7 +24,7 @@ function ServiceCard({
 
   return (
     <div ref={ref} className={`scroll-reveal ${revealed ? "revealed" : ""}`}>
-      <div className="card-lift h-full flex flex-col bg-bg-elevated border border-border rounded-xl p-6 sm:p-7 hover:border-accent/30 shadow-sm">
+      <div className="card-lift h-full min-h-[220px] flex flex-col bg-bg-elevated border border-border rounded-xl p-6 sm:p-7 hover:border-accent/30 shadow-sm">
         <div className="w-10 h-10 rounded-lg bg-accent-subtle flex items-center justify-center text-accent mb-5">
           {iconMap[icon]}
         </div>
@@ -57,7 +57,7 @@ export default function Capabilities() {
         </h2>
 
         {/* Service cards — single cohesive grid */}
-        <div className="stagger-container grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div className="stagger-container grid grid-cols-1 sm:grid-cols-2 gap-6 items-stretch">
           {servicesContent.map((service) => (
             <div key={service.title} className="stagger-item">
               <ServiceCard
