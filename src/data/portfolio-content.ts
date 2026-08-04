@@ -167,7 +167,7 @@ export const servicesContent: ServiceOffer[] = [
   {
     title: "Custom Websites & Web Apps",
     description:
-      "Fast, responsive websites and web apps built with modern tools like Next.js and React — from a business site to a full product.",
+      "Fast, responsive websites and web apps built with modern tools like Next.js and React — clean, scalable code that looks great and holds up as your business grows.",
     icon: "Globe",
   },
   {
@@ -179,13 +179,13 @@ export const servicesContent: ServiceOffer[] = [
   {
     title: "Database Design & Architecture",
     description:
-      "Well-structured databases that scale with your data, designed properly from the start instead of needing a rewrite six months in.",
+      "Well-structured databases that scale with your data, designed properly from day one so performance and reliability hold up as your product grows, not falls apart.",
     icon: "Database",
   },
   {
     title: "Secure, Production-Ready Code",
     description:
-      "Authentication, environment variables, and credentials handled correctly from day one — the same practices used to ship and maintain a live client site.",
+      "Authentication, environment variables, and credentials handled correctly from day one — secure, tested code built to run reliably in production, not just in development.",
     icon: "ShieldCheck",
   },
 ];
