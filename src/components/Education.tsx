@@ -1,6 +1,6 @@
 "use client";
 
-import { Award } from "lucide-react";
+import { Award, GraduationCap } from "lucide-react";
 import { educationContent } from "@/data/portfolio-content";
 import { useScrollReveal } from "@/lib/useScrollReveal";
 
@@ -23,28 +23,33 @@ export default function Education() {
           {/* ── LEFT COLUMN — Education ── */}
           <div className="card-lift bg-bg-elevated border border-border rounded-xl p-6 sm:p-8 shadow-sm h-full">
             {/* Degree row */}
-            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-6">
-              <div>
-                <h3 className="text-lg font-display font-semibold text-fg">
-                  {degree}
-                </h3>
-                <p className="text-sm text-fg-muted mt-0.5">{institution}</p>
+            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-8">
+              <div className="flex items-start gap-3.5">
+                <span className="w-11 h-11 shrink-0 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center">
+                  <GraduationCap size={22} className="text-accent" />
+                </span>
+                <div>
+                  <h3 className="text-lg font-display font-semibold text-fg leading-snug">
+                    {degree}
+                  </h3>
+                  <p className="text-sm text-fg-muted mt-1">{institution}</p>
+                </div>
               </div>
               <span className="text-xs font-medium text-accent whitespace-nowrap">
                 {year}
               </span>
             </div>
 
-            {/* Relevant coursework */}
-            <div className="mb-6">
-              <h4 className="text-xs font-display font-semibold text-fg-dim uppercase tracking-wider mb-3">
+            {/* Relevant coursework — pill tags */}
+            <div className="mb-8">
+              <h4 className="text-xs font-display font-semibold text-fg-dim uppercase tracking-wider mb-4">
                 Relevant Coursework
               </h4>
               <div className="flex flex-wrap gap-2">
                 {coursework.map((course) => (
                   <span
                     key={course}
-                    className="px-2.5 py-1 text-xs font-medium text-fg-muted bg-bg-secondary border border-border rounded-md"
+                    className="px-3 py-1.5 text-xs font-medium text-fg-muted bg-bg-secondary border border-border rounded-full"
                   >
                     {course}
                   </span>
@@ -52,12 +57,24 @@ export default function Education() {
               </div>
             </div>
 
-            {/* Honors */}
-            <div className="pt-4 border-t border-border">
-              <span className="inline-flex items-center gap-2 text-sm text-fg-muted">
-                <span className="text-accent text-base">✦</span>
-                {honors}
-              </span>
+            {/* Honors — highlighted lines with award icons */}
+            <div className="pt-6 border-t border-border space-y-4">
+              <h4 className="text-xs font-display font-semibold text-fg-dim uppercase tracking-wider">
+                Honors & Awards
+              </h4>
+              {honors.map((honor) => (
+                <div
+                  key={honor}
+                  className="flex items-start gap-3 bg-accent-subtle border border-accent/20 rounded-lg px-4 py-3"
+                >
+                  <span className="w-8 h-8 shrink-0 rounded-md bg-accent/10 border border-accent/20 flex items-center justify-center">
+                    <Award size={16} className="text-accent" />
+                  </span>
+                  <p className="text-sm font-medium text-fg leading-snug pt-1">
+                    {honor}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
 

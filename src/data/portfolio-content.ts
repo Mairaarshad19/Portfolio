@@ -17,7 +17,10 @@ export const educationContent = {
     "Information Security",
     "Computer Networks",
   ],
-  honors: "Honhaar Scholarship (fully funded)",
+  honors: [
+    "Honhaar Scholarship — Fully Funded",
+    "Punjab College Full Fee Concession — Awarded for highest marks in class",
+  ],
   certifications: [
     { name: "AI Fluency Framework & Foundations", issuer: "Anthropic" },
     { name: "SQL (Basic & Intermediate)", issuer: "HackerRank" },
