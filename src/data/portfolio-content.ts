@@ -193,22 +193,12 @@ export interface SkillCategory {
   skills: string[];
 }
 
-/** Skills with the deepest real project/internship depth — shown prominently. */
-export const coreStack: string[] = [
-  "TypeScript",
-  "Next.js",
-  "Express.js",
-  "PostgreSQL",
-  "React",
-  "Python",
-];
-
 /** Full skill breakdown, ordered by real-world usage (most-used first). */
 export const skillCategories: SkillCategory[] = [
   {
     id: "languages",
     label: "Languages",
-    skills: ["TypeScript", "Python", "JavaScript", "C++", "C#"],
+    skills: ["TypeScript", "JavaScript", "Python", "C++", "C#"],
   },
   {
     id: "frameworks",
@@ -220,25 +210,25 @@ export const skillCategories: SkillCategory[] = [
       "Node.js",
       "FastAPI",
       "Flask",
-      "Flutter",
       "Tailwind CSS",
+      "Flutter",
       ".NET Framework (Windows Forms)",
     ],
+  },
+  {
+    id: "databases",
+    label: "Databases",
+    skills: ["PostgreSQL", "MySQL", "Neo4j", "Qdrant"],
+  },
+  {
+    id: "tools",
+    label: "Tools & DevOps",
+    skills: ["Git/GitHub", "Docker", "Vercel"],
   },
   {
     id: "apis",
     label: "APIs & Integrations",
     skills: ["REST API", "Google Gemini API"],
-  },
-  {
-    id: "databases",
-    label: "Databases",
-    skills: ["PostgreSQL", "Qdrant", "Neo4j", "MySQL", "SQLite"],
-  },
-  {
-    id: "tools",
-    label: "Tools & DevOps",
-    skills: ["Git/GitHub", "Docker", "Vercel", "Visual Studio"],
   },
 ];
 
