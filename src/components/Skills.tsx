@@ -89,7 +89,7 @@ function SkillPill({ skill }: { skill: string }) {
   return (
     <div className="flex flex-col items-center justify-center gap-3 bg-bg-elevated border border-border rounded-xl p-5 shadow-sm hover:border-accent/40 hover:shadow-md transition-all duration-200">
       <div className="w-10 h-10 flex items-center justify-center">
-        <Icon size={28} color={brandColors[skill] ?? "#666"} />
+        <Icon size={28} color={brandColors[skill] ?? "#666"} aria-label={skill} />
       </div>
       <span className="text-xs font-medium text-fg-muted text-center leading-tight">
         {skill}

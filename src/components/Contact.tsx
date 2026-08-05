@@ -17,9 +17,9 @@ export default function Contact() {
   );
 
   const socialIcons: Record<string, React.ReactNode> = {
-    GitHub: <FaGithub size={20} />,
-    LinkedIn: <FaLinkedin size={20} />,
-    Email: <MdEmail size={20} />,
+    GitHub: <FaGithub size={20} aria-label="GitHub" />,
+    LinkedIn: <FaLinkedin size={20} aria-label="LinkedIn" />,
+    Email: <MdEmail size={20} aria-label="Email" />,
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {

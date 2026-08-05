@@ -19,10 +19,11 @@ const spaceGrotesk = Space_Grotesk({
   display: "swap",
 });
 
-const siteUrl = "https://mairaarshad.dev";
+const siteUrl = "https://portfolio-chi-ruddy-poj41hgdwn.vercel.app";
 const siteName = "Maira Arshad | Software Engineer";
 const description =
   "Backend-leaning full-stack developer building production systems.";
+const ogImage = `${siteUrl}/og-image.png`;
 
 export const metadata: Metadata = {
   title: {
@@ -44,7 +45,7 @@ export const metadata: Metadata = {
     description,
     images: [
       {
-        url: "/og.png",
+        url: ogImage,
         width: 1200,
         height: 630,
         alt: "Maira Arshad, Software Engineer",
@@ -55,7 +56,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteName,
     description,
-    images: ["/og.png"],
+    images: [ogImage],
   },
   robots: {
     index: true,

@@ -7,10 +7,10 @@ import SectionHeading from "@/components/SectionHeading";
 import MagneticButton from "@/components/MagneticButton";
 
 const iconMap: Record<string, React.ReactNode> = {
-  Globe: <Globe size={24} />,
-  Server: <Server size={24} />,
-  Database: <Database size={24} />,
-  ShieldCheck: <ShieldCheck size={24} />,
+  Globe: <Globe size={24} aria-label="Web Development" />,
+  Server: <Server size={24} aria-label="Backend & API Development" />,
+  Database: <Database size={24} aria-label="Database Design" />,
+  ShieldCheck: <ShieldCheck size={24} aria-label="Secure Production Code" />,
 };
 
 function ServiceCard({
