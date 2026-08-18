@@ -28,9 +28,6 @@ html.dark,
   --color-fg: #f3f4f6;
   --color-fg-muted: #9ca3af;
   --color-fg-dim: #6b7280;
-  --color-accent: #3b82f6;
-  --color-accent-hover: #60a5fa;
-  --color-accent-subtle: rgba(59, 130, 246, 0.1);
   --color-border: #1e293b;
   --color-border-light: #334155;
 }
