@@ -91,7 +91,7 @@ export default function Contact() {
                     rel="noopener noreferrer"
                     className="group flex items-center gap-4 rounded-lg px-4 py-3 bg-bg-elevated border border-border hover:border-accent/30 hover:bg-accent-subtle transition-all duration-200"
                   >
-                    <span className="text-[#0047FF] transition-transform duration-200 group-hover:scale-110">
+                    <span className="text-accent transition-transform duration-200 group-hover:scale-110">
                       {socialIcons[s.label]}
                     </span>
                     <span className="text-sm font-medium text-fg-muted group-hover:text-fg transition-colors">

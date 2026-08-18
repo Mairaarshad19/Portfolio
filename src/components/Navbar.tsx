@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -64,36 +65,41 @@ export default function Navbar() {
           MA<span className="text-accent">.</span>
         </a>
 
-        {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => {
-            const isActive = active === link.href;
-            return (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleClick(link.href);
-                }}
-                className={`link-underline text-sm font-medium transition-colors ${
-                  isActive ? "text-accent" : "text-fg-muted hover:text-accent"
-                }`}
-              >
-                {link.label}
-              </a>
-            );
-          })}
-        </nav>
+        {/* Right nav & theme toggle container */}
+        <div className="flex items-center gap-4 md:gap-8">
+          {/* Desktop nav */}
+          <nav className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => {
+              const isActive = active === link.href;
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleClick(link.href);
+                  }}
+                  className={`link-underline text-sm font-medium transition-colors ${
+                    isActive ? "text-accent" : "text-fg-muted hover:text-accent"
+                  }`}
+                >
+                  {link.label}
+                </a>
+              );
+            })}
+          </nav>
 
-        {/* Mobile toggle */}
-        <button
-          onClick={() => setOpen(!open)}
-          className="md:hidden p-2 text-fg-muted hover:text-accent transition-colors"
-          aria-label="Toggle navigation menu"
-        >
-          {open ? <X size={22} /> : <Menu size={22} />}
-        </button>
+          <ThemeToggle />
+
+          {/* Mobile toggle */}
+          <button
+            onClick={() => setOpen(!open)}
+            className="md:hidden p-2 text-fg-muted hover:text-accent transition-colors"
+            aria-label="Toggle navigation menu"
+          >
+            {open ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile nav */}

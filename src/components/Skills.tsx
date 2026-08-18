@@ -29,6 +29,8 @@ import {
 } from "react-icons/si";
 import { Network } from "lucide-react";
 import type { IconType } from "react-icons";
+import { useTheme } from "./ThemeProvider";
+import { useState, useEffect } from "react";
 
 const iconMap: Record<string, IconType> = {
   TypeScript: SiTypescript,
@@ -84,12 +86,22 @@ const brandColors: Record<string, string> = {
 
 function SkillPill({ skill }: { skill: string }) {
   const Icon = iconMap[skill];
+  const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   if (!Icon) return null;
+
+  const isDarkBrand = brandColors[skill] === "#000000" || brandColors[skill] === "#181717";
+  const iconColor = mounted && theme === "dark" && isDarkBrand ? "#ffffff" : (brandColors[skill] ?? "#666");
 
   return (
     <div className="flex flex-col items-center justify-center gap-3 bg-bg-elevated border border-border rounded-xl p-5 shadow-sm hover:border-accent/40 hover:shadow-md transition-all duration-200">
       <div className="w-10 h-10 flex items-center justify-center">
-        <Icon size={28} color={brandColors[skill] ?? "#666"} aria-label={skill} />
+        <Icon size={28} color={iconColor} aria-label={skill} />
       </div>
       <span className="text-xs font-medium text-fg-muted text-center leading-tight">
         {skill}

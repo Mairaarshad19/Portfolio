@@ -78,12 +78,12 @@ function ProjectCard({
           {project.description}
         </p>
 
-        {/* Tech stack pills — text-only, electric blue on white */}
+        {/* Tech stack pills */}
         <div className="flex flex-wrap justify-center gap-2 mb-6">
           {project.techStack.map((tech) => (
             <span
               key={tech}
-              className="px-2.5 py-1 text-xs font-medium text-[#0066FF] bg-white border border-blue-200/60 rounded-full"
+              className="px-2.5 py-1 text-xs font-medium text-accent bg-bg-secondary border border-border rounded-full"
             >
               {tech}
             </span>

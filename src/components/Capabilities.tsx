@@ -29,7 +29,7 @@ function ServiceCard({
       ref={ref}
       className={`scroll-reveal h-full ${revealed ? "revealed" : ""}`}
     >
-      <div className="card-lift h-full flex flex-col bg-white border-2 border-accent/30 rounded-2xl p-6 sm:p-7 shadow-sm hover:border-accent/50 hover:shadow-md transition-all duration-200">
+      <div className="card-lift h-full flex flex-col bg-bg-elevated border-2 border-accent/30 rounded-2xl p-6 sm:p-7 shadow-sm hover:border-accent/50 hover:shadow-md transition-all duration-200">
         {/* Header row — icon badge + title on the same line */}
         <div className="flex items-center gap-3.5 mb-4 sm:mb-5">
           <span className="w-11 h-11 shrink-0 rounded-lg bg-accent-subtle flex items-center justify-center text-accent">

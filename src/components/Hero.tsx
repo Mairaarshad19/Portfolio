@@ -176,7 +176,7 @@ export default function Hero() {
                       const el = document.querySelector(btn.href);
                       if (el) el.scrollIntoView({ behavior: "smooth" });
                     }}
-                    className="btn-lift px-6 py-3 rounded-lg border-2 border-[#0047FF] text-[#0047FF] bg-transparent font-semibold text-sm gap-2 hover:bg-[#0047FF] hover:text-white active:scale-[0.97]"
+                    className="btn-lift px-6 py-3 rounded-lg border-2 border-accent text-accent bg-transparent font-semibold text-sm gap-2 hover:bg-accent hover:text-white active:scale-[0.97]"
                   >
                     {btn.label}
                   </MagneticButton>
@@ -225,7 +225,7 @@ export default function Hero() {
               {/* Floating badges — hidden on small screens */}
               <div className="hidden sm:block">
                 {/* Available for Opportunities */}
-                <div className="float-badge float-badge-delay-1 absolute -top-5 -left-6 flex items-center gap-2 px-3.5 py-2 bg-white rounded-full border border-border shadow-md">
+                <div className="float-badge float-badge-delay-1 absolute -top-5 -left-6 flex items-center gap-2 px-3.5 py-2 bg-bg-elevated rounded-full border border-border shadow-md">
                   <span className="pulse-dot w-2.5 h-2.5 rounded-full bg-green-500" />
                   <span className="text-xs font-medium text-fg-muted leading-none">
                     Available for Opportunities
@@ -233,7 +233,7 @@ export default function Hero() {
                 </div>
 
                 {/* Live local time */}
-                <div className="float-badge float-badge-delay-2 absolute -bottom-5 -left-8 flex items-center gap-2 px-3.5 py-2 bg-white rounded-full border border-border shadow-md">
+                <div className="float-badge float-badge-delay-2 absolute -bottom-5 -left-8 flex items-center gap-2 px-3.5 py-2 bg-bg-elevated rounded-full border border-border shadow-md">
                   <span className="text-xs font-medium text-fg-muted leading-none">
                     {lahoreTime}
                   </span>
