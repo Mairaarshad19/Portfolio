@@ -80,18 +80,6 @@ export const experienceContent: Experience[] = [
       "Managed sprint cycles for a **4-member team** through weekly task allocation and progress tracking",
     ],
   },
-  {
-    role: "Mobile App Development Intern",
-    company: "DevInfantary",
-    workMode: "Remote",
-    dates: "July 2026 – August 2026",
-    bullets: [
-      "Developed cross-platform mobile applications using **Flutter** and **Dart**, implementing responsive UIs with **Material Design** principles",
-      "Built and customized **7+ core Flutter widgets** (Container, Row, Column, ListView, AppBar, Navigation, Forms), gaining hands-on experience with Flutter's widget tree and layout system",
-      "Used **Hot Reload** and Android device testing to troubleshoot and optimize app behavior",
-      "Practiced **Git** and **GitHub** for version control and source code management throughout the internship",
-    ],
-  },
 ];
 
 export interface Project {
@@ -243,7 +231,7 @@ export const heroContent = {
     "Full-Stack Developer",
     "API Designer",
   ],
-  role: "Computer Science undergraduate with **4 internships** across backend engineering, AI workflows, and mobile development. Built and shipped **5 projects**, including a live production website using Next.js 15, RESTful APIs and RAG pipelines with Express.js and PostgreSQL, and a multi-database AI platform. BSc Computer Science at **UET Lahore**.",
+  role: "Computer Science undergraduate with **3 internships** across backend engineering and AI workflows. Built and shipped **5 projects**, including a live production website using Next.js 15, RESTful APIs and RAG pipelines with Express.js and PostgreSQL, and a multi-database AI platform. BSc Computer Science at **UET Lahore**.",
   intro: [],
   buttons: [
     { label: "Download Resume", href: "/Maira_Arshad_Resume.pdf", variant: "primary" },
