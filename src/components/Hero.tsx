@@ -213,7 +213,7 @@ export default function Hero() {
               {/* Photo frame */}
               <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-[2rem] overflow-hidden border-2 border-accent/20 shadow-xl shadow-accent/10">
                 <Image
-                  src="/maira.jpeg"
+                  src="/maira-picture.jpeg"
                   alt="Maira Arshad"
                   fill
                   className="object-cover"
