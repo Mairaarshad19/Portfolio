@@ -18,7 +18,7 @@ export const educationContent = {
   certifications: [
     { name: "AI Fluency Framework & Foundations", issuer: "Anthropic" },
     { name: "SQL (Basic & Intermediate)", issuer: "HackerRank" },
-    { name: "AI & Data Science", issuer: "Honhaar Jawan" },
+    { name: "Claude 101", issuer: "Anthropic Academy" },
   ],
 };
 

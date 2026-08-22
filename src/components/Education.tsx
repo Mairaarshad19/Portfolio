@@ -60,7 +60,7 @@ export default function Education() {
               {certifications.map((cert) => (
                 <div
                   key={cert.name}
-                  className="inline-flex items-center gap-3.5 bg-accent-subtle border border-accent/20 rounded-lg px-4 py-3"
+                  className="inline-flex items-center gap-3.5 bg-bg-elevated border border-border rounded-lg px-4 py-3"
                 >
                   <span className="w-9 h-9 shrink-0 rounded-md bg-accent/10 border border-accent/20 flex items-center justify-center">
                     <GraduationCap size={18} className="text-accent" />
