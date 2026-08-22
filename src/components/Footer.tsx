@@ -20,6 +20,9 @@ export default function Footer() {
         <p className="text-xs text-fg-dim mt-2">
           &copy; 2026 Maira Arshad. All rights reserved.
         </p>
+        <p className="text-xs text-fg-dim mt-1">
+          Designed and built by Maira herself.
+        </p>
       </div>
     </footer>
   );

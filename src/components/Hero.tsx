@@ -4,7 +4,7 @@ import { Download } from "lucide-react";
 import Image from "next/image";
 import { heroContent } from "@/data/portfolio-content";
 import { useScrollReveal } from "@/lib/useScrollReveal";
-import { useRotatingRole } from "@/lib/useRotatingRole";
+
 import { useEffect, useRef, useState } from "react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import type { IconType } from "react-icons";
@@ -56,12 +56,11 @@ function useLahoreTime() {
 }
 
 export default function Hero() {
-  const { name, roles, role, buttons, socials } = heroContent;
+  const { name, role, buttons, socials } = heroContent;
   const { ref, revealed } = useScrollReveal<HTMLDivElement>({ threshold: 0.05 });
   const sectionRef = useRef<HTMLElement>(null);
   const spotlightRef = useRef<HTMLDivElement>(null);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
-  const { role: currentRole, visible: roleVisible } = useRotatingRole(roles);
   const lahoreTime = useLahoreTime();
 
   useEffect(() => {
@@ -136,14 +135,10 @@ export default function Hero() {
               {name}
             </h1>
 
-            {/* Rotating role text */}
+            {/* Static role text */}
             <div className="mt-3 h-10 flex items-center justify-center lg:justify-start">
-              <span
-                className={`role-text text-xl sm:text-2xl md:text-3xl font-display font-semibold text-accent ${
-                  roleVisible ? "role-visible" : "role-hidden"
-                }`}
-              >
-                {currentRole}
+              <span className="text-xl sm:text-2xl md:text-3xl font-display font-semibold text-accent">
+                Backend-Focused Full-Stack Developer
               </span>
             </div>
 

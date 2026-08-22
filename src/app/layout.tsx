@@ -21,9 +21,9 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 const siteUrl = "https://portfolio-chi-ruddy-poj41hgdwn.vercel.app";
-const siteName = "Maira Arshad | Software Engineer";
+const siteName = "Maira Arshad | Backend-Focused Full-Stack Developer";
 const description =
-  "Backend-leaning full-stack developer building production systems.";
+  "Backend-focused full-stack developer building production web applications and APIs.";
 const ogImage = `${siteUrl}/og-image.png`;
 
 export const metadata: Metadata = {
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
         url: ogImage,
         width: 1200,
         height: 630,
-        alt: "Maira Arshad, Software Engineer",
+        alt: "Maira Arshad, Backend-Focused Full-Stack Developer",
       },
     ],
   },

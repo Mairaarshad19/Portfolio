@@ -81,6 +81,10 @@ export default function Contact() {
                 Lahore-based.
               </p>
 
+              <p className="mt-4 text-sm text-fg-muted">
+                Email is the best way to reach me.
+              </p>
+
               {/* Direct contact links — stacked vertically */}
               <div className="mt-10 space-y-3">
                 {socials.map((s) => (
