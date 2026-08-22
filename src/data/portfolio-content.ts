@@ -99,7 +99,7 @@ export const projectsContent: Project[] = [
   {
     name: "Allied Shipping Agency Website",
     description:
-      "A live, production website for a freight forwarding and logistics company, built solo and actively maintained for a real client, focused on performance, responsive design, and clean corporate UI/UX.",
+      "A live, production website for a freight forwarding and logistics company, built solo and actively maintained, focusing on performance, responsive design, and clean corporate UI/UX.",
     techStack: ["Next.js 15 (App Router)", "TypeScript", "Tailwind CSS", "React", "Vercel"],
     links: {
       live: "https://www.alliedshippingpk.com/",
