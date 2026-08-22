@@ -6,6 +6,14 @@ import { useScrollReveal } from "@/lib/useScrollReveal";
 import SectionHeading from "@/components/SectionHeading";
 import ProjectImage from "@/components/ProjectImage";
 
+// Only these two projects are shown on the homepage — keeps the section
+// scannable in ~20 seconds. Smart Emergency Response System and VOXLINK
+// stay on GitHub for anyone who wants to dig deeper.
+const FEATURED_PROJECT_NAMES = [
+  "Allied Shipping Agency Website",
+  "QueryMind (SmartCRM)",
+];
+
 function ProjectCard({
   project,
 }: {
@@ -102,6 +110,10 @@ function ProjectCard({
 export default function Projects() {
   const { ref, revealed } = useScrollReveal();
 
+  const featuredProjects = projectsContent.filter((project) =>
+    FEATURED_PROJECT_NAMES.includes(project.name)
+  );
+
   return (
     <section id="projects" className="py-28">
       <div
@@ -112,7 +124,7 @@ export default function Projects() {
 
         {/* Single column — one project per row */}
         <div className="grid grid-cols-1 gap-8 max-w-4xl mx-auto">
-          {projectsContent.map((project) => (
+          {featuredProjects.map((project) => (
             <div key={project.name} className="stagger-item">
               <ProjectCard project={project} />
             </div>
