@@ -34,26 +34,7 @@ function renderBoldText(text: string) {
   });
 }
 
-function useLahoreTime() {
-  const [time, setTime] = useState("");
 
-  useEffect(() => {
-    const update = () => {
-      const formatted = new Intl.DateTimeFormat("en-US", {
-        hour: "numeric",
-        minute: "2-digit",
-        timeZone: "Asia/Karachi",
-      }).format(new Date());
-      setTime(`${formatted} · Lahore`);
-    };
-
-    update();
-    const interval = setInterval(update, 60000);
-    return () => clearInterval(interval);
-  }, []);
-
-  return time;
-}
 
 export default function Hero() {
   const { name, role, buttons, socials } = heroContent;
@@ -61,7 +42,6 @@ export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
   const spotlightRef = useRef<HTMLDivElement>(null);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
-  const lahoreTime = useLahoreTime();
 
   useEffect(() => {
     // Detect touch device on mount
@@ -131,13 +111,13 @@ export default function Hero() {
             </p>
 
             {/* Name — largest, Space Grotesk bold */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold tracking-tight text-fg leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-fg leading-tight">
               {name}
             </h1>
 
             {/* Static role text */}
             <div className="mt-3 flex items-center justify-center lg:justify-start">
-              <span className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-accent">
+              <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-accent">
                 Backend-Focused Full-Stack Developer
               </span>
             </div>
@@ -223,14 +203,7 @@ export default function Hero() {
                 <div className="float-badge float-badge-delay-1 absolute -top-5 -left-6 flex items-center gap-2 px-3.5 py-2 bg-bg-elevated rounded-full border border-border shadow-md">
                   <span className="pulse-dot w-2.5 h-2.5 rounded-full bg-green-500" />
                   <span className="text-xs font-medium text-fg-muted leading-none">
-                    Open to Backend & Full-Stack Roles
-                  </span>
-                </div>
-
-                {/* Live local time */}
-                <div className="float-badge float-badge-delay-2 absolute -bottom-5 -left-8 flex items-center gap-2 px-3.5 py-2 bg-bg-elevated rounded-full border border-border shadow-md">
-                  <span className="text-xs font-medium text-fg-muted leading-none">
-                    {lahoreTime}
+                    Open to Backend Roles & Freelance Projects
                   </span>
                 </div>
               </div>

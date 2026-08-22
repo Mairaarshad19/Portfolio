@@ -44,7 +44,7 @@ function ExperienceCard({
 
       {/* Card */}
       <div className="card-lift bg-bg-elevated border border-border rounded-xl p-6 hover:border-border-light shadow-sm">
-        <h3 className="text-lg font-display font-semibold text-fg">{exp.role}</h3>
+        <h3 className="text-lg font-semibold text-fg">{exp.role}</h3>
         <p className="text-sm text-fg-muted mt-0.5 mb-4 flex items-center gap-2">
           {exp.company}
           <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-accent-subtle border border-accent/20 text-xs font-medium text-accent">

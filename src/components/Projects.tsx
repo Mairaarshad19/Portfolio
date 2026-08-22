@@ -35,7 +35,7 @@ function ProjectCard({
       >
         {/* Header — centered */}
         <div className={`text-center ${hasScreenshot ? "mb-6" : "mb-8"}`}>
-          <h3 className="text-2xl font-display font-bold text-fg">
+          <h3 className="text-2xl font-bold text-fg">
             {project.name}
           </h3>
           <p className="mt-1 text-sm text-accent tracking-wide">
@@ -115,7 +115,7 @@ export default function Projects() {
   );
 
   return (
-    <section id="projects" className="py-28">
+    <section id="projects" className="py-28 bg-bg-secondary">
       <div
         ref={ref}
         className={`container-content scroll-reveal ${revealed ? "revealed" : ""}`}

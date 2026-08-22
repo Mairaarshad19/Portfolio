@@ -102,7 +102,7 @@ export const projectsContent: Project[] = [
       "A live, production website for a freight forwarding and logistics company, built solo and actively maintained for a real client, focused on performance, responsive design, and clean corporate UI/UX.",
     techStack: ["Next.js 15 (App Router)", "TypeScript", "Tailwind CSS", "React", "Vercel"],
     links: {
-      live: "https://allied-shipping-agency.vercel.app/",
+      live: "https://www.alliedshippingpk.com/",
       github: "https://github.com/Mairaarshad19/allied-shipping-website",
     },
     featured: true,

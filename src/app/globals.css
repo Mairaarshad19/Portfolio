@@ -14,7 +14,6 @@
   --color-accent-subtle: #eff6ff;
   --color-border: #e2ddd6;
   --color-border-light: #ece8e2;
-  --font-display: "Space Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --max-width-content: 68rem;
 }
@@ -45,7 +44,6 @@ html.dark,
   --color-accent-subtle: var(--color-accent-subtle);
   --color-border: var(--color-border);
   --color-border-light: var(--color-border-light);
-  --font-display: var(--font-display);
   --font-sans: var(--font-sans);
   --max-width-content: var(--max-width-content);
 }

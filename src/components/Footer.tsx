@@ -11,10 +11,10 @@ export default function Footer() {
         ref={ref}
         className={`container-content flex flex-col items-center gap-2 py-14 text-center scroll-reveal ${revealed ? "revealed" : ""}`}
       >
-        <p className="text-2xl font-display font-bold tracking-wide text-fg">
+        <p className="text-2xl font-bold tracking-wide text-fg">
           MAIRA
         </p>
-        <p className="text-sm font-display text-fg-muted">
+        <p className="text-sm text-fg-muted">
           Software Engineer · Backend & Full-Stack · Lahore
         </p>
         <p className="text-xs text-fg-dim mt-2">

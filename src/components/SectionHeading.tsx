@@ -27,7 +27,7 @@ export default function SectionHeading({ children }: { children: React.ReactNode
   return (
     <h2
       ref={ref}
-      className="relative inline-block text-2xl sm:text-3xl font-display font-bold tracking-tight text-fg mb-12"
+      className="relative inline-block text-2xl sm:text-3xl font-bold tracking-tight text-fg mb-12"
     >
       {children}
       <span

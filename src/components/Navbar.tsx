@@ -60,7 +60,7 @@ export default function Navbar() {
             e.preventDefault();
             handleClick("#home");
           }}
-          className="text-lg font-display font-semibold tracking-tight text-fg hover:text-accent transition-colors"
+          className="text-lg font-semibold tracking-tight text-fg hover:text-accent transition-colors"
         >
           MA<span className="text-accent">.</span>
         </a>

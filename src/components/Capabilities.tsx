@@ -35,7 +35,7 @@ function ServiceCard({
           <span className="w-11 h-11 shrink-0 rounded-lg bg-accent-subtle flex items-center justify-center text-accent">
             {iconMap[icon]}
           </span>
-          <h3 className="text-base sm:text-lg font-display font-semibold text-fg leading-snug">
+          <h3 className="text-base sm:text-lg font-semibold text-fg leading-snug">
             {title}
           </h3>
         </div>

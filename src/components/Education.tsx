@@ -10,7 +10,7 @@ export default function Education() {
   const { ref, revealed } = useScrollReveal();
 
   return (
-    <section id="education" className="py-28">
+    <section id="education" className="py-28 bg-bg-secondary">
       <div
         ref={ref}
         className={`container-content scroll-reveal ${revealed ? "revealed" : ""}`}
@@ -26,7 +26,7 @@ export default function Education() {
                 <GraduationCap size={24} className="text-accent" />
               </span>
               <div>
-                <h3 className="text-lg font-display font-semibold text-fg leading-snug">
+                <h3 className="text-lg font-semibold text-fg leading-snug">
                   {degree}
                 </h3>
                 <p className="text-sm text-fg-muted mt-1">{institution}</p>
@@ -35,7 +35,7 @@ export default function Education() {
 
             {/* Relevant coursework — pill tags */}
             <div>
-              <h4 className="text-xs font-display font-semibold text-fg-dim uppercase tracking-wider mb-5">
+              <h4 className="text-xs font-semibold text-fg-dim uppercase tracking-wider mb-5">
                 Relevant Coursework
               </h4>
               <div className="flex flex-wrap" style={{ gap: "10px" }}>
@@ -53,7 +53,7 @@ export default function Education() {
 
           {/* ── RIGHT COLUMN — Certifications ── */}
           <div className="card-lift bg-bg-elevated border border-border rounded-xl p-6 sm:p-8 shadow-sm h-full">
-            <h3 className="text-xs font-display font-semibold text-fg-dim uppercase tracking-wider mb-6">
+            <h3 className="text-xs font-semibold text-fg-dim uppercase tracking-wider mb-6">
               Certifications
             </h3>
             <div className="flex flex-col gap-4">

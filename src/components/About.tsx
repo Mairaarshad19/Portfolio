@@ -9,7 +9,7 @@ export default function About() {
   const { ref, revealed } = useScrollReveal();
 
   return (
-    <section id="about" className="py-28">
+    <section id="about" className="py-28 bg-bg-secondary">
       <div
         ref={ref}
         className={`container-content scroll-reveal ${revealed ? "revealed" : ""}`}
