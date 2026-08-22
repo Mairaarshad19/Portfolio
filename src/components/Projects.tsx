@@ -1,39 +1,10 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
 import { projectsContent } from "@/data/portfolio-content";
-import { ExternalLink, GitBranch, Code } from "lucide-react";
+import { ExternalLink, GitBranch } from "lucide-react";
 import { useScrollReveal } from "@/lib/useScrollReveal";
 import SectionHeading from "@/components/SectionHeading";
-
-function LandscapeImage({ screenshot, name }: { screenshot: string; name: string }) {
-  const [error, setError] = useState(false);
-
-  if (error) {
-    return (
-      <div className="relative w-full h-[300px] bg-bg-secondary rounded-xl border border-border mb-6 flex items-center justify-center overflow-hidden">
-        <div className="flex flex-col items-center gap-1.5">
-          <Code size={20} className="text-fg-muted/30" />
-          <span className="text-xs text-fg-muted/30">{name}</span>
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <div className="relative w-full h-[300px] bg-bg-secondary rounded-xl overflow-hidden border border-border mb-6 shadow-sm">
-      <Image
-        src={screenshot}
-        alt={`${name} screenshot`}
-        fill
-        className="object-cover"
-        onError={() => setError(true)}
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-      />
-    </div>
-  );
-}
+import ProjectImage from "@/components/ProjectImage";
 
 function ProjectCard({
   project,
@@ -46,7 +17,7 @@ function ProjectCard({
   return (
     <div
       ref={ref}
-      className={`card-lift border-2 border-accent/30 bg-bg-elevated rounded-2xl p-8 flex flex-col shadow-sm scroll-reveal ${revealed ? "revealed" : ""}`}
+      className={`card-lift border-2 border-accent/30 bg-bg-elevated rounded-2xl p-8 md:p-10 flex flex-col shadow-sm scroll-reveal ${revealed ? "revealed" : ""}`}
     >
       {/* Content — vertically centered when there's no image to balance the card */}
       <div
@@ -55,31 +26,35 @@ function ProjectCard({
         }`}
       >
         {/* Header — centered */}
-        <div className={`text-center ${hasScreenshot ? "mb-5" : "mb-8"}`}>
-          <h3 className="text-xl font-display font-bold text-fg">
+        <div className={`text-center ${hasScreenshot ? "mb-6" : "mb-8"}`}>
+          <h3 className="text-2xl font-display font-bold text-fg">
             {project.name}
           </h3>
-          <p className="mt-1 text-sm text-accent tracking-wide truncate">
+          <p className="mt-1 text-sm text-accent tracking-wide">
             {project.tagline}
           </p>
         </div>
 
-        {/* Image — only when a screenshot exists */}
+        {/* Image — only when a screenshot exists. Uses the dual-layer
+           ProjectImage component: blurred backdrop fills the frame,
+           the real screenshot sits fully visible on top, nothing cropped. */}
         {hasScreenshot && (
-          <LandscapeImage screenshot={project.screenshot!} name={project.name} />
+          <div className="max-w-3xl mx-auto w-full">
+            <ProjectImage screenshot={project.screenshot!} name={project.name} />
+          </div>
         )}
 
         {/* Description */}
         <p
-          className={`text-sm text-fg-muted leading-relaxed text-justify line-clamp-3 ${
-            hasScreenshot ? "mb-6" : "mb-8 max-w-md mx-auto"
+          className={`text-sm text-fg-muted leading-relaxed text-justify line-clamp-3 max-w-2xl mx-auto ${
+            hasScreenshot ? "mb-6" : "mb-8"
           }`}
         >
           {project.description}
         </p>
 
         {/* Tech stack pills */}
-        <div className="flex flex-wrap justify-center gap-2 mb-6">
+        <div className="flex flex-wrap justify-center gap-2 mb-6 max-w-2xl mx-auto">
           {project.techStack.map((tech) => (
             <span
               key={tech}
@@ -135,7 +110,8 @@ export default function Projects() {
       >
         <SectionHeading>Projects</SectionHeading>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Single column — one project per row */}
+        <div className="grid grid-cols-1 gap-8 max-w-4xl mx-auto">
           {projectsContent.map((project) => (
             <div key={project.name} className="stagger-item">
               <ProjectCard project={project} />
