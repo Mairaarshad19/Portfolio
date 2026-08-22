@@ -32,7 +32,7 @@ export const aboutContent = {
     "CS @ UET Lahore",
     "Startup Lead Intern at UET Lahore",
     "Backend Engineering at FlyRank",
-    "Live Client Project Shipped",
+    "Live Project Shipped",
   ],
 };
 
@@ -115,8 +115,8 @@ export const projectsContent: Project[] = [
       "Co-designed a multi-paradigm data platform unifying PostgreSQL, Neo4j, and Qdrant under one natural-language query interface, with no SQL or vector-search expertise required.",
     techStack: ["PostgreSQL", "Neo4j", "Qdrant", "FastAPI", "Google Gemini", "Python"],
     links: {
-    github: "https://github.com/Mairaarshad19/QueryMind-SmartCRM",
-    live: "", // leave empty/omit if no live demo — button only shows when this has a value
+      github: "https://github.com/Mairaarshad19/QueryMind-SmartCRM",
+      live: "", // leave empty/omit if no live demo — button only shows when this has a value
     },
     featured: false,
     screenshot: "/projects/querymind.png",
@@ -156,27 +156,27 @@ export interface ServiceOffer {
 /** Client-facing services. Each combines the deliverable with an honest reason to trust it. */
 export const servicesContent: ServiceOffer[] = [
   {
-    title: "Custom Websites & Web Apps",
-    description:
-      "Fast, responsive websites and web apps built with modern tools like Next.js and React. Clean, scalable code that looks great and holds up as your business grows.",
-    icon: "Globe",
-  },
-  {
     title: "Backend & API Development",
     description:
-      "Reliable backend systems and APIs your product runs on, built with clean, layered architecture so they're easy to extend later, not just glued together to work once.",
+      "Building reliable APIs that handle real traffic without breaking, with clean, layered architecture designed to scale as usage grows.",
     icon: "Server",
   },
   {
     title: "Database Design & Architecture",
     description:
-      "Well-structured databases that scale with your data, designed properly from day one so performance and reliability hold up as your product grows, not falls apart.",
+      "Designing databases properly from day one, preventing data loss and structural issues that come from rushed schema decisions.",
     icon: "Database",
+  },
+  {
+    title: "Full-Stack Web Applications",
+    description:
+      "Complete web applications built end-to-end with Next.js and React, backed by the same production-grade backend discipline.",
+    icon: "Globe",
   },
   {
     title: "Secure, Production-Ready Code",
     description:
-      "Authentication, environment variables, and credentials handled correctly from day one. Secure, tested code built to run reliably in production, not just in development.",
+      "Writing systems that don't break in production, authentication, environment handling, and error cases considered from the start, not patched in later.",
     icon: "ShieldCheck",
   },
 ];
@@ -226,7 +226,7 @@ export const skillCategories: SkillCategory[] = [
 
 export const heroContent = {
   name: "Maira Arshad",
-  role: "Computer Science undergraduate with **3 internships** across backend engineering and AI workflows. Built and shipped **5 projects**, including a live production website using Next.js 15, RESTful APIs and RAG pipelines with Express.js and PostgreSQL, and a multi-database AI platform. BSc Computer Science at **UET Lahore**.",
+  role: "I build **reliable APIs**, **well-structured databases**, and systems that hold up under **real traffic**, not just something that works once.",
   intro: [],
   buttons: [
     { label: "Download Resume", href: "/Maira_Arshad_Resume.pdf", variant: "primary" },

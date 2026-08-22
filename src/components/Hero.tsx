@@ -136,8 +136,8 @@ export default function Hero() {
             </h1>
 
             {/* Static role text */}
-            <div className="mt-3 h-10 flex items-center justify-center lg:justify-start">
-              <span className="text-xl sm:text-2xl md:text-3xl font-display font-semibold text-accent">
+            <div className="mt-3 flex items-center justify-center lg:justify-start">
+              <span className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-accent">
                 Backend-Focused Full-Stack Developer
               </span>
             </div>
@@ -223,7 +223,7 @@ export default function Hero() {
                 <div className="float-badge float-badge-delay-1 absolute -top-5 -left-6 flex items-center gap-2 px-3.5 py-2 bg-bg-elevated rounded-full border border-border shadow-md">
                   <span className="pulse-dot w-2.5 h-2.5 rounded-full bg-green-500" />
                   <span className="text-xs font-medium text-fg-muted leading-none">
-                    Available for Opportunities
+                    Open to Backend & Full-Stack Roles
                   </span>
                 </div>
 

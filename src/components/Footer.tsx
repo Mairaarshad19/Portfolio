@@ -14,7 +14,7 @@ export default function Footer() {
         <p className="text-2xl font-display font-bold tracking-wide text-fg">
           MAIRA
         </p>
-        <p className="text-sm text-fg-muted">
+        <p className="text-sm font-display text-fg-muted">
           Software Engineer · Backend & Full-Stack · Lahore
         </p>
         <p className="text-xs text-fg-dim mt-2">
