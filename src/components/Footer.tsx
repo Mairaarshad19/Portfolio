@@ -12,10 +12,10 @@ export default function Footer() {
         className={`container-content flex flex-col items-center gap-2 py-14 text-center scroll-reveal ${revealed ? "revealed" : ""}`}
       >
         <p className="text-2xl font-bold tracking-wide text-fg">
-          MAIRA
+          MAIRA ARSHAD
         </p>
         <p className="text-sm text-fg-muted">
-          Software Engineer · Backend & Full-Stack · Lahore
+          Backend-Focused Full-Stack Developer
         </p>
         <p className="text-xs text-fg-dim mt-2">
           &copy; 2026 Maira Arshad. All rights reserved.
