@@ -45,8 +45,11 @@ function ExperienceCard({
       {/* Card */}
       <div className="card-lift bg-bg-elevated border border-border rounded-xl p-6 hover:border-border-light shadow-sm">
         <h3 className="text-lg font-semibold text-fg">{exp.role}</h3>
-        <p className="text-sm text-fg-muted mt-0.5 mb-4 flex items-center gap-2">
-          {exp.company}
+        <p className="text-sm text-fg-muted mt-0.5 mb-4 flex flex-wrap items-center gap-2">
+          <span className="text-xs font-semibold uppercase tracking-wider text-fg-dim">
+            {exp.organizationType === "institute" ? "Institute" : "Company"}:
+          </span>
+          <span className="font-medium text-fg">{exp.company}</span>
           <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-accent-subtle border border-accent/20 text-xs font-medium text-accent">
             {exp.workMode}
           </span>
