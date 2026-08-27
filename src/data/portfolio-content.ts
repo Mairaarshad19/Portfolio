@@ -30,7 +30,7 @@ export const aboutContent = {
   ],
   journeyMilestones: [
     "CS @ UET Lahore",
-    "Startup Lead Intern at UET Lahore",
+    "First Internship — UET Lahore",
     "Backend Engineering at FlyRank",
     "Live Project Shipped",
   ],
@@ -39,6 +39,7 @@ export const aboutContent = {
 export interface Experience {
   role: string;
   company: string;
+  organizationType: "company" | "institute";
   workMode: string;
   dates: string;
   bullets: string[];
@@ -48,6 +49,7 @@ export const experienceContent: Experience[] = [
   {
     role: "Backend AI Engineering Intern",
     company: "FlyRank",
+    organizationType: "company",
     workMode: "Remote",
     dates: "July 2026 – August 2026",
     bullets: [
@@ -60,6 +62,7 @@ export const experienceContent: Experience[] = [
   {
     role: "AI Fluency Intern",
     company: "FlyRank",
+    organizationType: "company",
     workMode: "Remote",
     dates: "July 2026 – August 2026",
     bullets: [
@@ -70,11 +73,12 @@ export const experienceContent: Experience[] = [
   },
   {
     role: "Startup Project Lead Intern",
-    company: "Ustadam (AI-based EdTech startup)",
+    company: "University of Engineering and Technology Lahore",
+    organizationType: "institute",
     workMode: "Hybrid, UET Lahore",
     dates: "June 2025 – August 2025",
     bullets: [
-      "Planned the MVP roadmap for an **AI-based EdTech platform** across backend, frontend, database, and AI integration phases",
+      "Planned the MVP roadmap for an **AI-powered product** across backend, frontend, database, and AI integration phases",
       "Designed **system architecture**, user flow diagrams, and a relational **database schema** for a scalable platform",
       "Built a **5-year** financial model covering operating costs, revenue forecasting, and ROI estimation",
       "Managed sprint cycles for a **4-member team** through weekly task allocation and progress tracking",
